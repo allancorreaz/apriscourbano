@@ -1,0 +1,210 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+// User model for authentication
+model User {
+  id        String   @id @default(cuid())
+  email     String   @unique
+  name      String?
+  password  String
+  role      Role     @default(EDITOR)
+  image     String?
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  // Relations
+  accounts Account[]
+  sessions Session[]
+  events   Event[]
+  payments Payment[]
+
+  @@map("users")
+}
+
+// NextAuth models
+model Account {
+  id                String  @id @default(cuid())
+  userId            String
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String? @db.Text
+  access_token      String? @db.Text
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String? @db.Text
+  session_state     String?
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+  @@map("accounts")
+}
+
+model Session {
+  id           String   @id @default(cuid())
+  sessionToken String   @unique
+  userId       String
+  expires      DateTime
+  user         User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@map("sessions")
+}
+
+model VerificationToken {
+  identifier String
+  token      String   @unique
+  expires    DateTime
+
+  @@unique([identifier, token])
+  @@map("verificationtokens")
+}
+
+// Church specific models
+model Event {
+  id                String    @id @default(cuid())
+  name              String
+  description       String    @db.Text
+  date              DateTime
+  time              String
+  location          String
+  image             String?
+  isPaid            Boolean   @default(false)
+  price             Decimal?  @db.Decimal(10, 2)
+  ticketsAvailable  Int       @default(0)
+  ticketsTotal      Int       @default(0)
+  isActive          Boolean   @default(true)
+  createdAt         DateTime  @default(now())
+  updatedAt         DateTime  @updatedAt
+  
+  // Relations
+  createdBy   User      @relation(fields: [createdById], references: [id])
+  createdById String
+  payments    Payment[]
+
+  @@map("events")
+}
+
+model WeeklyEvent {
+  id          String  @id @default(cuid())
+  name        String
+  description String  @db.Text
+  dayOfWeek   Int     // 0 = Sunday, 1 = Monday, etc.
+  time        String
+  leader      String?
+  isActive    Boolean @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@map("weekly_events")
+}
+
+model ServiceTime {
+  id          String  @id @default(cuid())
+  name        String
+  description String  @db.Text
+  dayOfWeek   Int     // 0 = Sunday, 1 = Monday, etc.
+  time        String
+  isActive    Boolean @default(true)
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@map("service_times")
+}
+
+model Payment {
+  id                String        @id @default(cuid())
+  amount            Decimal       @db.Decimal(10, 2)
+  currency          String        @default("BRL")
+  status            PaymentStatus @default(PENDING)
+  stripePaymentId   String?       @unique
+  stripeSessionId   String?       @unique
+  
+  // Customer info
+  customerName      String
+  customerEmail     String
+  customerPhone     String?
+  
+  // Event relation
+  event             Event         @relation(fields: [eventId], references: [id])
+  eventId           String
+  
+  // User relation (optional - for logged users)
+  user              User?         @relation(fields: [userId], references: [id])
+  userId            String?
+  
+  createdAt         DateTime      @default(now())
+  updatedAt         DateTime      @updatedAt
+
+  @@map("payments")
+}
+
+model Gallery {
+  id          String         @id @default(cuid())
+  name        String
+  description String?        @db.Text
+  date        DateTime       // Date of the event/service
+  isActive    Boolean        @default(true)
+  createdAt   DateTime       @default(now())
+  updatedAt   DateTime       @updatedAt
+  
+  // Relations
+  images      GalleryImage[]
+
+  @@map("galleries")
+}
+
+model GalleryImage {
+  id          String   @id @default(cuid())
+  url         String
+  alt         String?
+  publicId    String?  // For Cloudinary
+  width       Int?
+  height      Int?
+  
+  // Gallery relation
+  gallery     Gallery  @relation(fields: [galleryId], references: [id], onDelete: Cascade)
+  galleryId   String
+  
+  createdAt   DateTime @default(now())
+  updatedAt   DateTime @updatedAt
+
+  @@map("gallery_images")
+}
+
+// Settings model for editable content
+model Setting {
+  id        String   @id @default(cuid())
+  key       String   @unique
+  value     String   @db.Text
+  type      String   @default("text") // text, number, boolean, json
+  category  String   @default("general")
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+
+  @@map("settings")
+}
+
+// Enums
+enum Role {
+  ADMIN
+  EDITOR
+}
+
+enum PaymentStatus {
+  PENDING
+  COMPLETED
+  FAILED
+  CANCELLED
+  REFUNDED
+}
