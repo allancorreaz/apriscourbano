@@ -1,23 +1,34 @@
 'use client'
 
 import Link from 'next/link'
-import Image from 'next/image'
 import { useState, useEffect } from 'react'
 import { useSession, signOut } from 'next-auth/react'
-import { Disclosure } from '@headlessui/react'
-import { Bars3Icon, XMarkIcon, UserIcon } from '@heroicons/react/24/outline'
+import { usePathname } from 'next/navigation'
+
+/* ===========================================
+   HEADER - MENU DE NAVEGAÇÃO
+   
+   Para alterar os itens do menu, edite o array 'navigation' abaixo.
+   Cada item possui:
+   - name: texto exibido no menu
+   - href: caminho da página
+   =========================================== */
 
 const navigation = [
-  { name: 'Início', href: '/' },
-  { name: 'Cultos', href: '/cultos' },
+  { name: 'Home', href: '/' },
   { name: 'Eventos', href: '/eventos' },
-  { name: 'Discipulados', href: '/discipulados' },
-  { name: 'Galeria', href: '/galeria' },
+  { name: 'Ministérios', href: '/ministerios' },
+  { name: 'Células', href: '/celulas' },
+  { name: 'Batismo', href: '/batismo' },
+  { name: 'Ofertas', href: '/ofertas' },
+  { name: 'Contato', href: '/contato' },
 ]
 
 export default function Header() {
   const [scrolled, setScrolled] = useState(false)
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const { data: session } = useSession()
+  const pathname = usePathname()
 
   useEffect(() => {
     const handleScroll = () => {
@@ -28,118 +39,148 @@ export default function Header() {
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
 
+  // Fecha o menu mobile ao mudar de página
+  useEffect(() => {
+    setMobileMenuOpen(false)
+  }, [pathname])
+
+  const isActive = (href: string) => {
+    if (href === '/') return pathname === '/'
+    return pathname.startsWith(href)
+  }
+
   return (
-    <Disclosure as="nav" className={`fixed w-full z-50 transition-all duration-300 ${
-      scrolled 
-        ? 'bg-white/95 backdrop-blur-md shadow-lg' 
-        : 'bg-transparent'
-    }`}>
-      {({ open }) => (
-        <>
-          <div className="container-custom">
-            <div className="relative flex h-16 items-center justify-between">
-              {/* Logo */}
-              <div className="flex flex-shrink-0 items-center">
-                <Link href="/" className="flex items-center space-x-3">
-                  <div className="w-12 h-12 bg-primary-600 rounded-lg flex items-center justify-center">
-                    {/* Placeholder for logo - replace with actual logo */}
-                    <span className="text-white font-bold text-xl">AU</span>
-                  </div>
-                  <div className="hidden sm:block">
-                    <h1 className={`text-xl font-bold font-serif ${
-                      scrolled ? 'text-primary-900' : 'text-white'
-                    }`}>
-                      Aprisco Urbano
-                    </h1>
-                  </div>
-                </Link>
-              </div>
+    <header 
+      className={`fixed w-full z-50 transition-all duration-300 ${
+        scrolled || mobileMenuOpen
+          ? 'bg-white shadow-md' 
+          : 'bg-white/95 backdrop-blur-sm'
+      }`}
+    >
+      <div className="container mx-auto px-6">
+        <div className="flex h-18 items-center justify-between">
+          {/* Logo */}
+          <Link href="/" className="flex items-center gap-3">
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <img 
+              src="/img/logoapriscourbano.webp" 
+              alt="Aprisco Urbano" 
+              className="h-12 w-auto"
+            />
+            <span className="hidden sm:block text-xl font-bold text-slate-800">
+              Aprisco Urbano
+            </span>
+          </Link>
 
-              {/* Desktop Navigation */}
-              <div className="hidden md:block">
-                <div className="ml-10 flex items-baseline space-x-4">
-                  {navigation.map((item) => (
-                    <Link
-                      key={item.name}
-                      href={item.href}
-                      className={`px-3 py-2 rounded-md text-sm font-medium transition-colors ${
-                        scrolled
-                          ? 'text-gray-700 hover:text-primary-600 hover:bg-primary-50'
-                          : 'text-white hover:text-gold-300 hover:bg-white/10'
-                      }`}
-                    >
-                      {item.name}
-                    </Link>
-                  ))}
-                </div>
-              </div>
+          {/* Desktop Navigation */}
+          <nav className="hidden lg:flex items-center gap-1">
+            {navigation.map((item) => (
+              <Link
+                key={item.name}
+                href={item.href}
+                className={`px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+                  isActive(item.href)
+                    ? 'bg-primary-100 text-primary-700'
+                    : 'text-slate-600 hover:text-primary-600 hover:bg-slate-50'
+                }`}
+              >
+                {item.name}
+              </Link>
+            ))}
+          </nav>
 
-              {/* User Menu & Mobile menu button */}
-              <div className="flex items-center space-x-4">
-                {/* User Menu */}
-                {session?.user ? (
-                  <div className="relative">
-                    <div className="flex items-center space-x-2">
-                      <UserIcon className={`h-5 w-5 ${scrolled ? 'text-gray-700' : 'text-white'}`} />
-                      <button
-                        onClick={() => signOut()}
-                        className={`text-sm ${
-                          scrolled ? 'text-gray-700 hover:text-primary-600' : 'text-white hover:text-gold-300'
-                        }`}
-                      >
-                        Sair
-                      </button>
-                    </div>
-                  </div>
-                ) : (
-                  <Link
-                    href="/auth/login"
-                    className={`text-sm font-medium ${
-                      scrolled 
-                        ? 'text-gray-700 hover:text-primary-600' 
-                        : 'text-white hover:text-gold-300'
-                    }`}
-                  >
-                    Admin
-                  </Link>
-                )}
+          {/* User Menu & Mobile button */}
+          <div className="flex items-center gap-4">
+            {/* Admin Link (só aparece para usuários logados) */}
+            {session?.user && (
+              <Link
+                href="/admin/eventos"
+                className="hidden md:flex items-center gap-2 text-sm font-medium text-primary-600 hover:text-primary-700"
+              >
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" />
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
+                </svg>
+                Painel Admin
+              </Link>
+            )}
 
-                {/* Mobile menu button */}
-                <div className="md:hidden">
-                  <Disclosure.Button className={`inline-flex items-center justify-center rounded-md p-2 ${
-                    scrolled
-                      ? 'text-gray-700 hover:bg-primary-50 hover:text-primary-600'
-                      : 'text-white hover:bg-white/10 hover:text-gold-300'
-                  } focus:outline-none focus:ring-2 focus:ring-primary-500`}>
-                    <span className="sr-only">Open main menu</span>
-                    {open ? (
-                      <XMarkIcon className="block h-6 w-6" aria-hidden="true" />
-                    ) : (
-                      <Bars3Icon className="block h-6 w-6" aria-hidden="true" />
-                    )}
-                  </Disclosure.Button>
-                </div>
-              </div>
-            </div>
+            {/* Auth button */}
+            {session?.user ? (
+              <button
+                onClick={() => signOut()}
+                className="hidden md:block text-sm text-slate-500 hover:text-slate-700"
+              >
+                Sair
+              </button>
+            ) : (
+              <Link
+                href="/auth/login"
+                className="hidden md:block text-sm text-slate-500 hover:text-slate-700"
+              >
+                Login
+              </Link>
+            )}
+
+            {/* Mobile menu button */}
+            <button
+              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+              className="lg:hidden p-2 rounded-lg text-slate-600 hover:bg-slate-100"
+              aria-label="Menu"
+            >
+              {mobileMenuOpen ? (
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              ) : (
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+              )}
+            </button>
           </div>
+        </div>
+      </div>
 
-          {/* Mobile menu */}
-          <Disclosure.Panel className="md:hidden">
-            <div className="space-y-1 px-2 pb-3 pt-2 bg-white/95 backdrop-blur-md shadow-lg">
-              {navigation.map((item) => (
-                <Disclosure.Button
-                  key={item.name}
-                  as={Link}
-                  href={item.href}
-                  className="block rounded-md px-3 py-2 text-base font-medium text-gray-700 hover:bg-primary-50 hover:text-primary-600"
+      {/* Mobile Menu */}
+      {mobileMenuOpen && (
+        <div className="lg:hidden bg-white border-t border-slate-100">
+          <nav className="container mx-auto px-6 py-4 space-y-1">
+            {navigation.map((item) => (
+              <Link
+                key={item.name}
+                href={item.href}
+                className={`block px-4 py-3 rounded-lg text-base font-medium transition-colors ${
+                  isActive(item.href)
+                    ? 'bg-primary-100 text-primary-700'
+                    : 'text-slate-600 hover:bg-slate-50'
+                }`}
+              >
+                {item.name}
+              </Link>
+            ))}
+            
+            {/* Admin link no mobile */}
+            {session?.user && (
+              <>
+                <hr className="my-2 border-slate-100" />
+                <Link
+                  href="/admin/eventos"
+                  className="block px-4 py-3 rounded-lg text-base font-medium text-primary-600"
                 >
-                  {item.name}
-                </Disclosure.Button>
-              ))}
-            </div>
-          </Disclosure.Panel>
-        </>
+                  Painel Admin
+                </Link>
+                <button
+                  onClick={() => signOut()}
+                  className="block w-full text-left px-4 py-3 rounded-lg text-base font-medium text-slate-500"
+                >
+                  Sair
+                </button>
+              </>
+            )}
+          </nav>
+        </div>
       )}
-    </Disclosure>
+    </header>
   )
 }
