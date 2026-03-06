@@ -51,26 +51,23 @@ export default function Header() {
 
   return (
     <header 
-      className={`fixed w-full z-50 transition-all duration-300 ${
+      className={`w-full z-50 transition-all duration-300 ${
         scrolled || mobileMenuOpen
           ? 'bg-white shadow-md' 
           : 'bg-white/95 backdrop-blur-sm'
       }`}
     >
       <div className="container mx-auto px-6">
-        <div className="flex h-18 items-center justify-between border-b border-slate-200 bg-white/95">
-          {/* Logo */}
+        <div className="flex h-18 items-center justify-between border-b bg-gradient-to-r from-orange-400 via-red-300 to-blue-400">
+          {/* Logo substitui texto */}
           <Link href="/" className="flex items-center gap-3">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img 
               src="/img/logoapriscourbano.webp" 
               alt="Aprisco Urbano" 
-              className="h-10 w-auto sm:h-12 md:h-14 lg:h-16 object-contain"
-              style={{ maxWidth: '140px', minWidth: '48px' }}
+              className="h-14 md:h-18 w-auto object-contain"
+              style={{ maxWidth: '180px', minWidth: '48px' }}
             />
-            <span className="hidden sm:block text-xl font-bold text-neutral-900 tracking-wider" style={{ letterSpacing: '0.04em', fontFamily: 'Montserrat, sans-serif' }}>
-              Aprisco Urbano
-            </span>
           </Link>
 
           {/* Desktop Navigation */}

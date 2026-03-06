@@ -90,8 +90,8 @@ export default function HomePage() {
             <img 
               src="/img/logoapriscourbano.webp" 
               alt="Aprisco Urbano"
-              className="h-28 md:h-44 w-auto mx-auto drop-shadow-2xl object-contain"
-              style={{ maxWidth: '220px', minWidth: '72px' }}
+              className="h-36 md:h-52 w-auto mx-auto drop-shadow-2xl object-contain"
+              style={{ maxWidth: '320px', minWidth: '72px' }}
             />
           </div>
           
