@@ -14,9 +14,9 @@ const CHURCH_ADDRESS = 'Rua Orlando Silva, 9 - Engenho, Itaguaí'
 // Programação semanal da igreja
 const schedule = [
   { day: 'Domingo', time: '18h', event: 'Culto de Celebração' },
-  { day: 'Terça-feira', time: '19h', event: 'Treinamento de Líderes' },
+  { day: 'Quarta-feira', time: '19h', event: 'Discipulado Ative+ Teens' },
   { day: 'Quinta-feira', time: '19h', event: 'Células' },
-  { day: 'Sábado', time: '19h', event: 'Discipulado de Casais' },
+  { day: 'Sexta-feira', time: '20h', event: 'Discipulado Ative+ Juventude' },
 ]
 
 // Destaques para a home
@@ -85,7 +85,7 @@ export default function HomePage() {
         
         <div className="relative container mx-auto px-6 text-center text-white z-10 pt-20">
           {/* Logo */}
-          <div className="mb-10">
+          <div className="mb-10 mt-8 md:mt-16">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img 
               src="/img/logoapriscourbano.webp" 

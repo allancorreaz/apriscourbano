@@ -74,14 +74,14 @@ export default function RootLayout({
                       </li>
                       <li className="flex justify-between">
                         <span>Discipulado Ative+ Teens</span>
-                        <span>Quarta 19h</span>
+                        <span>Qua 19h</span>
                       </li>
                       <li className="flex justify-between">
                         <span>Células</span>
                         <span>Qui 19h</span>
                       </li>
                       <li className="flex justify-between">
-                        <span>Discip. Ative+ Juventude</span>
+                        <span>Discipulado Ative+ Juventude</span>
                         <span>Sex 20h</span>
                       </li>
                     </ul>

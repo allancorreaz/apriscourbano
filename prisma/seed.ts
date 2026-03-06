@@ -4,7 +4,7 @@ import bcrypt from 'bcryptjs'
 const prisma = new PrismaClient()
 
 async function main() {
-  console.log('🌱 Starting seed...')
+  console.log('Starting seed...')
   
   // Create admin user
   const hashedPassword = await bcrypt.hash('admin123', 12)
@@ -20,7 +20,7 @@ async function main() {
     }
   })
   
-  console.log('👤 Admin user created:', adminUser.email)
+  console.log('Admin user created:', adminUser.email)
 
   // Create service times
   const serviceTimes = [
@@ -60,7 +60,7 @@ async function main() {
     })
   }
   
-  console.log('⛪ Service times created')
+  console.log('Service times created')
 
   // Create weekly events (discipleship groups)
   const weeklyEvents = [
@@ -103,7 +103,7 @@ async function main() {
     })
   }
   
-  console.log('📅 Weekly events created')
+  console.log('Weekly events created')
 
   // Create sample events
   const currentDate = new Date()
@@ -167,7 +167,7 @@ async function main() {
     })
   }
   
-  console.log('🎉 Sample events created')
+  console.log('Sample events created')
 
   // Create sample gallery
   const sampleGallery = await prisma.gallery.upsert({
@@ -202,7 +202,7 @@ async function main() {
     })
   }
   
-  console.log('📸 Sample gallery created')
+  console.log('Sample gallery created')
 
   // Create settings
   const settings = [
@@ -252,14 +252,14 @@ async function main() {
     })
   }
   
-  console.log('⚙️  Settings created')
+  console.log('Settings created')
 
-  console.log('✅ Seed completed successfully!')
+  console.log('Seed completed successfully!')
 }
 
 main()
   .catch((e) => {
-    console.error('❌ Seed failed:', e)
+    console.error('Seed failed:', e)
     process.exit(1)
   })
   .finally(async () => {

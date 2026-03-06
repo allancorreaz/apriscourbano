@@ -6,19 +6,10 @@ import { ArrowRightIcon, CalendarDaysIcon, MapPinIcon } from '@heroicons/react/2
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden mt-6 md:mt-10">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden mt-14 md:mt-24 bg-white">
       {/* Background Image */}
-      <div className="absolute inset-0 z-0">
-        <Image
-          src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
-          alt="Igreja Aprisco Urbano"
-          fill
-          className="object-cover"
-          priority
-        />
-        <div className="absolute inset-0 bg-gradient-to-r from-primary-900/90 via-primary-800/80 to-primary-600/70"></div>
-        <div className="absolute inset-0 hero-pattern"></div>
-      </div>
+      {/* Fundo branco, sem gradiente */}
+      <div className="absolute inset-0 z-0 bg-white"></div>
 
       {/* Content */}
       <div className="relative z-10 text-center text-neutral-900 container-custom py-20">

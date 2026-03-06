@@ -67,14 +67,8 @@ const programacaoSemanal = [
     descricao: 'Nosso principal momento de adoração e comunhão',
   },
   {
-    dia: 'Terça-feira',
-    horario: '19h',
-    evento: 'Treinamento de Líderes',
-    descricao: 'Capacitação para líderes e líderes em treinamento',
-  },
-  {
     dia: 'Quarta-feira',
-    horario: '20h',
+    horario: '19h',
     evento: 'Discipulado Ative+ Teens',
     descricao: 'Discipulado para adolescentes de 14 a 17 anos',
   },
@@ -89,12 +83,6 @@ const programacaoSemanal = [
     horario: '20h',
     evento: 'Discipulado Ative+ Juventude',
     descricao: 'Discipulado para jovens de 18 a 27 anos',
-  },
-  {
-    dia: 'Sábado',
-    horario: '19h',
-    evento: 'Discipulado de Casais',
-    descricao: 'Líderes: Pastor Gláucio Muniz e Cintia Fernandes',
   },
 ]
 

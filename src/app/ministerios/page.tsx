@@ -98,13 +98,11 @@ const areasDeServico = [
     descricao: 'Equipe que acolhe e recebe os visitantes com amor',
   },
   {
-    nome: 'Diaconia',
-    descricao: 'Servem nas necessidades práticas da igreja e dos membros',
-  },
-  {
     nome: 'Consolidação',
     descricao: 'Acompanham os novos convertidos em seus primeiros passos na fé',
   },
+  // Espaço para novos ministérios
+  // { nome: 'Novo Ministério', descricao: 'Descrição do novo ministério', formPath: '/servir/novo-ministerio' },
 ]
 
 export default function MinisteriosPage() {
