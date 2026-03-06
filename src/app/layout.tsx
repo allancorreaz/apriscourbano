@@ -27,7 +27,8 @@ export default function RootLayout({
     <html lang="pt-BR" className={inter.variable}>
       <body className="bg-white font-sans antialiased">
         <SessionProvider>
-          <div className="min-h-screen flex flex-col">
+          {/* Compensação do header fixo */}
+          <div className="min-h-screen flex flex-col pt-[72px] md:pt-[72px]">
             <Header />
             <main className="flex-1">
               {children}
@@ -45,7 +46,8 @@ export default function RootLayout({
                   <img 
                     src="/img/logoapriscourbano.webp" 
                     alt="Aprisco Urbano" 
-                    className="h-24 md:h-32 w-auto object-contain mb-6"
+                    className="h-20 md:h-28 w-auto object-contain mb-6"
+                    style={{ maxWidth: '180px', minWidth: '64px' }}
                   />
                   <p className="text-slate-400 text-center max-w-md">
                     Cada membro, um sacerdote. Cada casa, uma extensão da igreja.
@@ -71,16 +73,16 @@ export default function RootLayout({
                         <span>Dom 18h</span>
                       </li>
                       <li className="flex justify-between">
-                        <span>Treinamento Líderes</span>
-                        <span>Ter 19h</span>
+                        <span>Discipulado Ative+ Teens</span>
+                        <span>Quarta 19h</span>
                       </li>
                       <li className="flex justify-between">
                         <span>Células</span>
                         <span>Qui 19h</span>
                       </li>
                       <li className="flex justify-between">
-                        <span>Discip. Casais</span>
-                        <span>Sáb 19h</span>
+                        <span>Discip. Ative+ Juventude</span>
+                        <span>Sex 20h</span>
                       </li>
                     </ul>
                   </div>

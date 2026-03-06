@@ -73,7 +73,7 @@ export default function HomePage() {
           ou use uma imagem local da pasta /public/img/
           Exemplo: backgroundImage: 'url(/img/hero-home.jpg)'
           =========================================== */}
-      <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden">
+      <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden mt-6 md:mt-10">
         {/* Gradiente de fundo */}
         <div className="absolute inset-0 bg-gradient-to-br from-primary-700 via-primary-600 to-primary-800"></div>
         
@@ -90,11 +90,12 @@ export default function HomePage() {
             <img 
               src="/img/logoapriscourbano.webp" 
               alt="Aprisco Urbano"
-              className="h-36 md:h-52 w-auto mx-auto drop-shadow-2xl"
+              className="h-28 md:h-44 w-auto mx-auto drop-shadow-2xl object-contain"
+              style={{ maxWidth: '220px', minWidth: '72px' }}
             />
           </div>
           
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight">
+          <h1 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight font-montserrat text-neutral-900">
             Bem-vindo à nossa comunidade
           </h1>
           

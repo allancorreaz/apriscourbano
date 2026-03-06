@@ -16,13 +16,13 @@ export const metadata: Metadata = {
    =========================================== */
 
 // Chave PIX da igreja
-const chavePix = 'igrejaapriscourbano@email.com'
+const chavePix = 'igrejaapriscourbano@gmail.com'
 
 // Nome do titular
-const nomeTitular = 'Igreja Aprisco Urbano'
+const nomeTitular = 'Igreja Evangélica Aprisco Urbano'
 
 // Banco
-const banco = 'Banco do Brasil'
+const banco = 'Sicoob'
 
 export default function OfertasPage() {
   return (
@@ -47,6 +47,9 @@ export default function OfertasPage() {
             </p>
             <p className="text-lg text-slate-600 leading-relaxed">
               Sua contribuição faz a diferença! Cada oferta é usada com responsabilidade e transparência para o avanço do Reino de Deus.
+            </p>
+            <p className="text-lg text-slate-600 leading-relaxed">
+              Dízimo protege seus bens (Malaquias 3:10) e ofertas são sementes para colheitas futuras (2 Coríntios 9:6-7).
             </p>
           </div>
         </div>

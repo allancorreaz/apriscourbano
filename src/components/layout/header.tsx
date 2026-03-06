@@ -58,18 +58,20 @@ export default function Header() {
       }`}
     >
       <div className="container mx-auto px-6">
-        <div className="flex h-18 items-center justify-between">
+        <div className="flex h-18 items-center justify-between border-b border-slate-200 bg-white/95">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-3">
             {/* eslint-disable-next-line @next/next/no-img-element */}
             <img 
               src="/img/logoapriscourbano.webp" 
               alt="Aprisco Urbano" 
-              className="h-12 w-auto"
+              className="h-10 w-auto sm:h-12 md:h-14 lg:h-16 object-contain"
+              style={{ maxWidth: '140px', minWidth: '48px' }}
             />
-            <span className="hidden sm:block text-xl font-bold text-slate-800">
+            <span className="hidden sm:block text-xl font-bold text-neutral-900 tracking-wider" style={{ letterSpacing: '0.04em', fontFamily: 'Montserrat, sans-serif' }}>
               Aprisco Urbano
             </span>
+          </Link>
           </Link>
 
           {/* Desktop Navigation */}
@@ -125,7 +127,7 @@ export default function Header() {
             {/* Mobile menu button */}
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="lg:hidden p-2 rounded-lg text-slate-600 hover:bg-slate-100"
+              className="lg:hidden p-2 rounded-lg text-neutral-700 hover:bg-neutral-100 border border-neutral-200"
               aria-label="Menu"
             >
               {mobileMenuOpen ? (
@@ -150,11 +152,11 @@ export default function Header() {
               <Link
                 key={item.name}
                 href={item.href}
-                className={`block px-4 py-3 rounded-lg text-base font-medium transition-colors ${
+                className={`block px-4 py-3 rounded-lg text-base font-semibold transition-colors ${
                   isActive(item.href)
-                    ? 'bg-primary-100 text-primary-700'
-                    : 'text-slate-600 hover:bg-slate-50'
-                }`}
+                    ? 'bg-neutral-100 text-neutral-900 border border-neutral-200'
+                    : 'text-neutral-700 hover:bg-neutral-50 border border-transparent'
+                } font-montserrat`}
               >
                 {item.name}
               </Link>
@@ -163,16 +165,16 @@ export default function Header() {
             {/* Admin link no mobile */}
             {session?.user && (
               <>
-                <hr className="my-2 border-slate-100" />
+                <hr className="my-2 border-neutral-200" />
                 <Link
                   href="/admin/eventos"
-                  className="block px-4 py-3 rounded-lg text-base font-medium text-primary-600"
+                  className="block px-4 py-3 rounded-lg text-base font-semibold text-neutral-900 font-montserrat"
                 >
                   Painel Admin
                 </Link>
                 <button
                   onClick={() => signOut()}
-                  className="block w-full text-left px-4 py-3 rounded-lg text-base font-medium text-slate-500"
+                  className="block w-full text-left px-4 py-3 rounded-lg text-base font-medium text-neutral-500 font-montserrat"
                 >
                   Sair
                 </button>

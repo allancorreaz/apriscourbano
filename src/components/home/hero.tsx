@@ -6,7 +6,7 @@ import { ArrowRightIcon, CalendarDaysIcon, MapPinIcon } from '@heroicons/react/2
 
 export default function Hero() {
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden mt-6 md:mt-10">
       {/* Background Image */}
       <div className="absolute inset-0 z-0">
         <Image
@@ -21,7 +21,7 @@ export default function Hero() {
       </div>
 
       {/* Content */}
-      <div className="relative z-10 text-center text-white container-custom py-20">
+      <div className="relative z-10 text-center text-neutral-900 container-custom py-20">
         <div className="max-w-4xl mx-auto animate-fade-in">
           <h1 className="text-5xl md:text-7xl font-bold font-serif mb-6 leading-tight">
             Bem-vindos ao
