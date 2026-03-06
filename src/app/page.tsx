@@ -13,8 +13,8 @@ const CHURCH_ADDRESS = 'Rua Orlando Silva, 9 - Engenho, Itaguaí'
 
 // Programação semanal da igreja
 const schedule = [
-  { day: 'Domingo', time: '18h', event: 'Culto de Celebração' },
-  { day: 'Quarta-feira', time: '19h', event: 'Discipulado Ative+ Teens' },
+  { day: 'Domingo', time: '18h', event: 'Culto' },
+  { day: 'Quarta-feira', time: '19h', event: 'Discipulado Ative+ Teen' },
   { day: 'Quinta-feira', time: '19h', event: 'Células' },
   { day: 'Sexta-feira', time: '20h', event: 'Discipulado Ative+ Juventude' },
 ]
@@ -95,7 +95,7 @@ export default function HomePage() {
             />
           </div>
           
-          <h1 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight font-montserrat text-neutral-900">
+          <h1 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight font-montserrat text-white">
             Bem-vindo à nossa comunidade
           </h1>
           

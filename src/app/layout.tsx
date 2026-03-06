@@ -28,7 +28,7 @@ export default function RootLayout({
       <body className="bg-white font-sans antialiased">
         <SessionProvider>
           {/* Compensação do header fixo */}
-          <div className="min-h-screen flex flex-col pt-[72px] md:pt-[72px]">
+          <div className="min-h-screen flex flex-col">
             <Header />
             <main className="flex-1">
               {children}
