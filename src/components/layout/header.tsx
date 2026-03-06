@@ -72,7 +72,6 @@ export default function Header() {
               Aprisco Urbano
             </span>
           </Link>
-          </Link>
 
           {/* Desktop Navigation */}
           <nav className="hidden lg:flex items-center gap-1">
