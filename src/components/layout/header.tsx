@@ -57,8 +57,8 @@ export default function Header() {
           : 'bg-white/95 backdrop-blur-sm'
       }`}
     >
-      <div className="container mx-auto px-6">
-        <div className="flex h-18 items-center justify-between border-b bg-gradient-to-r from-orange-400 via-red-300 to-blue-400">
+      <div className="w-full">
+        <div className="flex items-center justify-between border-b bg-gradient-to-r from-orange-400 via-red-300 to-blue-400 w-full h-12 md:h-16 px-4">
           {/* Logo substitui texto */}
           <Link href="/" className="flex items-center gap-3">
             {/* eslint-disable-next-line @next/next/no-img-element */}
