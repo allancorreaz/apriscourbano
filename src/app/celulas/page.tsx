@@ -37,6 +37,7 @@ const celulas = [
     nome: 'Célula A Forja',
     lider: 'João Bolis',
     bairro: 'Centro',
+    endereco: 'Rua Tietê, 2602 - Estrela do Céu, Itaguaí, RJ - 23820-780',
     dia: 'Quinta-feira',
     horario: '19h',
     instagram: 'celula_aforja_',
@@ -45,6 +46,7 @@ const celulas = [
     nome: 'Célula Ekballo',
     lider: 'Felipe Santana',
     bairro: 'Engenho',
+    endereco: 'Rua do Engenho, 45, Engenho, Itaguaí, RJ',
     dia: 'Quinta-feira',
     horario: '19h',
     instagram: 'celulaekballoaprisco',
@@ -53,6 +55,7 @@ const celulas = [
     nome: 'Célula Koinonia',
     lider: 'Maria Silva',
     bairro: 'Vila Geny',
+    endereco: 'Av. Geny, 200, Vila Geny, Itaguaí, RJ',
     dia: 'Quinta-feira',
     horario: '19h',
     instagram: '',
@@ -61,6 +64,7 @@ const celulas = [
     nome: 'Célula Ágape',
     lider: 'Carlos Mendes',
     bairro: 'Brisamar',
+    endereco: 'Rua Brisamar, 88, Brisamar, Itaguaí, RJ',
     dia: 'Quinta-feira',
     horario: '19h',
     instagram: '',
@@ -69,6 +73,7 @@ const celulas = [
     nome: 'Célula Shalom',
     lider: 'Ana Paula',
     bairro: 'Centro',
+    endereco: 'Rua Central, 50, Centro, Itaguaí, RJ',
     dia: 'Quinta-feira',
     horario: '19h',
     instagram: '',
@@ -77,6 +82,7 @@ const celulas = [
     nome: 'Célula Eben-Ezer',
     lider: 'Roberto Lima',
     bairro: 'Coroa Grande',
+    endereco: 'Rua Coroa Grande, 10, Coroa Grande, Itaguaí, RJ',
     dia: 'Quinta-feira',
     horario: '19h',
     instagram: '',
@@ -218,6 +224,20 @@ export default function CelulasPage() {
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
                     </svg>
                     <span>{celula.bairro}</span>
+                  </div>
+                  <div className="flex items-center gap-2 text-primary-700">
+                    <svg className="w-4 h-4 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z" />
+                      <circle cx="12" cy="9" r="2.5" />
+                    </svg>
+                    <a
+                      href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(celula.endereco)}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="underline hover:text-primary-light"
+                    >
+                      {celula.endereco}
+                    </a>
                   </div>
                   <div className="flex items-center gap-2 text-slate-600">
                     <svg className="w-4 h-4 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">

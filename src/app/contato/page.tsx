@@ -23,7 +23,7 @@ const endereco = {
 
 const telefone = '(21) 99999-9999' // Altere para o telefone da igreja
 const email = 'contato@apriscourbano.com.br' // Altere para o email da igreja
-const instagram = 'igrejaapriscourbano'
+const instagram = 'apriscourbano'
 
 // Horários de funcionamento
 const horarios = [

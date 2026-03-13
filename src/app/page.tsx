@@ -129,7 +129,7 @@ export default function HomePage() {
               <div>
                 <span className="inline-block px-4 py-2 bg-primary-100 text-primary-700 rounded-full text-sm font-semibold mb-6">
                   Nossa Missão
-                </span>
+                </span>i
                 <h2 className="text-2xl md:text-3xl font-bold text-slate-800 mb-6 leading-tight">
                   Ser igual a Jesus, fazer as mesmas coisas que Ele fez e coisas maiores ainda pelo poder do Espírito Santo.
                 </h2>
@@ -154,7 +154,7 @@ export default function HomePage() {
               </div>
             </div>
           </div>
-        </div>
+        </div> 
       </section>
 
       {/* Destaques */}

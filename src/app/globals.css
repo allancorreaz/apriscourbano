@@ -3,6 +3,17 @@
 @tailwind utilities;
 
 /* ===========================================
+   PALETA DE CORES - APRISCO URBANO
+   =========================================== */
+
+:root {
+  --primary-dark: #0f172a;
+  --primary-blue: #1e3a5f;
+  --primary-light: #2563eb;
+  --primary-mid: #3b82f6;
+}
+
+/* ===========================================
    ESTILOS GLOBAIS - APRISCO URBANO
    =========================================== */
 
@@ -20,8 +31,8 @@ body {
 
 body {
   font-family: var(--font-inter), system-ui, -apple-system, sans-serif;
-  background-color: #ffffff;
-  color: #1e293b;
+  background-color: var(--primary-dark);
+  color: var(--primary-mid);
 }
 
 /* ===========================================
@@ -31,7 +42,7 @@ body {
 h1, h2, h3, h4, h5, h6 {
   font-weight: 700;
   line-height: 1.2;
-  color: #1e293b;
+  color: var(--primary-blue);
 }
 
 h1 { font-size: 2.5rem; }
@@ -47,7 +58,7 @@ h4 { font-size: 1.25rem; }
 
 p {
   line-height: 1.7;
-  color: #64748b;
+  color: var(--primary-mid);
 }
 
 /* ===========================================
