@@ -34,9 +34,6 @@ export default function Header() {
             className="h-12 md:h-16 w-auto object-contain"
             style={{ maxWidth: '180px', minWidth: '48px' }}
           />
-          <span className="text-white font-bold text-xl md:text-2xl tracking-wide">
-            Aprisco Urbano
-          </span>
         </Link>
 
         {/* MENU DESKTOP */}
