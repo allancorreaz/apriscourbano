@@ -91,12 +91,13 @@ export default function ContatoPage() {
                     </div>
                   </a>
                   
-                  {/* WhatsApp */}
+                  {/* WhatsApp (oculto) */}
                   <a 
                     href={whatsappLink}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-start gap-4 p-4 rounded-xl hover:bg-slate-50 transition-colors group"
+                    className="flex items-start gap-4 p-4 rounded-xl hover:bg-slate-50 transition-colors group hidden"
+                    style={{ display: 'none' }}
                   >
                     <div className="w-12 h-12 rounded-xl bg-green-100 text-green-600 flex items-center justify-center flex-shrink-0 group-hover:bg-green-600 group-hover:text-white transition-colors">
                       <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
