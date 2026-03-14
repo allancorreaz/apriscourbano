@@ -98,7 +98,7 @@ export default function HomePage() {
           </div>
           
           <h1 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight font-montserrat text-white">
-              <span style={{ color: '#FFFFFF' }}>Bem-vindos ao Aprisco Urbano</span>
+              <span style={{ color: '#FFFFFF' }}>Bem-vindo ao Aprisco Urbano</span>
           </h1>
           
           <p className="text-xl md:text-2xl mb-4 text-white/90 max-w-2xl mx-auto font-light">
@@ -193,9 +193,9 @@ export default function HomePage() {
         <div className="container mx-auto px-6">
           <div className="max-w-4xl mx-auto">
             <div className="text-center mb-14">
-              <h2 className="section-title">Programação Semanal</h2>
+              <h4 className="section-title">Programação Semanal</h4>
               <p className="section-subtitle mx-auto">
-                Participe dos nossos encontros durante a semana
+                <span style={{ color: '#000000' }}> Participe dos nossos encontros durante a semana</span>
               </p>
             </div>
             

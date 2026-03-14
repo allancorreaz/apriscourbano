@@ -145,7 +145,7 @@ export default function MinisteriosPage() {
       <section className="section">
         <div className="container mx-auto px-6">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="section-title mb-6">Sirva com seus dons</h2>
+            <h4 className="section-title mb-6">Sirva com seus dons</h4>
             <p className="text-lg text-slate-600 leading-relaxed">
               Na Igreja Aprisco Urbano, acreditamos que cada membro é um sacerdote e tem um papel importante no corpo de Cristo. Os ministérios são áreas onde você pode usar seus dons e talentos para servir a Deus e ao próximo.
             </p>
@@ -160,7 +160,7 @@ export default function MinisteriosPage() {
             <span className="inline-block px-4 py-2 bg-primary-100 text-primary-700 rounded-full text-sm font-semibold mb-4">
               Nossos Ministérios
             </span>
-            <h2 className="section-title">Conheça nossos ministérios</h2>
+            <h4 className="section-title">Conheça nossos ministérios</h4>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
@@ -218,9 +218,9 @@ export default function MinisteriosPage() {
             <span className="inline-block px-4 py-2 bg-accent-100 text-accent-700 rounded-full text-sm font-semibold mb-4">
               Áreas de Serviço
             </span>
-            <h2 className="section-title">Onde você pode servir</h2>
+            <h4 className="section-title">Onde você pode servir</h4>
             <p className="section-subtitle mx-auto">
-              Diversas oportunidades para usar seus talentos no Reino de Deus
+              <span style={{ color: '#000000' }}>Diversas oportunidades para usar seus talentos no Reino de Deus</span>
             </p>
           </div>
           

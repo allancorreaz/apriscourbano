@@ -80,7 +80,7 @@ export default function BatismoPage() {
       <section className="section">
         <div className="container mx-auto px-6">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="section-title mb-6">O que é o batismo?</h2>
+            <h4 className="section-title mb-6">O que é o batismo?</h4>
             <p className="text-lg text-slate-600 leading-relaxed mb-6">
               O batismo nas águas é um mandamento de Jesus Cristo e uma demonstração pública da nossa fé. Quando somos batizados, declaramos que morremos para o pecado e ressuscitamos para uma nova vida em Cristo.
             </p>
@@ -98,7 +98,7 @@ export default function BatismoPage() {
             <span className="inline-block px-4 py-2 bg-primary-100 text-primary-700 rounded-full text-sm font-semibold mb-4">
               Significado
             </span>
-            <h2 className="section-title">O que o batismo representa</h2>
+            <h4 className="section-title">O que o batismo representa</h4>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-4xl mx-auto">
@@ -134,7 +134,7 @@ export default function BatismoPage() {
             <span className="inline-block px-4 py-2 bg-accent-100 text-accent-700 rounded-full text-sm font-semibold mb-4">
               Próximos Passos
             </span>
-            <h2 className="section-title">Como me preparar para o batismo?</h2>
+            <h4 className="section-title">Como me preparar para o batismo?</h4>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
@@ -158,7 +158,7 @@ export default function BatismoPage() {
       <section className="section">
         <div className="container mx-auto px-6">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="section-title mb-6">Próximas datas de batismo</h2>
+            <h4 className="section-title mb-6">Próximas datas de batismo</h4>
             <div className="bg-primary-50 rounded-2xl p-8 border border-primary-100">
               <p className="text-lg text-slate-600 mb-4">
                 As datas de batismo são divulgadas periodicamente.

@@ -113,7 +113,7 @@ export default function EventosPage() {
             <span className="inline-block px-4 py-2 bg-primary-100 text-primary-700 rounded-full text-sm font-semibold mb-4">
               Eventos Especiais
             </span>
-            <h2 className="section-title">Próximos Eventos</h2>
+            <h4 className="section-title">Próximos Eventos</h4>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
@@ -186,9 +186,9 @@ export default function EventosPage() {
             <span className="inline-block px-4 py-2 bg-accent-100 text-accent-700 rounded-full text-sm font-semibold mb-4">
               Toda Semana
             </span>
-            <h2 className="section-title">Programação Semanal</h2>
+            <h4 className="section-title">Programação Semanal</h4>
             <p className="section-subtitle mx-auto">
-              Encontros regulares para edificação e comunhão
+              <span style={{ color: '#000000' }}> Encontros regulares para edificação e comunhão</span>
             </p>
           </div>
           
@@ -213,7 +213,7 @@ export default function EventosPage() {
       {/* Localização */}
       <section className="section">
         <div className="container mx-auto px-6 text-center">
-          <h2 className="section-title mb-4">Nossa Localização</h2>
+          <h4 className="section-title mb-4">Nossa Localização</h4>
           <p className="text-lg text-slate-600 mb-2">
             Rua Orlando Silva, 9 - Engenho, Itaguaí - RJ
           </p>

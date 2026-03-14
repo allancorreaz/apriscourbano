@@ -26,14 +26,14 @@ const navigation = [
 export default function Header() {
   return (
     <header className="fixed top-0 left-0 w-full z-50 bg-gradient-to-r from-[var(--primary-dark)] via-[var(--primary-blue)] to-[var(--primary-light)] shadow-lg text-white">
-      <div className="container mx-auto flex items-center justify-between py-4 px-4 md:px-8">
+      <div className="container mx-auto flex items-center justify-between py-0 pb-0 px-4 md:px-8 md:h-16">
 
         {/* LOGO */}
         <Link href="/" className="flex items-center gap-3">
           <Image
             src={logo}
             alt="Aprisco Urbano"
-            className="h-12 md:h-16 w-auto object-contain"
+            className="w-32 h-20 md:w-40 md:h-24 object-contain mt-2 md:mt-8"
             priority
           />
         </Link>

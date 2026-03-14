@@ -171,7 +171,7 @@ export default function CelulasPage() {
             <span className="inline-block px-4 py-2 bg-primary-100 text-primary-700 rounded-full text-sm font-semibold mb-4">
               Por que participar?
             </span>
-            <h2 className="section-title">Benefícios de participar</h2>
+            <h4 className="section-title">Benefícios de participar</h4>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
@@ -198,9 +198,9 @@ export default function CelulasPage() {
             <span className="inline-block px-4 py-2 bg-accent-100 text-accent-700 rounded-full text-sm font-semibold mb-4">
               Nossas Células
             </span>
-            <h2 className="section-title">Encontre uma célula perto de você</h2>
+            <h4 className="section-title">Encontre uma célula perto de você</h4>
             <p className="section-subtitle mx-auto">
-              Todas as células se reúnem às quintas-feiras às 19h
+              <span style={{ color: '#000000' }}>Todas as células se reúnem às quintas-feiras às 19h</span>
             </p>
           </div>
           
