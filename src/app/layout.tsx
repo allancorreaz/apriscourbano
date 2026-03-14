@@ -40,25 +40,25 @@ export default function RootLayout({
                 FOOTER
                 Para alterar informações do rodapé, edite os dados abaixo.
                 =========================================== */}
-            <footer className="bg-slate-900 text-white py-16 px-6">
+            <footer className="bg-slate-900 text-white py-10 px-4 md:py-16 md:px-6">
               <div className="container mx-auto max-w-6xl">
                 {/* Logo e Info Principal */}
-                <div className="flex flex-col items-center mb-12">
+                <div className="flex flex-col items-center mb-8 md:mb-12">
                   <Image 
                     src={logo} 
                     alt="Aprisco Urbano" 
-                    className="h-20 md:h-28 w-auto object-contain mb-6"
+                    className="h-16 md:h-28 w-auto object-contain mb-4 md:mb-6"
                   />
-                              <p className="text-white text-center max-w-md">
+                  <p className="text-white text-center max-w-md text-sm md:text-base">
                     Cada membro, um sacerdote. Cada casa, uma extensão da igreja.
                   </p>
                 </div>
 
-                {/* Grid de Informações */}
-                <div className="grid md:grid-cols-3 gap-12 xl:gap-20 mb-12 items-start">
+                {/* Grid de Informações - Mobile: stack vertical, Desktop: grid */}
+                <div className="flex flex-col gap-8 md:grid md:grid-cols-3 md:gap-12 xl:gap-20 mb-8 md:mb-12 items-center md:items-start">
                   {/* Missão */}
-                  <div className="flex flex-col items-start">
-                    <h3 className="text-lg font-bold mb-4 text-white self-start">Nossa Missão</h3>
+                  <div className="flex flex-col items-center md:items-start text-center md:text-left">
+                    <h3 className="text-lg font-bold mb-4 text-white self-center md:self-start">Nossa Missão</h3>
                     <p className="text-white text-sm leading-relaxed">
                       Ser igual a Jesus, fazer as mesmas coisas que Ele fez e coisas maiores ainda pelo poder do Espírito Santo. Salvar, discipular, treinar e sustentar através das células.
                     </p>
@@ -67,34 +67,34 @@ export default function RootLayout({
                   {/* Programação */}
                   <div className="flex flex-col items-center">
                     <h3 className="text-lg font-bold mb-4 text-white self-center">Programação</h3>
-                    <ul className="text-white text-sm space-y-2">
-                      <li className="flex justify-between">
+                    <ul className="text-white text-sm space-y-2 w-full">
+                      <li className="flex flex-col md:flex-row md:justify-between w-full">
                         <span>Culto</span>
                         <span>Dom 18h</span>
                       </li>
-                      <li className="flex justify-between">
+                      <li className="flex flex-col md:flex-row md:justify-between w-full">
                         <span>Discipulado Ative+ Teens</span>
                         <span>Qua 19h</span>
                       </li>
-                      <li className="flex justify-between">
+                      <li className="flex flex-col md:flex-row md:justify-between w-full">
                         <span>Células</span>
                         <span>Qui 19h</span>
                       </li>
-                      <li className="flex flex-col md:flex-row md:justify-between">
+                      <li className="flex flex-col md:flex-row md:justify-between w-full">
                         <span>Discipulado Ative+ Juventude</span> 
-                        <span style={{ marginLeft: '29px !important' }}>Sex 20h</span>
+                        <span>Sex 20h</span>
                       </li>
                     </ul>
                   </div>
 
                   {/* Endereço e Contato */}
-                  <div className="flex flex-col items-end">
-                    <h3 className="text-lg font-bold mb-4 text-white self-end">Localização</h3>
-                    <p className="text-white text-sm mb-4 text-right">
+                  <div className="flex flex-col items-center md:items-end text-center md:text-right">
+                    <h3 className="text-lg font-bold mb-4 text-white self-center md:self-end">Localização</h3>
+                    <p className="text-white text-sm mb-4">
                       Rua Orlando Silva, 9<br />
                       Engenho, Itaguaí - RJ
                     </p>
-                    <div className="flex items-center gap-2 justify-end">
+                    <div className="flex items-center gap-2 justify-center md:justify-end">
                       <a 
                         href="https://instagram.com/igrejaapriscourbano" 
                         target="_blank" 
@@ -109,7 +109,7 @@ export default function RootLayout({
                   </div>
                 </div>
 
-                <div className="border-t border-slate-800 pt-8 text-center text-slate-500 text-sm">
+                <div className="border-t border-slate-800 pt-6 md:pt-8 text-center text-slate-500 text-xs md:text-sm">
                   © 2026 Igreja Aprisco Urbano. Todos os direitos reservados.
                 </div>
               </div>

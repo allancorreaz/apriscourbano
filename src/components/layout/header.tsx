@@ -26,7 +26,7 @@ const navigation = [
 export default function Header() {
   return (
     <header className="fixed top-0 left-0 w-full z-50 bg-gradient-to-r from-[var(--primary-dark)] via-[var(--primary-blue)] to-[var(--primary-light)] shadow-lg text-white">
-      <div className="container mx-auto flex items-center justify-between py-0 pb-0 px-4 md:px-8 md:h-16">
+      <div className="container mx-auto flex items-center justify-between py-0 pb-0 px-4 md:px-8 md:h-16 pb-1">
 
         {/* LOGO */}
         <Link href="/" className="flex items-center gap-3">
@@ -50,6 +50,11 @@ export default function Header() {
             </Link>
           ))}
         </nav>
+
+        {/* MENU MOBILE - Hamburguer */}
+        <div className="md:hidden">
+          <MobileMenu navigation={navigation} />
+        </div>
 
       </div>
     </header>
