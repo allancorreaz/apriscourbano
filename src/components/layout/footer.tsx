@@ -113,7 +113,7 @@ className="text-gray-300 text-sm hover:text-gold-300 transition-colors"
 Contato
 </h4>
 
-<ul className="space-y-3 text-sm">
+<ul className="space-y-16 text-sm md:space-y-3">
 
 <li className="flex items-start space-x-3">
 

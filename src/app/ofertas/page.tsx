@@ -32,7 +32,7 @@ export default function OfertasPage() {
       <section
         className="relative w-full h-[260px] md:h-[400px] flex items-center justify-center mb-8 mt-[43px] md:mt-0"
         style={{
-          backgroundImage: "url('/img/aprisco_urbano_4k-copia.jpg')",
+          backgroundImage: "linear-gradient(to bottom, rgba(30, 58, 95, 0.94), rgba(15, 23, 42, 0.97)), url('https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?w=1200&h=600&fit=crop')",
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',

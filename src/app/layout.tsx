@@ -96,13 +96,13 @@ export default function RootLayout({
                     </p>
                     <div className="flex items-center gap-2 justify-center md:justify-end">
                       <a 
-                        href="https://instagram.com/igrejaapriscourbano" 
+                        href="https://instagram.com/apriscourbano" 
                         target="_blank" 
                         rel="noopener noreferrer"
                         className="flex items-center gap-2 text-white hover:text-white/80 transition-colors"
                         aria-label="Instagram"
                       >
-                        <Image src="/app/img/instagram-svgrepo-com.svg" alt="Instagram" width={24} height={24} className="w-6 h-6" />
+                        <Image src="/app/img/instagram.svg" alt="Instagram" width={24} height={24} className="w-6 h-6" />
                         <span className="text-sm font-medium underline">apriscourbano</span>
                       </a>
                     </div>

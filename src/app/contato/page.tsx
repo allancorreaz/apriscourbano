@@ -41,7 +41,12 @@ export default function ContatoPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero da página */}
-      <section className="page-hero mt-[43px] md:mt-0">
+      <section className="page-hero mt-[43px] md:mt-0" style={{
+        backgroundImage: "linear-gradient(to bottom, rgba(30, 58, 95, 0.94), rgba(15, 23, 42, 0.97)), url('https://images.unsplash.com/photo-1465101046530-73398c7f0d09?w=1200&h=600&fit=crop')",
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        backgroundRepeat: 'no-repeat',
+      }}>
         <div className="page-hero-content">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Contato</h1>
           <p className="text-xl text-white/80 max-w-2xl mx-auto">
