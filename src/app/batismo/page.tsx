@@ -68,7 +68,7 @@ export default function BatismoPage() {
           backgroundPosition: 'center',
         }}
       >
-        <div className="page-hero-content">
+          <div className="page-hero-content mt-[43px] md:mt-0">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Batismo</h1>
           <p className="text-xl text-white/80 max-w-2xl mx-auto">
             Um passo de fé e obediência a Jesus Cristo

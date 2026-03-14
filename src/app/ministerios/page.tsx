@@ -1,5 +1,5 @@
 // Margin-top para o primeiro texto/banner logo abaixo do header
-const bannerMargin = "mt-[33px] md:mt-0";
+const bannerMargin = "mt-[43px] md:mt-0";
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {

@@ -41,7 +41,7 @@ export default function ContatoPage() {
   return (
     <div className="min-h-screen bg-white">
       {/* Hero da página */}
-      <section className="page-hero">
+      <section className="page-hero mt-[43px] md:mt-0">
         <div className="page-hero-content">
           <h1 className="text-4xl md:text-5xl font-bold mb-4">Contato</h1>
           <p className="text-xl text-white/80 max-w-2xl mx-auto">

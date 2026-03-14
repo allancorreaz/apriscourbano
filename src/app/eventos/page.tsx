@@ -107,7 +107,6 @@ export default function EventosPage() {
           </p>
         </div>
       </section>
-          className={`relative w-full h-[260px] md:h-[400px] flex items-center justify-center mb-8 ${bannerMargin}`}
       {/* Eventos Especiais */}
       <section className="section">
         <div className="container mx-auto px-6">

@@ -173,9 +173,7 @@ Horários dos Cultos
 Domingo
 </div>
 
-<div>
-09:00 - Culto Matutino
-</div>
+              
 
 <div>
 18:00 - Culto Vespertino

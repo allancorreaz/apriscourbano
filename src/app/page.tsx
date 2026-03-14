@@ -15,7 +15,7 @@ const CHURCH_ADDRESS = 'Rua Orlando Silva, 9 - Engenho, Itaguaí'
         {/* Gradiente de fundo */}
 
         // Banner principal: adicionar margin-top para mobile
-        const bannerMargin = "mt-8 md:mt-0";
+        const bannerMargin = "mt-0 md:mt-0";
 // Programação semanal da igreja
 const schedule = [
   { day: 'Domingo', time: '18h', event: 'Culto' },
