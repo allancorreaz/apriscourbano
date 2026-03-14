@@ -39,16 +39,16 @@ return (
 <div className="flex items-center space-x-3">
 
 <div className="w-10 h-10 bg-gold-500 rounded-lg flex items-center justify-center">
-<span className="text-white font-bold text-lg">AU</span>
+<span className="text-[#FFFFFF] font-bold text-lg">AU</span>
 </div>
 
-<h3 className="text-xl font-bold font-serif">
+<h3 className="text-xl font-bold font-serif" style={{color:'#FFFFFF'}}>
 Aprisco Urbano
 </h3>
 
 </div>
 
-<p className="text-gray-300 text-sm leading-relaxed">
+<p className="text-[#FFFFFF] text-sm leading-relaxed">
 Uma comunidade de fé, esperança e amor no coração da cidade.
 Venha fazer parte da nossa família espiritual.
 </p>
@@ -61,7 +61,7 @@ Venha fazer parte da nossa família espiritual.
 key={social.name}
 href={social.href}
 aria-label={social.name}
-className="text-gray-300 hover:text-gold-300 transition-colors"
+className="text-[#FFFFFF] hover:text-gold-300 transition-colors"
 >
 
 <SocialIcon name={social.icon} />

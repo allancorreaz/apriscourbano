@@ -1,4 +1,4 @@
-import './globals.css'
+import  "./globals.css"
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import Image from 'next/image'
@@ -49,25 +49,25 @@ export default function RootLayout({
                     alt="Aprisco Urbano" 
                     className="h-20 md:h-28 w-auto object-contain mb-6"
                   />
-                  <p className="text-white/80 text-center max-w-md">
+                              <p className="text-white text-center max-w-md">
                     Cada membro, um sacerdote. Cada casa, uma extensão da igreja.
                   </p>
                 </div>
 
                 {/* Grid de Informações */}
-                <div className="grid md:grid-cols-3 gap-10 mb-12">
+                <div className="grid md:grid-cols-3 gap-12 xl:gap-20 mb-12 items-start">
                   {/* Missão */}
-                  <div>
-                    <h3 className="text-lg font-bold mb-4 text-white">Nossa Missão</h3>
-                    <p className="text-white/80 text-sm leading-relaxed">
+                  <div className="flex flex-col items-start">
+                    <h3 className="text-lg font-bold mb-4 text-white self-start">Nossa Missão</h3>
+                    <p className="text-white text-sm leading-relaxed">
                       Ser igual a Jesus, fazer as mesmas coisas que Ele fez e coisas maiores ainda pelo poder do Espírito Santo. Salvar, discipular, treinar e sustentar através das células.
                     </p>
                   </div>
 
                   {/* Programação */}
-                  <div>
-                    <h3 className="text-lg font-bold mb-4 text-white">Programação</h3>
-                    <ul className="text-white/80 text-sm space-y-2">
+                  <div className="flex flex-col items-center">
+                    <h3 className="text-lg font-bold mb-4 text-white self-center">Programação</h3>
+                    <ul className="text-white text-sm space-y-2">
                       <li className="flex justify-between">
                         <span>Culto</span>
                         <span>Dom 18h</span>
@@ -80,21 +80,21 @@ export default function RootLayout({
                         <span>Células</span>
                         <span>Qui 19h</span>
                       </li>
-                      <li className="flex justify-between">
-                        <span>Discipulado Ative+ Juventude</span>
-                        <span>Sex 20h</span>
+                      <li className="flex flex-col md:flex-row md:justify-between">
+                        <span>Discipulado Ative+ Juventude</span> 
+                        <span style={{ marginLeft: '29px !important' }}>Sex 20h</span>
                       </li>
                     </ul>
                   </div>
 
                   {/* Endereço e Contato */}
-                  <div>
-                    <h3 className="text-lg font-bold mb-4 text-white">Localização</h3>
-                    <p className="text-white/80 text-sm mb-4">
+                  <div className="flex flex-col items-end">
+                    <h3 className="text-lg font-bold mb-4 text-white self-end">Localização</h3>
+                    <p className="text-white text-sm mb-4 text-right">
                       Rua Orlando Silva, 9<br />
                       Engenho, Itaguaí - RJ
                     </p>
-                    <div className="flex items-center gap-3">
+                    <div className="flex items-center gap-2 justify-end">
                       <a 
                         href="https://instagram.com/igrejaapriscourbano" 
                         target="_blank" 
@@ -102,9 +102,7 @@ export default function RootLayout({
                         className="flex items-center gap-2 text-white hover:text-white/80 transition-colors"
                         aria-label="Instagram"
                       >
-                        <svg className="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                          <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                        </svg>
+                        <img src="/app/img/instagram-svgrepo-com.svg" alt="Instagram" className="w-6 h-6" />
                         <span className="text-sm font-medium">apriscourbano</span>
                       </a>
                     </div>

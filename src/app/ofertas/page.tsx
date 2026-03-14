@@ -32,7 +32,7 @@ export default function OfertasPage() {
       <section
         className="relative w-full h-[260px] md:h-[400px] flex items-center justify-center mb-8"
         style={{
-          backgroundImage: "url('/img/aprisco_urbano_4k-copia.jpg')", // Caminho correto para imagem
+          backgroundImage: "url('/img/aprisco_urbano_4k-copia.jpg')",
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
@@ -41,7 +41,7 @@ export default function OfertasPage() {
         <div className="absolute inset-0 bg-black/40" />
         <div className="relative z-10 text-center">
           {/* Título do banner sempre branco */}
-          <h1 className="text-4xl md:text-5xl font-bold" style={{ color: '#FFFFFF', textShadow: '0 2px 8px #000' }}>Ofertas</h1>
+          <h1 className="text-4xl md:text-5xl font-bold banner-title" style={{ color: '#FFFFFF' }}>Ofertas</h1>
         </div>
       </section>
 
@@ -49,7 +49,7 @@ export default function OfertasPage() {
       <section className="section">
         <div className="container mx-auto px-6">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="section-title mb-6">Por que contribuir?</h2>
+            <h4 className="section-title mb-6">Por que contribuir?</h4>
             <p className="text-lg text-slate-600 leading-relaxed mb-6">
               A contribuição é um ato de adoração e gratidão a Deus. Através dos dízimos e ofertas, sustentamos a obra do Senhor, mantemos nossas atividades e alcançamos mais vidas para Cristo.
             </p>
@@ -83,7 +83,7 @@ export default function OfertasPage() {
               <span className="inline-block px-4 py-2 bg-primary-100 text-primary-700 rounded-full text-sm font-semibold mb-4">
                 Contribuição via PIX
               </span>
-              <h2 className="section-title">Faça sua contribuição</h2>
+              <h4 className="section-title">Faça sua contribuição</h4>
             </div>
             
             <div className="bg-white rounded-2xl border border-slate-200 p-8 shadow-sm">
@@ -143,7 +143,7 @@ export default function OfertasPage() {
       <section className="section bg-slate-50">
         <div className="container mx-auto px-6">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="section-title mb-6">Outras formas de contribuir</h2>
+            <h4 className="section-title mb-6">Outras formas de contribuir</h4>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="bg-white rounded-2xl p-6 border border-slate-100">
                 <div className="w-12 h-12 mx-auto mb-4 rounded-xl bg-primary-100 text-primary-600 flex items-center justify-center">

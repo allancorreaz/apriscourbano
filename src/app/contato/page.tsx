@@ -57,7 +57,7 @@ export default function ContatoPage() {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
               {/* Informações */}
               <div>
-                <h2 className="section-title mb-8">Fale Conosco</h2>
+                <h4 className="section-title mb-8">Fale Conosco</h4>
                 
                 <div className="space-y-6">
                   {/* Endereço */}

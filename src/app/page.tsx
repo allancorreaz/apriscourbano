@@ -160,9 +160,9 @@ export default function HomePage() {
       <section className="section bg-slate-50">
         <div className="container mx-auto px-6">
           <div className="text-center mb-14">
-            <h2 className="section-title">Conheça Nossa Igreja</h2>
+            <h4 className="section-title">Conheça Nossa Igreja</h4>
             <p className="section-subtitle mx-auto">
-              Descubra as diversas formas de participar da nossa comunidade
+              <span style={{ color: '#000000' }}> Descubra as diversas formas de participar da nossa comunidade</span>
             </p>
           </div>
           
