@@ -93,7 +93,7 @@ export default function HomePage() {
         
         <div className="relative container mx-auto px-6 text-center text-white z-10 pt-20">
           {/* Logo */}
-          <div className="mb-10 mt-[19px] md:mt-16">
+          <div className="mb-10 mt-[33px] md:mt-16">
             <Image 
               src={logo}
               alt="Aprisco Urbano"

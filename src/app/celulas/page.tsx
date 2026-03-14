@@ -147,13 +147,14 @@ export default function CelulasPage() {
             Pequenos grupos que fazem uma grande diferença
           </p>
         </div>
+        const bannerMargin = "mt-[33px] md:mt-0";
       </section>
 
       {/* O que são células */}
       <section className="section">
         <div className="container mx-auto px-6">
           <div className="max-w-3xl mx-auto text-center">
-            <h2 className="section-title mb-6">O que são as células?</h2>
+            <h2 className={`section-title mb-6 ${bannerMargin}`}>O que são as células?</h2>
             <p className="text-lg text-slate-600 leading-relaxed mb-6">
               As células são pequenos grupos que se reúnem semanalmente nas casas para comunhão, oração e estudo da Palavra de Deus. É uma forma de fortalecer relacionamentos e crescer espiritualmente em um ambiente acolhedor e familiar.
             </p>

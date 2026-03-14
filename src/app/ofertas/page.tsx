@@ -30,7 +30,7 @@ export default function OfertasPage() {
       {/* Banner principal com imagem de fundo */}
       {/* HERO BANNER DA PÁGINA OFERTAS */}
       <section
-        className="relative w-full h-[260px] md:h-[400px] flex items-center justify-center mb-8"
+        className="relative w-full h-[260px] md:h-[400px] flex items-center justify-center mb-8 mt-[33px] md:mt-0"
         style={{
           backgroundImage: "url('/img/aprisco_urbano_4k-copia.jpg')",
           backgroundSize: 'cover',

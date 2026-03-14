@@ -18,6 +18,8 @@ export const metadata: Metadata = {
 // Imagem de destaque da página
 const heroImage = 'https://images.unsplash.com/photo-1501281668745-f7f57925c3b4?w=1200&h=600&fit=crop'
 
+const bannerMargin = "mt-[33px] md:mt-0";
+
 /* ===========================================
    LISTA DE EVENTOS
    
@@ -105,7 +107,7 @@ export default function EventosPage() {
           </p>
         </div>
       </section>
-
+          className={`relative w-full h-[260px] md:h-[400px] flex items-center justify-center mb-8 ${bannerMargin}`}
       {/* Eventos Especiais */}
       <section className="section">
         <div className="container mx-auto px-6">
