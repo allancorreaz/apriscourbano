@@ -3,6 +3,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import logo from '@/app/img/logo.webp'
+import MobileMenu from './MobileMenu'
 
 /* ===========================================
    HEADER - MENU DE NAVEGAÇÃO

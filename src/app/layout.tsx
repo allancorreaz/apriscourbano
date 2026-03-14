@@ -102,7 +102,7 @@ export default function RootLayout({
                         className="flex items-center gap-2 text-white hover:text-white/80 transition-colors"
                         aria-label="Instagram"
                       >
-                        <img src="/app/img/instagram-svgrepo-com.svg" alt="Instagram" className="w-6 h-6" />
+                        <Image src="/app/img/instagram-svgrepo-com.svg" alt="Instagram" width={24} height={24} className="w-6 h-6" />
                         <span className="text-sm font-medium">apriscourbano</span>
                       </a>
                     </div>
