@@ -161,7 +161,7 @@ export default function MinisteriosPage() {
             <span className="inline-block px-4 py-2 bg-primary-100 text-primary-700 rounded-full text-sm font-semibold mb-4">
               Nossos Ministérios
             </span>
-            <h4 className="section-title">Conheça nossos ministérios</h4>
+            <h4 className="section-title">Conhe&ccedil;a nossos minist&eacute;rios</h4>
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
