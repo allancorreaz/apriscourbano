@@ -1,3 +1,21 @@
+# Automatização da limpeza do Prisma (Windows)
+
+Se ocorrer erro EPERM ou arquivos bloqueados do Prisma no Windows:
+
+1. Rode o comando:
+   ```
+   npm run clean-prisma
+   ```
+2. Instale as dependências e gere o Prisma Client:
+   ```
+   npm install
+   npx prisma generate
+   ```
+3. Se o erro persistir, reinicie o computador e repita o processo.
+
+**No Vercel (Linux), esse problema não ocorre.**
+
+O deploy é automático pelo Vercel. Não é necessário rodar o script de limpeza no ambiente de produção.
 # Igreja Aprisco Urbano - Website Oficial
 
 Um site moderno e responsivo para a Igreja Aprisco Urbano, desenvolvido com Next.js, TypeScript e Tailwind CSS.
