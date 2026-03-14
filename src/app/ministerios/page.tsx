@@ -1,3 +1,5 @@
+// Margin-top para o primeiro texto/banner logo abaixo do header
+const bannerMargin = "mt-[33px] md:mt-0";
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -153,8 +155,6 @@ export default function MinisteriosPage() {
         </div>
       </section>
 
-  const bannerMargin = "mt-[33px] md:mt-0";
-      {/* Ministérios */}
       <section className="section bg-slate-50">
         <div className="container mx-auto px-6">
           <div className="text-center mb-14">

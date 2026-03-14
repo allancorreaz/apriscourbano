@@ -1,3 +1,5 @@
+// Margin-top para o primeiro texto/banner logo abaixo do header
+const bannerMargin = "mt-[33px] md:mt-0";
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -147,7 +149,6 @@ export default function CelulasPage() {
             Pequenos grupos que fazem uma grande diferença
           </p>
         </div>
-        const bannerMargin = "mt-[33px] md:mt-0";
       </section>
 
       {/* O que são células */}
