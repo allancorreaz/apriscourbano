@@ -73,9 +73,9 @@ export default function UpcomingEvents({ events }: UpcomingEventsProps) {
 
 function EventCard({ event }: { event: Event }) {
   return (
-    <div className="bg-white rounded-xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-xl transition-shadow group">
+    <div className="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-xl hover:-translate-y-1 transition-all group">
       {/* Event Image */}
-      <div className="relative h-48 bg-gradient-to-br from-primary-100 to-gold-50">
+      <div className="relative h-48 bg-gradient-to-br from-primary-100 to-accent-50">
         {event.image ? (
           <Image
             src={event.image}
@@ -92,7 +92,7 @@ function EventCard({ event }: { event: Event }) {
         {/* Price Badge */}
         {event.isPaid && event.price && (
           <div className="absolute top-4 right-4">
-            <div className="bg-gold-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+            <div className="bg-accent-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
               R$ {event.price.toFixed(2).replace('.', ',')}
             </div>
           </div>
@@ -100,7 +100,7 @@ function EventCard({ event }: { event: Event }) {
         
         {!event.isPaid && (
           <div className="absolute top-4 right-4">
-            <div className="bg-green-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
+            <div className="bg-emerald-500 text-white px-3 py-1 rounded-full text-sm font-semibold">
               Gratuito
             </div>
           </div>
@@ -120,23 +120,23 @@ function EventCard({ event }: { event: Event }) {
         {/* Event Details */}
         <div className="space-y-2 mb-6">
           <div className="flex items-center space-x-2 text-sm text-gray-600">
-            <CalendarDaysIcon className="w-4 h-4 text-gold-500" />
+            <CalendarDaysIcon className="w-4 h-4 text-accent-500" />
             <span>{format(event.date, "d 'de' MMMM 'de' yyyy", { locale: ptBR })}</span>
           </div>
           
           <div className="flex items-center space-x-2 text-sm text-gray-600">
-            <ClockIcon className="w-4 h-4 text-gold-500" />
+            <ClockIcon className="w-4 h-4 text-accent-500" />
             <span>{event.time}</span>
           </div>
           
           <div className="flex items-center space-x-2 text-sm text-gray-600">
-            <MapPinIcon className="w-4 h-4 text-gold-500" />
+            <MapPinIcon className="w-4 h-4 text-accent-500" />
             <span>{event.location}</span>
           </div>
 
           {event.isPaid && event.ticketsAvailable > 0 && (
             <div className="flex items-center space-x-2 text-sm text-gray-600">
-              <TicketIcon className="w-4 h-4 text-gold-500" />
+              <TicketIcon className="w-4 h-4 text-accent-500" />
               <span>{event.ticketsAvailable} ingressos disponíveis</span>
             </div>
           )}
@@ -154,7 +154,7 @@ function EventCard({ event }: { event: Event }) {
           {event.isPaid && event.ticketsAvailable > 0 && (
             <Link 
               href={`/eventos/${event.id}/checkout`}
-              className="bg-gold-500 hover:bg-gold-600 text-white py-2 px-4 rounded-lg transition-colors text-sm font-medium"
+              className="bg-accent-500 hover:bg-accent-600 text-white py-2 px-4 rounded-lg transition-colors text-sm font-medium"
             >
               Comprar
             </Link>

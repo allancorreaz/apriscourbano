@@ -14,42 +14,42 @@ const quickActions = [
     description: 'Confira os próximos eventos e participe',
     href: '/eventos',
     icon: CalendarDaysIcon,
-    color: 'bg-blue-500',
+    color: 'bg-primary-600',
   },
   {
     name: 'Galeria de Fotos',
     description: 'Reviva os momentos especiais da nossa comunidade',
     href: '/galeria',
     icon: CameraIcon,
-    color: 'bg-purple-500',
+    color: 'bg-primary-500',
   },
   {
     name: 'Discipulados',
     description: 'Participe dos grupos de crescimento espiritual',
     href: '/discipulados',
     icon: UserGroupIcon,
-    color: 'bg-green-500',
+    color: 'bg-primary-500',
   },
   {
     name: 'Como Ajudar',
     description: 'Descubra como fazer parte do nosso time',
     href: '/voluntarios',
     icon: HeartIcon,
-    color: 'bg-red-500',
+    color: 'bg-accent-500',
   },
   {
     name: 'Fale Conosco',
     description: 'Entre em contato para mais informações',
     href: '/contato',
     icon: PhoneIcon,
-    color: 'bg-gold-500',
+    color: 'bg-primary-500',
   },
   {
     name: 'Como Chegar',
     description: 'Veja nossa localização e direções',
     href: '/localizacao',
     icon: MapPinIcon,
-    color: 'bg-primary-500',
+    color: 'bg-primary-700',
   },
 ]
 
@@ -93,7 +93,7 @@ export default function QuickActions() {
 
         {/* CTA Section */}
         <div className="mt-16 text-center">
-          <div className="bg-gradient-to-r from-primary-600 to-gold-500 rounded-2xl p-8 md:p-12 text-white">
+          <div className="bg-gradient-to-r from-primary-700 via-primary-600 to-accent-500 rounded-2xl p-8 md:p-12 text-white">
             <h3 className="text-2xl md:text-3xl font-bold mb-4 font-serif">
               Primeira Vez na Igreja?
             </h3>

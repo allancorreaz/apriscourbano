@@ -54,8 +54,8 @@ export default function AboutSection() {
               {features.map((feature) => (
                 <div key={feature.name} className="flex items-start space-x-3">
                   <div className="flex-shrink-0">
-                    <div className="w-10 h-10 bg-gold-100 rounded-lg flex items-center justify-center">
-                      <feature.icon className="w-5 h-5 text-gold-600" />
+                    <div className="w-10 h-10 bg-primary-50 rounded-lg flex items-center justify-center">
+                      <feature.icon className="w-5 h-5 text-primary-600" />
                     </div>
                   </div>
                   <div>
@@ -103,7 +103,7 @@ export default function AboutSection() {
               {/* Floating Card */}
               <div className="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-lg border border-gray-100 max-w-xs">
                 <div className="flex items-center space-x-3">
-                  <div className="w-12 h-12 bg-gold-500 rounded-full flex items-center justify-center">
+                  <div className="w-12 h-12 bg-primary-700 rounded-full flex items-center justify-center">
                     <span className="text-white font-bold text-lg">AU</span>
                   </div>
                   <div>

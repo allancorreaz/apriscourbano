@@ -1,6 +1,8 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
+import logo from '@/app/img/logo.webp'
 
 /* ===========================================
    PÁGINA INICIAL - HOME
@@ -73,6 +75,7 @@ export default function HomePage() {
           ou use uma imagem local da pasta /public/img/
           Exemplo: backgroundImage: 'url(/img/hero-home.jpg)'
           =========================================== */}
+        {/* Para editar o texto do banner principal (título e descrição), altere o conteúdo das tags <h1> e <p> abaixo. Para mudar a cor, altere a propriedade style={{ color: '#FFFFFF' }}. */}
       <section className="relative min-h-[85vh] flex items-center justify-center overflow-hidden mt-6 md:mt-10">
         {/* Gradiente de fundo */}
         <div className="absolute inset-0 bg-gradient-to-br from-primary-700 via-primary-600 to-primary-800"></div>
@@ -86,22 +89,23 @@ export default function HomePage() {
         <div className="relative container mx-auto px-6 text-center text-white z-10 pt-20">
           {/* Logo */}
           <div className="mb-10 mt-8 md:mt-16">
-            {/* eslint-disable-next-line @next/next/no-img-element */}
-            <img 
-              src="/img/logoapriscourbano.webp" 
+            <Image 
+              src={logo}
               alt="Aprisco Urbano"
               className="h-36 md:h-52 w-auto mx-auto drop-shadow-2xl object-contain"
-              style={{ maxWidth: '320px', minWidth: '72px' }}
+              priority
             />
           </div>
           
           <h1 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight font-montserrat text-white">
-            Bem-vindo à nossa comunidade
+              <span style={{ color: '#FFFFFF' }}>Bem-vindos ao Aprisco Urbano</span>
           </h1>
           
           <p className="text-xl md:text-2xl mb-4 text-white/90 max-w-2xl mx-auto font-light">
-            Cada membro, um sacerdote.<br />
-            Cada casa, uma extensão da igreja.
+              <span style={{ color: '#FFFFFF' }}>
+                Uma comunidade de fé, esperança e amor no coração da cidade. 
+                Venha fazer parte da nossa família espiritual.
+              </span>
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mt-10">
@@ -129,17 +133,12 @@ export default function HomePage() {
               <div>
                 <span className="inline-block px-4 py-2 bg-primary-100 text-primary-700 rounded-full text-sm font-semibold mb-6">
                   Nossa Missão
-                </span>i
+                </span>
                 <h2 className="text-2xl md:text-3xl font-bold text-slate-800 mb-6 leading-tight">
                   Ser igual a Jesus, fazer as mesmas coisas que Ele fez e coisas maiores ainda pelo poder do Espírito Santo.
                 </h2>
-                <p className="text-lg text-slate-600">
-                  <span className="text-primary-600 font-semibold">Salvar</span> · 
-                  <span className="text-primary-600 font-semibold"> Discipular</span> · 
-                  <span className="text-primary-600 font-semibold"> Treinar</span> · 
-                  <span className="text-primary-600 font-semibold"> Sustentar</span>
-                  <span className="block mt-2 text-slate-500">através das células</span>
-                </p>
+                <p className="text-lg text-slate-500">Salvar, discipular, treinar e sustentar através das células.</p>
+                
               </div>
               <div>
                 <span className="inline-block px-4 py-2 bg-accent-100 text-accent-700 rounded-full text-sm font-semibold mb-6">

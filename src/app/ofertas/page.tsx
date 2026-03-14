@@ -27,13 +27,21 @@ const banco = 'Sicoob'
 export default function OfertasPage() {
   return (
     <div className="min-h-screen bg-white">
-      {/* Hero da página */}
-      <section className="page-hero">
-        <div className="page-hero-content">
-          <h1 className="text-4xl md:text-5xl font-bold mb-4">Ofertas</h1>
-          <p className="text-xl text-white/80 max-w-2xl mx-auto">
-            Contribua com a obra do Senhor
-          </p>
+      {/* Banner principal com imagem de fundo */}
+      {/* HERO BANNER DA PÁGINA OFERTAS */}
+      <section
+        className="relative w-full h-[260px] md:h-[400px] flex items-center justify-center mb-8"
+        style={{
+          backgroundImage: "url('/img/aprisco_urbano_4k-copia.jpg')", // Caminho correto para imagem
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          backgroundRepeat: 'no-repeat',
+        }}
+      >
+        <div className="absolute inset-0 bg-black/40" />
+        <div className="relative z-10 text-center">
+          {/* Título do banner sempre branco */}
+          <h1 className="text-4xl md:text-5xl font-bold" style={{ color: '#FFFFFF', textShadow: '0 2px 8px #000' }}>Ofertas</h1>
         </div>
       </section>
 

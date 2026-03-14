@@ -1,6 +1,8 @@
 'use client'
 
 import Link from 'next/link'
+import Image from 'next/image'
+import logo from '@/app/img/logo.webp'
 
 /* ===========================================
    HEADER - MENU DE NAVEGAÇÃO
@@ -23,16 +25,16 @@ const navigation = [
 
 export default function Header() {
   return (
-    <header className="fixed top-0 left-0 w-full z-50 bg-gradient-to-r from-[var(--primary-dark)] via-[var(--primary-blue)] to-[var(--primary-light)] shadow-lg">
+    <header className="fixed top-0 left-0 w-full z-50 bg-gradient-to-r from-[var(--primary-dark)] via-[var(--primary-blue)] to-[var(--primary-light)] shadow-lg text-white">
       <div className="container mx-auto flex items-center justify-between py-4 px-4 md:px-8">
 
         {/* LOGO */}
         <Link href="/" className="flex items-center gap-3">
-          <img
-            src="/img/logoapriscourbano.webp"
+          <Image
+            src={logo}
             alt="Aprisco Urbano"
             className="h-12 md:h-16 w-auto object-contain"
-            style={{ maxWidth: '180px', minWidth: '48px' }}
+            priority
           />
         </Link>
 

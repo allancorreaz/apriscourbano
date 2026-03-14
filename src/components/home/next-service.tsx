@@ -34,7 +34,7 @@ export default function NextService({ service }: NextServiceProps) {
   const daysOfWeek = ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado']
 
   return (
-    <section className="py-16 bg-gradient-to-r from-primary-50 to-gold-50">
+    <section className="py-16 bg-gradient-to-r from-primary-50 via-primary-100 to-accent-50">
       <div className="container-custom">
         <div className="max-w-4xl mx-auto text-center">
           <div className="inline-flex items-center justify-center w-16 h-16 bg-primary-600 rounded-full mb-6">
@@ -60,7 +60,7 @@ export default function NextService({ service }: NextServiceProps) {
               {/* Date & Time */}
               <div className="space-y-4">
                 <div className="flex items-center justify-center md:justify-start space-x-3">
-                  <CalendarDaysIcon className="w-6 h-6 text-gold-500" />
+                  <CalendarDaysIcon className="w-6 h-6 text-accent-500" />
                   <div className="text-left">
                     <p className="font-semibold text-primary-900">
                       {daysOfWeek[service.dayOfWeek]}
@@ -72,7 +72,7 @@ export default function NextService({ service }: NextServiceProps) {
                 </div>
                 
                 <div className="flex items-center justify-center md:justify-start space-x-3">
-                  <ClockIcon className="w-6 h-6 text-gold-500" />
+                  <ClockIcon className="w-6 h-6 text-accent-500" />
                   <div className="text-left">
                     <p className="font-semibold text-primary-900">
                       {service.time}
@@ -82,7 +82,7 @@ export default function NextService({ service }: NextServiceProps) {
                 </div>
 
                 <div className="flex items-center justify-center md:justify-start space-x-3">
-                  <MapPinIcon className="w-6 h-6 text-gold-500" />
+                  <MapPinIcon className="w-6 h-6 text-accent-500" />
                   <div className="text-left">
                     <p className="font-semibold text-primary-900">
                       Igreja Aprisco Urbano
@@ -94,11 +94,11 @@ export default function NextService({ service }: NextServiceProps) {
 
               {/* CTA */}
               <div className="text-center">
-                <div className="bg-gold-50 rounded-xl p-6 mb-6 border border-gold-200">
-                  <div className="text-4xl font-bold text-gold-600 mb-1">
+                <div className="bg-accent-50 rounded-xl p-6 mb-6 border border-accent-200">
+                  <div className="text-4xl font-bold text-accent-600 mb-1">
                     {Math.ceil((nextServiceDate.getTime() - Date.now()) / (1000 * 60 * 60 * 24))}
                   </div>
-                  <p className="text-gold-700 font-medium">
+                  <p className="text-accent-700 font-medium">
                     {Math.ceil((nextServiceDate.getTime() - Date.now()) / (1000 * 60 * 60 * 24)) === 1 ? 'dia' : 'dias'}
                   </p>
                 </div>

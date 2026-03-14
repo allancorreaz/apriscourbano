@@ -136,7 +136,7 @@ export default function CelulasPage() {
       <section 
         className="page-hero relative"
         style={{
-          backgroundImage: `linear-gradient(to bottom, rgba(109, 40, 217, 0.9), rgba(109, 40, 217, 0.95)), url(${heroImage})`,
+          backgroundImage: `linear-gradient(to bottom, rgba(30, 58, 95, 0.94), rgba(15, 23, 42, 0.97)), url(${heroImage})`,
           backgroundSize: 'cover',
           backgroundPosition: 'center',
         }}

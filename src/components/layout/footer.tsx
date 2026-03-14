@@ -25,7 +25,7 @@ const quickLinks = [
 
 export default function Footer() {
   return (
-    <footer className="bg-primary-900 text-white">
+    <footer className="bg-[var(--primary-blue)] text-white">
       <div className="container-custom py-12">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* About */}
@@ -34,20 +34,20 @@ export default function Footer() {
               <div className="w-10 h-10 bg-gold-500 rounded-lg flex items-center justify-center">
                 <span className="text-white font-bold text-lg">AU</span>
               </div>
-              <h3 className="text-xl font-bold font-serif">Aprisco Urbano</h3>
+              <h3 className="text-xl font-bold font-serif text-white">Aprisco Urbano</h3> {/* cor branca */}
             </div>
             <p className="text-gray-300 text-sm leading-relaxed">
               Uma comunidade de fé, esperança e amor no coração da cidade. 
               Venha fazer parte da nossa família espiritual.
             </p>
-            
+                    <div className="space-y-4">
             {/* Social Links */}
             <div className="flex space-x-4">
-              {socialLinks.map((social) => (
+                          <span className="text-white font-bold text-lg">AU</span>
                 <Link
-                  key={social.name}
+                        <h3 className="text-xl font-bold font-serif" style={{ color: '#FFFFFF' }}>Aprisco Urbano</h3>
                   href={social.href}
-                  className="w-8 h-8 bg-primary-800 rounded-full flex items-center justify-center hover:bg-gold-500 transition-colors"
+                      <p style={{ color: '#FFFFFF' }} className="text-sm leading-relaxed">
                   aria-label={social.name}
                 >
                   <SocialIcon name={social.icon} />
@@ -58,7 +58,7 @@ export default function Footer() {
 
           {/* Quick Links */}
           <div className="space-y-4">
-            <h4 className="text-lg font-semibold">Links Rápidos</h4>
+            <h4 className="text-lg font-semibold text-white">Links Rápidos</h4> {/* cor branca */}
             <ul className="space-y-2">
               {quickLinks.map((link) => (
                 <li key={link.name}>
@@ -69,13 +69,13 @@ export default function Footer() {
                     {link.name}
                   </Link>
                 </li>
-              ))}
+                      <h4 className="text-lg font-semibold" style={{ color: '#FFFFFF' }}>Links Rápidos</h4>
             </ul>
           </div>
 
           {/* Contact Info */}
           <div className="space-y-4">
-            <h4 className="text-lg font-semibold">Contato</h4>
+            <h4 className="text-lg font-semibold text-white">Contato</h4> {/* cor branca */}
             <ul className="space-y-3 text-sm">
               <li className="flex items-start space-x-3">
                 <MapPinIcon className="w-5 h-5 text-gold-400 flex-shrink-0 mt-0.5" />
@@ -87,23 +87,23 @@ export default function Footer() {
               </li>
               <li className="flex items-center space-x-3">
                 <PhoneIcon className="w-5 h-5 text-gold-400 flex-shrink-0" />
-                <span className="text-gray-300">(11) 99999-9999</span>
+                      <h4 className="text-lg font-semibold" style={{ color: '#FFFFFF' }}>Contato</h4>
               </li>
               <li className="flex items-center space-x-3">
                 <EnvelopeIcon className="w-5 h-5 text-gold-400 flex-shrink-0" />
-                <span className="text-gray-300">contato@apriscourbano.com</span>
+                          <span style={{ color: '#FFFFFF' }}>
               </li>
             </ul>
           </div>
 
           {/* Service Times */}
           <div className="space-y-4">
-            <h4 className="text-lg font-semibold">Horários dos Cultos</h4>
-            <ul className="space-y-3 text-sm">
+            <h4 className="text-lg font-semibold text-white">Horários dos Cultos</h4> {/* cor branca */}
+                          <span style={{ color: '#FFFFFF' }}>(11) 99999-9999</span>
               <li className="flex items-start space-x-3">
                 <ClockIcon className="w-5 h-5 text-gold-400 flex-shrink-0 mt-0.5" />
                 <div className="text-gray-300">
-                  <div className="font-medium">Domingo</div>
+                          <span style={{ color: '#FFFFFF' }}>contato@apriscourbano.com</span>
                   <div>09:00 - Culto Matutino</div>
                   <div>18:00 - Culto Vespertino</div>
                 </div>
@@ -120,9 +120,9 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="border-t border-primary-800 mt-12 pt-8">
+        <div className="border-t border-[var(--primary-dark)] mt-12 pt-8">
           <div className="flex flex-col sm:flex-row justify-between items-center space-y-4 sm:space-y-0">
-            <p className="text-gray-300 text-sm">
+            <p className="text-gray-300 text-sm">{/* copyright mantido */}
               © 2024 Aprisco Urbano. Todos os direitos reservados.
             </p>
             <div className="flex space-x-6 text-sm">
@@ -134,8 +134,8 @@ export default function Footer() {
               </Link>
             </div>
           </div>
-        </div>
-      </div>
+                      <p className="text-white text-sm">
+                        © 2026 Igreja Aprisco Urbano. Todos os direitos reservados.
     </footer>
   )
 }
