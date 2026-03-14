@@ -47,7 +47,7 @@ export default function RootLayout({
                   <Image 
                     src={logo} 
                     alt="Aprisco Urbano" 
-                    className="h-16 md:h-28 w-auto object-contain mb-4 md:mb-6"
+                    className="h-24 md:h-28 w-auto object-contain mb-4 md:mb-6"
                   />
                   <p className="text-white text-center max-w-md text-sm md:text-base">
                     Cada membro, um sacerdote. Cada casa, uma extensão da igreja.
@@ -68,19 +68,19 @@ export default function RootLayout({
                   <div className="flex flex-col items-center">
                     <h3 className="text-lg font-bold mb-4 text-white self-center">Programação</h3>
                     <ul className="text-white text-sm space-y-2 w-full">
-                      <li className="flex flex-col md:flex-row md:justify-between w-full">
+                      <li className="flex flex-row justify-between w-full">
                         <span>Culto</span>
                         <span>Dom 18h</span>
                       </li>
-                      <li className="flex flex-col md:flex-row md:justify-between w-full">
+                      <li className="flex flex-row justify-between w-full">
                         <span>Discipulado Ative+ Teens</span>
                         <span>Qua 19h</span>
                       </li>
-                      <li className="flex flex-col md:flex-row md:justify-between w-full">
+                      <li className="flex flex-row justify-between w-full">
                         <span>Células</span>
                         <span>Qui 19h</span>
                       </li>
-                      <li className="flex flex-col md:flex-row md:justify-between w-full">
+                      <li className="flex flex-row justify-between w-full">
                         <span>Discipulado Ative+ Juventude</span> 
                         <span>Sex 20h</span>
                       </li>
@@ -103,7 +103,7 @@ export default function RootLayout({
                         aria-label="Instagram"
                       >
                         <Image src="/app/img/instagram-svgrepo-com.svg" alt="Instagram" width={24} height={24} className="w-6 h-6" />
-                        <span className="text-sm font-medium">apriscourbano</span>
+                        <span className="text-sm font-medium underline">apriscourbano</span>
                       </a>
                     </div>
                   </div>
