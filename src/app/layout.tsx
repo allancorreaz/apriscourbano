@@ -74,7 +74,6 @@ export default function RootLayout({
                       </li>
                       <li className="flex flex-row justify-between w-full">
                         <span>Discipulado Ative+ Teens</span>
-                          <p>Adolescentes de 13 a 17 anos</p>
                          <span>Qua 19h</span>
                       </li>
                       <li className="flex flex-row justify-between w-full">
@@ -83,7 +82,7 @@ export default function RootLayout({
                       </li>
                       <li className="flex flex-row justify-between w-full">
                         <span>Discipulado Ative+ Juventude</span>
-                          <p>Jovens de 18 a 27 anos</p>
+                          
                         <span>Sex 20h</span>
                       </li>
                     </ul>
