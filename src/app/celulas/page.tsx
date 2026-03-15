@@ -101,7 +101,7 @@ const celulas = [
     dia: 'Quinta-feira',
     horario: '19h',
     //instagram: '',
-    tipo: 'Adolescente',
+    tipo: 'Adolescentes',
   },
 
    {
@@ -113,7 +113,7 @@ const celulas = [
     horario: '19h',
     //instagram: '', // sem @ (opcional)
     tipo: 'Adolescentes',
-   }
+   },
 
    {
     nome: 'Teen Conected Girls',
@@ -124,7 +124,7 @@ const celulas = [
     horario: '19h',
     //instagram: '', // sem @ (opcional)
     tipo: 'Adolescentes',
-   }
+   },
 
    {
     nome: 'Teen Nissi Girls',
@@ -135,7 +135,7 @@ const celulas = [
     horario: '19h',
     //instagram: 'nomeusuario', // sem @ (opcional)
     tipo: 'Adolescentes',
-   }
+   },
 
    {
     nome: 'Bloom Girls',
@@ -146,7 +146,7 @@ const celulas = [
     horario: '19h',
     //instagram: 'nomeusuario', // sem @ (opcional)
     tipo: 'Adolescentes',
-   }
+   },
 
    {
     nome: 'Revive The Girls',
@@ -157,7 +157,7 @@ const celulas = [
     horario: '19h',
     //instagram: 'nomeusuario', // sem @ (opcional)
     tipo: 'Adolescentes',
-   }
+   },
 
    {
     nome: 'Maranata',
@@ -168,7 +168,7 @@ const celulas = [
     horario: '19h',
     //instagram: 'nomeusuario', // sem @ (opcional)
     tipo: 'Adolescentes',
-   }
+   },
 
    {
     nome: 'Kairos',
@@ -179,7 +179,7 @@ const celulas = [
     horario: '19h',
     //instagram: 'nomeusuario', // sem @ (opcional)
     tipo: 'Adolescentes',
-   }
+   },
 
 
    {
@@ -191,7 +191,7 @@ const celulas = [
     horario: '19h',
     //instagram: 'nomeusuario', // sem @ (opcional)
     tipo: 'Adolescentes',
-   }
+   },
 
 
 ];
