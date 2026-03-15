@@ -47,7 +47,7 @@ const celulas = [
     nome: 'Célula A Forja',
     lider: 'João Bolis',
     bairro: 'Estrela do Céu',
-    endereco: 'Rua Tietê, 2602, Casa 2 - Estrela do Céu, Itaguaí, RJ - 23820-780',
+    endereco: 'Rua Tietê, 2602, Casa 2 - Estrela do Céu, Itaguaí, RJ',
     dia: 'Quinta-feira',
     horario: '19h',
     instagram: 'celula_aforja_',
@@ -61,7 +61,7 @@ const celulas = [
     dia: 'Quinta-feira',
     horario: '19h',
     instagram: 'celulaekballoaprisco',
-    tipo: 'Adolescentes',
+    tipo: 'Jovens',
   },
   {
     nome: 'Célula Ide',
@@ -70,7 +70,7 @@ const celulas = [
     endereco: 'Rua Durvalina Duarte de Souza, Lote 5, Quadra 2',
     dia: 'Quinta-feira',
     horario: '19h',
-    instagram: '',
+    //instagram: '',
     tipo: 'Jovens',
   },
   {
@@ -80,7 +80,7 @@ const celulas = [
     endereco: 'Rua Joao Plaza Gonzales, Lote 1, Quadra 5 - Engenho, Itaguaí, RJ',
     dia: 'Quinta-feira',
     horario: '19h',
-    instagram: '',
+    instagram: 'casadepazpreach',
     tipo: 'Jovens',
   },
   {
@@ -90,19 +90,110 @@ const celulas = [
     endereco: 'Rua Sao Luis, Numero 22, Casa 7, Quadra 7, Fundos - Praia Do Saco, Mangaratiba - RJ',
     dia: 'Quinta-feira',
     horario: '19h',
-    instagram: '',
+    //instagram: '',
     tipo: 'Misturado',
   },
   {
-    nome: 'Célula Eben-Ezer',
-    lider: 'Roberto Lima',
-    bairro: 'Coroa Grande',
-    endereco: 'Rua Coroa Grande, 10, Coroa Grande, Itaguaí, RJ',
+    nome: 'Célula Girls Flames Teen',
+    lider: 'Ingrid',
+    bairro: 'Engenho',
+    endereco: 'Aprisco Urbano',
     dia: 'Quinta-feira',
     horario: '19h',
-    instagram: '',
-    tipo: 'Misturado',
+    //instagram: '',
+    tipo: 'Adolescente',
   },
+
+   {
+    nome: 'Teen Choosen Girl',
+    lider: 'Thaís',
+    bairro: 'Engenho',
+    endereco: 'Aprisco Urbano',
+    dia: 'Quinta-feita',
+    horario: '19h',
+    //instagram: '', // sem @ (opcional)
+    tipo: 'Adolescentes',
+   }
+
+   {
+    nome: 'Teen Conected Girls',
+    lider: 'Carol',
+    bairro: 'Engenho',
+    endereco: 'Aprisco Urbano',
+    dia: 'Quinta-feira',
+    horario: '19h',
+    //instagram: '', // sem @ (opcional)
+    tipo: 'Adolescentes',
+   }
+
+   {
+    nome: 'Teen Nissi Girls',
+    lider: 'Yasmin',
+    bairro: 'Engenho',
+    endereco: 'Aprisco Urbano',
+    dia: 'Quinta-feira',
+    horario: '19h',
+    //instagram: 'nomeusuario', // sem @ (opcional)
+    tipo: 'Adolescentes',
+   }
+
+   {
+    nome: 'Bloom Girls',
+    lider: 'Eduarda',
+    bairro: 'Engenho',
+    endereco: 'Aprisco Urbano',
+    dia: 'Quinta-feira',
+    horario: '19h',
+    //instagram: 'nomeusuario', // sem @ (opcional)
+    tipo: 'Adolescentes',
+   }
+
+   {
+    nome: 'Revive The Girls',
+    lider: 'Tabata',
+    bairro: 'Engenho',
+    endereco: 'Aprisco Urbano',
+    dia: 'Quinta-feira',
+    horario: '19h',
+    //instagram: 'nomeusuario', // sem @ (opcional)
+    tipo: 'Adolescentes',
+   }
+
+   {
+    nome: 'Maranata',
+    lider: 'Gabriel',
+    bairro: 'Engenho',
+    endereco: 'Aprisco Urbano',
+    dia: 'Quinta-feira',
+    horario: '19h',
+    //instagram: 'nomeusuario', // sem @ (opcional)
+    tipo: 'Adolescentes',
+   }
+
+   {
+    nome: 'Kairos',
+    lider: 'João',
+    bairro: 'Engenho',
+    endereco: 'Aprisco Urbano',
+    dia: 'Quinta-feira',
+    horario: '19h',
+    //instagram: 'nomeusuario', // sem @ (opcional)
+    tipo: 'Adolescentes',
+   }
+
+
+   {
+    nome: 'Emaús',
+    lider: 'Asafe',
+    bairro: 'Engenho',
+    endereco: 'Aprisco Urbano',
+    dia: 'Quinta-feira',
+    horario: '19h',
+    //instagram: 'nomeusuario', // sem @ (opcional)
+    tipo: 'Adolescentes',
+   }
+
+
 ];
 
 // Benefícios de participar das células
