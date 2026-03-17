@@ -176,23 +176,24 @@ export default function ContatoPage() {
                 
                 {/* Mapa placeholder */}
                 <div className="mt-8">
-                  <a 
-                    href={mapsLink}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="block w-full h-64 bg-slate-100 rounded-2xl overflow-hidden relative group"
-                  >
-                    <div className="absolute inset-0 flex items-center justify-center bg-slate-200">
-                      <div className="text-center">
-                        <svg className="w-12 h-12 mx-auto text-slate-400 mb-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                        </svg>
-                        <p className="text-slate-500">Clique para abrir no Google Maps</p>
-                      </div>
-                    </div>
-                    <div className="absolute inset-0 bg-primary-600/0 group-hover:bg-primary-600/10 transition-colors"></div>
-                  </a>
+                  <div className="w-full h-64 rounded-2xl overflow-hidden relative">
+                    <iframe
+                      title="Mapa Igreja Aprisco Urbano"
+                      src={`https://www.google.com/maps?q=${encodeURIComponent(enderecoCompleto)}&output=embed`}
+                      width="100%"
+                      height="100%"
+                      style={{ border: 0 }}
+                      allowFullScreen={true}
+                      loading="lazy"
+                      referrerPolicy="no-referrer-when-downgrade"
+                      className="w-full h-full"
+                    ></iframe>
+                  </div>
+                  <p className="text-center text-primary-600 mt-2 text-sm">
+                    <a href={mapsLink} target="_blank" rel="noopener noreferrer" className="underline hover:text-primary-700">
+                      Ver no Google Maps
+                    </a>
+                  </p>
                 </div>
               </div>
             </div>

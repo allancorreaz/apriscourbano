@@ -40,7 +40,8 @@ const heroImage = 'https://images.unsplash.com/photo-1529156069898-49953e39b3ac?
 //   dia: 'Dia da semana',
 //   horario: 'Horário',
 //   instagram: 'nomeusuario', // sem @ (opcional)
-//   tipo: 'Adolescentes' | 'Jovens' | 'Adultos' | 'Misturado',
+//   tipo: 'Adolescentes' | 'Jovens' | 'Adultos' | 'Mista',
+//   genero: 'Masculina' | 'Feminina' | 'Mista',
 // }
 const celulas = [
   {
@@ -52,6 +53,7 @@ const celulas = [
     horario: '19h',
     instagram: 'celula_aforja_',
     tipo: 'Jovens',
+    genero: 'Masculina',
   },
   {
     nome: 'Célula Ekballo',
@@ -62,6 +64,7 @@ const celulas = [
     horario: '19h',
     instagram: 'celulaekballoaprisco',
     tipo: 'Adolescentes',
+    genero: 'Feminina',
   },
   {
     nome: 'Célula Koinonia',
@@ -72,6 +75,7 @@ const celulas = [
     horario: '19h',
     instagram: '',
     tipo: 'Adultos',
+    genero: 'Mista',
   },
   {
     nome: 'Célula Ágape',
@@ -81,7 +85,8 @@ const celulas = [
     dia: 'Quinta-feira',
     horario: '19h',
     instagram: '',
-    tipo: 'Misturado',
+    tipo: 'Mista',
+    genero: 'Masculina',
   },
   {
     nome: 'Célula Shalom',
@@ -92,6 +97,7 @@ const celulas = [
     horario: '19h',
     instagram: '',
     tipo: 'Adultos',
+    genero: 'Feminina',
   },
   {
     nome: 'Célula Eben-Ezer',
@@ -101,7 +107,8 @@ const celulas = [
     dia: 'Quinta-feira',
     horario: '19h',
     instagram: '',
-    tipo: 'Misturado',
+    tipo: 'Mista',
+    genero: 'Mista',
   },
 ];
 
@@ -149,10 +156,13 @@ export default function CelulasPage() {
   const [bairroSelecionado, setBairroSelecionado] = React.useState('Todos');
   const [tipoSelecionado, setTipoSelecionado] = React.useState('Todos');
   const bairros = Array.from(new Set(celulas.map(c => c.bairro)));
-  const tipos = Array.from(new Set(celulas.map(c => c.tipo)));
+  const tipos = ['Adolescentes', 'Jovens', 'Adultos', 'Mista'];
+  const generos = ['Masculina', 'Feminina', 'Mista'];
+  const [generoSelecionado, setGeneroSelecionado] = React.useState('Todos');
   const celulasFiltradas = celulas.filter(c =>
     (bairroSelecionado === 'Todos' || c.bairro === bairroSelecionado) &&
-    (tipoSelecionado === 'Todos' || c.tipo === tipoSelecionado)
+    (tipoSelecionado === 'Todos' || c.tipo === tipoSelecionado) &&
+    (generoSelecionado === 'Todos' || c.genero === generoSelecionado)
   );
   return (
     <div className="min-h-screen bg-white">
@@ -227,33 +237,101 @@ export default function CelulasPage() {
               <span style={{ color: '#000000' }}>Todas as células se reúnem às quintas-feiras às 19h</span>
             </p>
             <div className="mt-6 mb-8 flex flex-row gap-4 justify-center">
-              <div>
-                <label htmlFor="bairro-select" className="block text-sm font-semibold text-primary-700 mb-2">Filtrar por bairro:</label>
-                <select
-                  id="bairro-select"
-                  value={bairroSelecionado}
-                  onChange={e => setBairroSelecionado(e.target.value)}
-                  className="px-4 py-2 rounded-lg border border-primary-200 text-primary-700 bg-white shadow-sm"
-                >
-                  <option value="Todos">Todos</option>
-                  {bairros.map(bairro => (
-                    <option key={bairro} value={bairro}>{bairro}</option>
-                  ))}
-                </select>
-              </div>
-              <div>
-                <label htmlFor="tipo-select" className="block text-sm font-semibold text-primary-700 mb-2">Filtrar por tipo:</label>
-                <select
-                  id="tipo-select"
-                  value={tipoSelecionado}
-                  onChange={e => setTipoSelecionado(e.target.value)}
-                  className="px-4 py-2 rounded-lg border border-primary-200 text-primary-700 bg-white shadow-sm"
-                >
-                  <option value="Todos">Todos</option>
-                  {tipos.map(tipo => (
-                    <option key={tipo} value={tipo}>{tipo}</option>
-                  ))}
-                </select>
+              {/* Filtros responsivos: mobile bairro e tipo lado a lado, gênero embaixo; desktop todos lado a lado */}
+              <div className="w-full">
+                {/* Desktop: todos lado a lado */}
+                <div className="hidden md:flex flex-row gap-4 items-center justify-center">
+                  <div className="w-auto">
+                    <label htmlFor="bairro-select" className="block text-sm font-semibold text-primary-700 mb-2">Filtrar por bairro:</label>
+                    <select
+                      id="bairro-select"
+                      value={bairroSelecionado}
+                      onChange={e => setBairroSelecionado(e.target.value)}
+                      className="px-4 py-2 rounded-lg border border-primary-200 text-primary-700 bg-white shadow-sm"
+                    >
+                      <option value="Todos">Todos</option>
+                      {bairros.map(bairro => (
+                        <option key={bairro} value={bairro}>{bairro}</option>
+                      ))}
+                    </select>
+                  </div>
+                  <div className="w-auto">
+                    <label htmlFor="tipo-select" className="block text-sm font-semibold text-primary-700 mb-2">Filtrar por tipo:</label>
+                    <select
+                      id="tipo-select"
+                      value={tipoSelecionado}
+                      onChange={e => setTipoSelecionado(e.target.value)}
+                      className="px-4 py-2 rounded-lg border border-primary-200 text-primary-700 bg-white shadow-sm"
+                    >
+                      <option value="Todos">Todos</option>
+                      {tipos.map(tipo => (
+                        <option key={tipo} value={tipo}>{tipo}</option>
+                      ))}
+                    </select>
+                  </div>
+                  <div className="w-auto">
+                    <label htmlFor="genero-select" className="block text-sm font-semibold text-primary-700 mb-2 text-center">Filtrar por gênero:</label>
+                    <select
+                      id="genero-select"
+                      value={generoSelecionado}
+                      onChange={e => setGeneroSelecionado(e.target.value)}
+                      className="px-4 py-2 rounded-lg border border-primary-200 text-primary-700 bg-white shadow-sm"
+                    >
+                      <option value="Todos">Todos</option>
+                      {generos.map(genero => (
+                        <option key={genero} value={genero}>{genero}</option>
+                      ))}
+                    </select>
+                  </div>
+                </div>
+                {/* Mobile: bairro e tipo lado a lado, gênero embaixo do mesmo tamanho */}
+                <div className="flex flex-row gap-2 items-center justify-center md:hidden">
+                  <div className="w-full">
+                    <label htmlFor="bairro-select" className="block text-sm font-semibold text-primary-700 mb-2">Filtrar por bairro:</label>
+                    <select
+                      id="bairro-select"
+                      value={bairroSelecionado}
+                      onChange={e => setBairroSelecionado(e.target.value)}
+                      className="px-4 py-2 rounded-lg border border-primary-200 text-primary-700 bg-white shadow-sm w-full"
+                    >
+                      <option value="Todos">Todos</option>
+                      {bairros.map(bairro => (
+                        <option key={bairro} value={bairro}>{bairro}</option>
+                      ))}
+                    </select>
+                  </div>
+                  <div className="w-full">
+                    <label htmlFor="tipo-select" className="block text-sm font-semibold text-primary-700 mb-2">Filtrar por tipo:</label>
+                    <select
+                      id="tipo-select"
+                      value={tipoSelecionado}
+                      onChange={e => setTipoSelecionado(e.target.value)}
+                      className="px-4 py-2 rounded-lg border border-primary-200 text-primary-700 bg-white shadow-sm w-full"
+                    >
+                      <option value="Todos">Todos</option>
+                      {tipos.map(tipo => (
+                        <option key={tipo} value={tipo}>{tipo}</option>
+                      ))}
+                    </select>
+                  </div>
+                </div>
+                <div className="w-full md:hidden mt-4 flex justify-center">
+                  <div className="w-full">
+                    <label htmlFor="genero-select" className="block text-sm font-semibold text-primary-700 mb-2 text-center">Filtrar por gênero:</label>
+                    <select
+                      id="genero-select"
+                      value={generoSelecionado}
+                      onChange={e => setGeneroSelecionado(e.target.value)}
+                      className="px-4 py-2 rounded-lg border border-primary-200 text-primary-700 bg-white shadow-sm"
+                      style={{ width: '160px' }}
+                    >
+                      <option value="Todos">Todos</option>
+                      {generos.map(genero => (
+                        <option key={genero} value={genero}>{genero}</option>
+                      ))}
+                    </select>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -265,7 +343,10 @@ export default function CelulasPage() {
                 className="card p-6"
               >
                 <h3 className="text-lg font-bold text-slate-800 mb-2">{celula.nome}</h3>
-                <div className="text-xs font-semibold text-primary-700 mb-2">{celula.tipo}</div>
+                <div className="flex flex-row gap-2 mb-2">
+                  <span className="text-xs font-semibold text-primary-700">{celula.tipo}</span>
+                  <span className="text-xs font-semibold text-accent-700">{celula.genero}</span>
+                </div>
                 <div className="space-y-2 text-sm mb-4">
                   <div className="flex items-center gap-2 text-slate-600">
                     <svg className="w-4 h-4 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">

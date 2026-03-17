@@ -1,9 +1,21 @@
 "use client";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Link from "next/link";
 
 export default function MobileMenu({ navigation }: { navigation: { name: string; href: string }[] }) {
   const [open, setOpen] = useState(false);
+  // Fecha menu ao clicar fora
+  useEffect(() => {
+    if (!open) return;
+    function handleClickOutside(e: MouseEvent) {
+      const menu = document.getElementById('mobile-menu');
+      if (menu && !menu.contains(e.target as Node)) {
+        setOpen(false);
+      }
+    }
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, [open]);
   return (
     <>
       <button
@@ -19,7 +31,7 @@ export default function MobileMenu({ navigation }: { navigation: { name: string;
         </svg>
       </button>
       {open && (
-        <div className="absolute top-16 left-0 w-full bg-slate-900 z-50 flex flex-col items-center py-4 shadow-lg">
+        <div id="mobile-menu" className="absolute top-16 left-0 w-full bg-slate-900 z-50 flex flex-col items-center py-4 shadow-lg">
           {navigation.map((item) => (
             <Link
               key={item.name}

@@ -38,6 +38,29 @@ const bannerMargin = "mt-[33px] md:mt-0";
    =========================================== */
 
 const eventos = [
+  /* ===========================================
+     EXEMPLO PRONTO DE EVENTO
+     Para adicionar um novo evento, copie o bloco abaixo para o array eventos:
+     {
+       id: '999',
+       titulo: 'Evento Teste com Inscrição e Pagamento',
+       descricao: 'Evento de exemplo para testar inscrição e pagamento.',
+       data: '25 de Março, 2026',
+       horario: '20h',
+       local: 'Igreja Aprisco Urbano',
+       status: 'aberto',
+       imagem: 'https://images.unsplash.com/photo-1507692049790-de58290a4334?w=600&h=400&fit=crop',
+       pagamento: {
+         pix: {
+           qrcode: 'https://api.qrserver.com/v1/create-qr-code/?data=00020126360014BR.GOV.BCB.PIX0114demelocorrea1@outlook.com52040000530398654041.005802BR5925Aprisco Urbano Igreja6009Itaguai RJ62100506teste6304ABCD',
+           copiaCola: '00020126360014BR.GOV.BCB.PIX0114demelocorrea1@outlook.com52040000530398654041.005802BR5925Aprisco Urbano Igreja6009Itaguai RJ62100506teste6304ABCD',
+         },
+         cartao: 'https://pagamento.exemplo.com/cartao',
+         debito: 'https://pagamento.exemplo.com/debito',
+       },
+       formInscricao: 'https://forms.gle/7QwKkQwKkQwKkQwK9', // Google Forms para teste
+     },
+     =========================================== */
   {
     id: '1',
     titulo: 'Seminário Bíblico da Fé',
@@ -72,7 +95,7 @@ const programacaoSemanal = [
     dia: 'Quarta-feira',
     horario: '19h',
     evento: 'Discipulado Ative+ Teens',
-    descricao: 'Discipulado para adolescentes de 14 a 17 anos',
+    descricao: 'Discipulado para adolescentes de 13 a 17 anos',
   },
   {
     dia: 'Quinta-feira',
@@ -173,6 +196,26 @@ export default function EventosPage() {
                       <span>{evento.local}</span>
                     </div>
                   </div>
+                  {/* Pagamento e Inscrição */}
+                  {evento.status === 'aberto' && evento.pagamento && (
+                    <div className="mt-6">
+                      <h4 className="text-primary-700 text-sm font-semibold mb-2">Pagamento</h4>
+                      <div className="flex flex-col gap-2">
+                        <a href={evento.pagamento.cartao} target="_blank" rel="noopener noreferrer" className="btn-outline">Cartão de Crédito</a>
+                        <a href={evento.pagamento.debito} target="_blank" rel="noopener noreferrer" className="btn-outline">Débito</a>
+                        <div className="flex items-center gap-2">
+                          <img src={evento.pagamento.pix.qrcode} alt="Pix QR Code" className="w-20 h-20" />
+                          <button className="btn-outline text-xs" onClick={() => navigator.clipboard.writeText(evento.pagamento.pix.copiaCola)}>Copiar Pix</button>
+                        </div>
+                      </div>
+                    </div>
+                  )}
+                  {evento.status === 'aberto' && evento.formInscricao && (
+                    <div className="mt-6">
+                      <h4 className="text-primary-700 text-sm font-semibold mb-2">Inscrição</h4>
+                      <a href={evento.formInscricao} target="_blank" rel="noopener noreferrer" className="btn-primary">Formulário de Inscrição</a>
+                    </div>
+                  )}
                 </div>
               </div>
             ))}

@@ -17,11 +17,26 @@ const CHURCH_ADDRESS = 'Rua Orlando Silva, 9 - Engenho, Itaguaí'
         // Banner principal: adicionar margin-top para mobile
         const bannerMargin = "mt-0 md:mt-0";
 // Programação semanal da igreja
+/* ===========================================
+   EXEMPLO PRONTO PARA HOME
+   Para adicionar um destaque extra, copie o bloco abaixo para o array highlights:
+   {
+     title: 'Exemplo de Destaque',
+     description: 'Descrição do destaque. Edite este texto para personalizar.',
+     href: '/exemplo',
+     icon: (
+       <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+         <circle cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="2" />
+         <path d="M12 8v4l3 3" stroke="currentColor" strokeWidth="2" />
+       </svg>
+     ),
+   },
+   =========================================== */
 const schedule = [
-  { day: 'Domingo', time: '18h', event: 'Culto' },
-  { day: 'Quarta-feira', time: '19h', event: 'Discipulado Ative+ Teen' },
-  { day: 'Quinta-feira', time: '19h', event: 'Células' },
-  { day: 'Sexta-feira', time: '20h', event: 'Discipulado Ative+ Juventude' },
+  { day: 'Domingo', time: '18h', event: 'Culto', description: 'Culto com louvor, palavra e comunhão para toda a família.' },
+    { day: 'Quarta-feira', time: '19h', event: 'Discipulado Ative+ Teen', description: 'Discipulado para adolescentes de 13 a 17 anos, com ensino bíblico, dinâmicas e comunhão.' },
+  { day: 'Quinta-feira', time: '19h', event: 'Células', description: 'Grupos pequenos nas casas para comunhão, oração e estudo bíblico. Ache a célula mais próxima a sua casa na página de células.' },
+    { day: 'Sexta-feira', time: '20h', event: 'Discipulado Ative+ Juventude', description: 'Discipulado para jovens de 18 a 27 anos, aprofundando a fé, amizade e crescimento espiritual.' },
 ]
 
 // Destaques para a home
@@ -213,6 +228,9 @@ export default function HomePage() {
                   <div>
                     <p className="text-sm text-primary-600 font-medium mb-1">{item.day}</p>
                     <p className="text-lg font-bold text-slate-800">{item.event}</p>
+                      {item.description && (
+                        <p className="text-xs text-slate-500 mt-1">{item.description}</p>
+                      )}
                   </div>
                   <div className="text-right">
                     <span className="text-2xl font-bold text-slate-800">{item.time}</span>
