@@ -1,3 +1,5 @@
+import React from "react";
+import Image from "next/image";
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
@@ -141,84 +143,85 @@ export default function EventosPage() {
           </div>
           
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto">
-            {eventos.map((evento) => (
-              <div
-                key={evento.id}
-                className="card overflow-hidden"
-              >
-                {/* Imagem do evento */}
-                {evento.imagem && (
-                  <div className="h-48 overflow-hidden">
-                    {/* eslint-disable-next-line @next/next/no-img-element */}
-                    <img 
-                      src={evento.imagem} 
-                      alt={evento.titulo}
-                      className="w-full h-full object-cover"
-                    />
-                  </div>
-                )}
-                
-                <div className="p-6">
-                  {/* Status */}
-                  <span className={`inline-block px-3 py-1 rounded-full text-xs font-semibold mb-4 ${
-                    evento.status === 'aberto' 
-                      ? 'bg-green-100 text-green-700' 
-                      : 'bg-red-100 text-red-700'
-                  }`}>
-                    {evento.status === 'aberto' ? 'Inscrições abertas' : 'Inscrições encerradas'}
-                  </span>
-                  
-                  <h3 className="text-xl font-bold text-slate-800 mb-3">
-                    {evento.titulo}
-                  </h3>
-                  <p className="text-slate-500 text-sm mb-4">
-                    {evento.descricao}
-                  </p>
-                  
-                  <div className="space-y-2 text-sm">
-                    <div className="flex items-center gap-2 text-slate-600">
-                      <svg className="w-4 h-4 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                      </svg>
-                      <span>{evento.data}</span>
+            {eventos.map((evento) => {
+              const hasPagamento = 'pagamento' in evento && typeof evento.pagamento === 'object';
+              const hasInscricao = 'formInscricao' in evento && typeof evento.formInscricao === 'string';
+              return (
+                <div
+                  key={evento.id}
+                  className="card overflow-hidden"
+                >
+                  {/* Imagem do evento */}
+                  {evento.imagem && (
+                    <div className="h-48 overflow-hidden">
+                      {/* eslint-disable-next-line @next/next/no-img-element */}
+                      <img 
+                        src={evento.imagem} 
+                        alt={evento.titulo}
+                        className="w-full h-full object-cover"
+                      />
                     </div>
-                    <div className="flex items-center gap-2 text-slate-600">
-                      <svg className="w-4 h-4 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
-                      </svg>
-                      <span>{evento.horario}</span>
-                    </div>
-                    <div className="flex items-center gap-2 text-slate-600">
-                      <svg className="w-4 h-4 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
-                      </svg>
-                      <span>{evento.local}</span>
-                    </div>
-                  </div>
-                  {/* Pagamento e Inscrição */}
-                  {evento.status === 'aberto' && evento.pagamento && (
-                    <div className="mt-6">
-                      <h4 className="text-primary-700 text-sm font-semibold mb-2">Pagamento</h4>
-                      <div className="flex flex-col gap-2">
-                        <a href={evento.pagamento.cartao} target="_blank" rel="noopener noreferrer" className="btn-outline">Cartão de Crédito</a>
-                        <a href={evento.pagamento.debito} target="_blank" rel="noopener noreferrer" className="btn-outline">Débito</a>
-                        <div className="flex items-center gap-2">
-                          <img src={evento.pagamento.pix.qrcode} alt="Pix QR Code" className="w-20 h-20" />
-                          <button className="btn-outline text-xs" onClick={() => navigator.clipboard.writeText(evento.pagamento.pix.copiaCola)}>Copiar Pix</button>
-                        </div>
+                  )}
+                  <div className="p-6">
+                    {/* Status */}
+                    <span className={`inline-block px-3 py-1 rounded-full text-xs font-semibold mb-4 ${
+                      evento.status === 'aberto' 
+                        ? 'bg-green-100 text-green-700' 
+                        : 'bg-red-100 text-red-700'
+                    }`}>
+                      {evento.status === 'aberto' ? 'Inscrições abertas' : 'Inscrições encerradas'}
+                    </span>
+                    <h3 className="text-xl font-bold text-slate-800 mb-3">
+                      {evento.titulo}
+                    </h3>
+                    <p className="text-slate-500 text-sm mb-4">
+                      {evento.descricao}
+                    </p>
+                    <div className="space-y-2 text-sm">
+                      <div className="flex items-center gap-2 text-slate-600">
+                        <svg className="w-4 h-4 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                        </svg>
+                        <span>{evento.data}</span>
+                      </div>
+                      <div className="flex items-center gap-2 text-slate-600">
+                        <svg className="w-4 h-4 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                        </svg>
+                        <span>{evento.horario}</span>
+                      </div>
+                      <div className="flex items-center gap-2 text-slate-600">
+                        <svg className="w-4 h-4 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                        </svg>
+                        <span>{evento.local}</span>
                       </div>
                     </div>
-                  )}
-                  {evento.status === 'aberto' && evento.formInscricao && (
-                    <div className="mt-6">
-                      <h4 className="text-primary-700 text-sm font-semibold mb-2">Inscrição</h4>
-                      <a href={evento.formInscricao} target="_blank" rel="noopener noreferrer" className="btn-primary">Formulário de Inscrição</a>
-                    </div>
-                  )}
+                    {/* Pagamento e Inscrição */}
+                    {evento.status === 'aberto' && hasPagamento && (
+                      <div className="mt-6">
+                        <h4 className="text-primary-700 text-sm font-semibold mb-2">Pagamento</h4>
+                        <div className="flex flex-col gap-2">
+                          <a href={(evento.pagamento as any).cartao} target="_blank" rel="noopener noreferrer" className="btn-outline">Cartão de Crédito</a>
+                          <a href={(evento.pagamento as any).debito} target="_blank" rel="noopener noreferrer" className="btn-outline">Débito</a>
+                          <div className="flex items-center gap-2">
+                             <Image src={(evento.pagamento as any).pix.qrcode} alt="Pix QR Code" width={80} height={80} className="w-20 h-20" />
+                            <button className="btn-outline text-xs" onClick={() => navigator.clipboard.writeText((evento.pagamento as any).pix.copiaCola)}>Copiar Pix</button>
+                          </div>
+                        </div>
+                      </div>
+                    )}
+                    {evento.status === 'aberto' && hasInscricao && (
+                      <div className="mt-6">
+                        <h4 className="text-primary-700 text-sm font-semibold mb-2">Inscrição</h4>
+                        <a href={(evento.formInscricao as string)} target="_blank" rel="noopener noreferrer" className="btn-primary">Formulário de Inscrição</a>
+                      </div>
+                    )}
+                  </div>
                 </div>
-              </div>
-            ))}
+              );
+            })}
           </div>
         </div>
       </section>
