@@ -1,4 +1,4 @@
-"use client";
+﻿"use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
@@ -6,17 +6,21 @@ import { navigation, siteConfig } from "../site-content";
 import { Icon } from "./Icons";
 
 export function Brand({ light = true }: { light?: boolean }) {
-  const [logo, setLogo] = useState("");
+  const [logo, setLogo] = useState(siteConfig.logo || "");
   useEffect(() => {
     fetch("/api/public/settings")
-      .then((response) => response.ok ? response.json() : null)
-      .then((settings: Record<string, string> | null) => setLogo(settings?.logo_url || ""))
+      .then((response) => (response.ok ? response.json() : null))
+      .then((settings: Record<string, string> | null) =>
+        setLogo(settings?.logo_url || siteConfig.logo || ""),
+      )
       .catch(() => undefined);
   }, []);
-  return <Link href="/" className={`brand ${light ? "light" : ""}`} aria-label="Aprisco Urbano">
-    {logo ? <img className="brand-logo" src={logo} alt="" /> : <span className="brand-mark"><b>A</b><i/><b>U</b></span>}
-    <span className="brand-name">{siteConfig.churchName}</span>
-  </Link>;
+  return (
+    <Link href="/" className={`brand ${light ? "light" : ""}`} aria-label="Aprisco Urbano">
+      {logo ? <img className="brand-logo" src={logo} alt="Logo Aprisco Urbano" /> : <span className="brand-mark"><b>A</b><i /><b>U</b></span>}
+      <span className="brand-name">{siteConfig.churchName}</span>
+    </Link>
+  );
 }
 
 export function SiteHeader() {
@@ -28,7 +32,8 @@ export function SiteHeader() {
 
   useEffect(() => {
     const handler = () => setScrolled(window.scrollY > 36);
-    handler(); window.addEventListener("scroll", handler, { passive: true });
+    handler();
+    window.addEventListener("scroll", handler, { passive: true });
     return () => window.removeEventListener("scroll", handler);
   }, []);
 
@@ -50,12 +55,8 @@ export function SiteHeader() {
       }
 
       if (event.key !== "Tab") return;
-      const links = Array.from(
-        mobileNavRef.current?.querySelectorAll<HTMLAnchorElement>("a") ?? [],
-      );
-      const focusable = [toggleRef.current, ...links].filter(
-        (item): item is HTMLElement => Boolean(item),
-      );
+      const links = Array.from(mobileNavRef.current?.querySelectorAll<HTMLAnchorElement>("a") ?? []);
+      const focusable = [toggleRef.current, ...links].filter((item): item is HTMLElement => Boolean(item));
       if (!focusable.length) return;
 
       const first = focusable[0];
@@ -91,38 +92,40 @@ export function SiteHeader() {
     return () => desktop.removeEventListener("change", closeOnDesktop);
   }, []);
 
-  return <>
-    <header className={`site-header ${scrolled ? "scrolled" : ""} ${open ? "open" : ""}`}>
-      <div className="nav-wrap">
-        <Brand light={open || !scrolled}/>
-        <nav className="desktop-nav" aria-label="Navegação principal">
-          {navigation.map(item => <Link className={pathname === item.href ? "active" : ""} href={item.href} key={item.href}>{item.label}</Link>)}
-        </nav>
-        <button
-          ref={toggleRef}
-          className="menu-toggle"
-          type="button"
-          aria-label={open ? "Fechar menu" : "Abrir menu"}
-          aria-expanded={open}
-          aria-controls="mobile-site-nav"
-          onClick={() => setOpen(value => !value)}
-        >
-          <Icon name={open ? "close" : "menu"} size={27}/>
-        </button>
-      </div>
-    </header>
-    <nav
-      ref={mobileNavRef}
-      id="mobile-site-nav"
-      className={`mobile-nav ${open ? "visible" : ""}`}
-      aria-label="Navegação móvel"
-      aria-hidden={!open}
-    >
-      <div className="mobile-nav-inner">
-        <p>Encontre seu lugar</p>
-        {navigation.map((item, i) => <Link tabIndex={open ? 0 : -1} className={pathname === item.href ? "active" : ""} href={item.href} key={item.href} onClick={() => setOpen(false)}><span>0{i + 1}</span>{item.label}</Link>)}
-        <small>{siteConfig.service.day} · {siteConfig.service.time} · {siteConfig.city}</small>
-      </div>
-    </nav>
-  </>;
+  return (
+    <>
+      <header className={`site-header ${scrolled ? "scrolled" : ""} ${open ? "open" : ""}`}>
+        <div className="nav-wrap">
+          <Brand light={open || !scrolled} />
+          <nav className="desktop-nav" aria-label="Navegacao principal">
+            {navigation.map((item) => <Link className={pathname === item.href ? "active" : ""} href={item.href} key={item.href}>{item.label}</Link>)}
+          </nav>
+          <button
+            ref={toggleRef}
+            className="menu-toggle"
+            type="button"
+            aria-label={open ? "Fechar menu" : "Abrir menu"}
+            aria-expanded={open}
+            aria-controls="mobile-site-nav"
+            onClick={() => setOpen((value) => !value)}
+          >
+            <Icon name={open ? "close" : "menu"} size={27} />
+          </button>
+        </div>
+      </header>
+      <nav
+        ref={mobileNavRef}
+        id="mobile-site-nav"
+        className={`mobile-nav ${open ? "visible" : ""}`}
+        aria-label="Navegacao movel"
+        aria-hidden={!open}
+      >
+        <div className="mobile-nav-inner">
+          <p>Encontre seu lugar</p>
+          {navigation.map((item, i) => <Link tabIndex={open ? 0 : -1} className={pathname === item.href ? "active" : ""} href={item.href} key={item.href} onClick={() => setOpen(false)}><span>0{i + 1}</span>{item.label}</Link>)}
+          <small>{siteConfig.service.day} · {siteConfig.service.time} · {siteConfig.city}</small>
+        </div>
+      </nav>
+    </>
+  );
 }

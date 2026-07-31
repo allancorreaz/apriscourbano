@@ -2,6 +2,25 @@
   | { type: "image"; image: string }
   | { type: "video"; image: string; video: string; poster?: string };
 
+export type CellType = "Jovens" | "Adultos" | "Adolescentes" | "Mista";
+export type CellGender = "Masculina" | "Feminina" | "Mista";
+
+export type Cell = {
+  id: string;
+  name: string;
+  neighborhood: string;
+  address: string;
+  day: string;
+  time: string;
+  type: CellType;
+  gender: CellGender;
+  leader: string;
+  audience: string;
+  mapUrl: string;
+  image: string;
+  instagram?: string;
+};
+
 export type Ministry = {
   slug: string;
   name: string;
@@ -28,12 +47,23 @@ export const siteConfig = {
   churchName: "Aprisco Urbano",
   shortName: "AU",
   instagramHandle: "@apriscourbano",
-  city: "Itaguai, Rio de Janeiro",
+  city: "Rua Orlando Silva 9, Engenho - Itaguai, RJ",
+  seniorPastors: {
+    pastor: {
+      name: "Glaucio Muniz",
+      instagram: "@glauciomuniz.ofc",
+    },
+    pastora: {
+      name: "Cintia Fentanes",
+      instagram: "@cintiafentanes",
+    },
+  },
   service: { day: "Domingos", time: "18h", label: "Culto de celebracao" },
   hero: {
     type: "image",
     image: "/media/hero-glaucio-pregando.png",
   } as HeroMedia,
+  logo: "/media/logo-aprisco-original.png",
   social: {
     instagram: "https://www.instagram.com/apriscourbano/",
     youtube: "#",
@@ -58,44 +88,205 @@ export const churchPurpose = {
     "Cada membro um sacerdote, cada casa uma extensao da igreja.",
 };
 
-export const cells = [
+export const cells: Cell[] = [
   {
     id: "a-forja",
-    name: "A Forja",
-    neighborhood: "Itaguai",
-    address: "Endereco completo em atualizacao",
-    day: "Quintas",
-    time: "19h30",
-    age: "Jovens e adultos",
-    leader: "Lider a confirmar",
-    audience: "Uma celula para crescer em comunhao e proposito.",
-    mapUrl: "https://www.google.com/maps/search/?api=1&query=Itaguai%2C+RJ",
+    name: "Celula A Forja",
+    neighborhood: "Estrela do Ceu",
+    address: "Rua Tiete, 2602, Casa 2 - Itaguai, RJ",
+    day: "Quinta-feira",
+    time: "19h",
+    type: "Mista",
+    gender: "Mista",
+    leader: "Joao Bolis",
+    audience: "Uma celula mista para comunhao, crescimento e vida compartilhada.",
+    mapUrl: "https://www.google.com/maps/search/?api=1&query=Rua+Tiet%C3%AA,+2602,+Casa+2,+Itagua%C3%AD,+RJ",
+    image: "/media/celulas-comunidade.png",
+    instagram: "@celula_aforja_",
+  },
+  {
+    id: "ekballo",
+    name: "Celula Ekballo",
+    neighborhood: "Engenho",
+    address: "Rua do Engenho, 45 - Itaguai, RJ",
+    day: "Quinta-feira",
+    time: "19h",
+    type: "Jovens",
+    gender: "Masculina",
+    leader: "Felipe Santana",
+    audience: "Jovens homens crescendo em identidade, amizade e envio.",
+    mapUrl: "https://www.google.com/maps/search/?api=1&query=Rua+do+Engenho,+45,+Itagua%C3%AD,+RJ",
+    image: "/media/celulas-comunidade.png",
+    instagram: "@celulaekballoaprisco",
+  },
+  {
+    id: "ide",
+    name: "Celula Ide",
+    neighborhood: "Morro do Corte",
+    address: "Rua Durvalina Duarte de Souza, Lote 5, Quadra 2 - Itaguai, RJ",
+    day: "Quinta-feira",
+    time: "19h",
+    type: "Jovens",
+    gender: "Masculina",
+    leader: "Julio Vieira",
+    audience: "Uma celula jovem, masculina e cheia de fome por Jesus.",
+    mapUrl: "https://www.google.com/maps/search/?api=1&query=Rua+Durvalina+Duarte+de+Souza,+Lote+5,+Quadra+2,+Itagua%C3%AD,+RJ",
+    image: "/media/celula-ide.png",
+    instagram: "@celulaidejovens",
+  },
+  {
+    id: "preach",
+    name: "Celula Preach",
+    neighborhood: "Engenho",
+    address: "Rua Joao Plaza Gonzales, Lt 1, QD 5 - Itaguai, RJ",
+    day: "Quinta-feira",
+    time: "19h",
+    type: "Jovens",
+    gender: "Masculina",
+    leader: "Jean Evangelista",
+    audience: "Jovens sendo discipulados com ousadia, palavra e comunhao.",
+    mapUrl: "https://www.google.com/maps/search/?api=1&query=Rua+Joao+Plaza+Gonzales,+Lt+1,+QD+5,+Itagua%C3%AD,+RJ",
+    image: "/media/celulas-comunidade.png",
+    instagram: "@casadepazpreach",
+  },
+  {
+    id: "mangaratiba",
+    name: "Celula Mangaratiba",
+    neighborhood: "Praia do Saco, Mangaratiba",
+    address: "Rua Sao Luis, N 22, Casa 7, QD 7 - Mangaratiba - RJ",
+    day: "Quinta-feira",
+    time: "19h",
+    type: "Mista",
+    gender: "Mista",
+    leader: "Ana Beatriz",
+    audience: "Uma extensao da casa para comunhao e discipulado em Mangaratiba.",
+    mapUrl: "https://www.google.com/maps/search/?api=1&query=Rua+Sao+Luis,+22,+Casa+7,+QD+7,+Mangaratiba,+RJ",
     image: "/media/celulas-comunidade.png",
   },
   {
-    id: "familias",
-    name: "Celula Familias",
-    neighborhood: "Regiao central",
-    address: "Endereco completo em atualizacao",
-    day: "Dia a confirmar",
-    time: "Horario a confirmar",
-    age: "Adultos e familias",
-    leader: "Lider a confirmar",
-    audience: "Um ambiente de cuidado, Palavra e vida em familia.",
-    mapUrl: "https://www.google.com/maps/search/?api=1&query=Itaguai%2C+RJ",
+    id: "girls-flames-teen",
+    name: "Girls Flames Teen",
+    neighborhood: "Engenho",
+    address: "Aprisco Urbano",
+    day: "Quinta-feira",
+    time: "19h",
+    type: "Adultos",
+    gender: "Feminina",
+    leader: "Ingrid",
+    audience: "Mulheres sendo fortalecidas em comunhao, fogo e amadurecimento espiritual.",
+    mapUrl: "https://www.google.com/maps/search/?api=1&query=Rua+Orlando+Silva+9,+Engenho,+Itagua%C3%AD,+RJ",
     image: "/media/celulas-comunidade.png",
   },
   {
-    id: "juventude",
-    name: "Celula Juventude",
-    neighborhood: "Itaguai",
-    address: "Endereco completo em atualizacao",
-    day: "Dia a confirmar",
-    time: "Horario a confirmar",
-    age: "18 a 27 anos",
-    leader: "Lider a confirmar",
-    audience: "Conexoes reais, discipulado e crescimento em Jesus.",
-    mapUrl: "https://www.google.com/maps/search/?api=1&query=Itaguai%2C+RJ",
+    id: "teen-choosen-girl",
+    name: "Teen Choosen Girl",
+    neighborhood: "Engenho",
+    address: "Aprisco Urbano",
+    day: "Quinta-feira",
+    time: "19h",
+    type: "Adolescentes",
+    gender: "Feminina",
+    leader: "Thais",
+    audience: "Adolescentes sendo lembradas de que foram escolhidas por Jesus.",
+    mapUrl: "https://www.google.com/maps/search/?api=1&query=Rua+Orlando+Silva+9,+Engenho,+Itagua%C3%AD,+RJ",
+    image: "/media/celulas-comunidade.png",
+  },
+  {
+    id: "teen-conected-girls",
+    name: "Teen Conected Girls",
+    neighborhood: "Engenho",
+    address: "Aprisco Urbano",
+    day: "Quinta-feira",
+    time: "19h",
+    type: "Adolescentes",
+    gender: "Feminina",
+    leader: "Carol",
+    audience: "Adolescentes crescendo em conexao real com Deus e umas com as outras.",
+    mapUrl: "https://www.google.com/maps/search/?api=1&query=Rua+Orlando+Silva+9,+Engenho,+Itagua%C3%AD,+RJ",
+    image: "/media/celulas-comunidade.png",
+  },
+  {
+    id: "teen-nissi-girls",
+    name: "Teen Nissi Girls",
+    neighborhood: "Engenho",
+    address: "Aprisco Urbano",
+    day: "Quinta-feira",
+    time: "19h",
+    type: "Adolescentes",
+    gender: "Feminina",
+    leader: "Yasmin",
+    audience: "Um ambiente de adoracao, identidade e cuidado para adolescentes.",
+    mapUrl: "https://www.google.com/maps/search/?api=1&query=Rua+Orlando+Silva+9,+Engenho,+Itagua%C3%AD,+RJ",
+    image: "/media/celulas-comunidade.png",
+  },
+  {
+    id: "bloom-girls",
+    name: "Bloom Girls",
+    neighborhood: "Engenho",
+    address: "Aprisco Urbano",
+    day: "Quinta-feira",
+    time: "19h",
+    type: "Adolescentes",
+    gender: "Feminina",
+    leader: "Eduarda",
+    audience: "Florescendo em Jesus com amizade, palavra e discipulado.",
+    mapUrl: "https://www.google.com/maps/search/?api=1&query=Rua+Orlando+Silva+9,+Engenho,+Itagua%C3%AD,+RJ",
+    image: "/media/celulas-comunidade.png",
+  },
+  {
+    id: "revive-the-girls",
+    name: "Revive The Girls",
+    neighborhood: "Engenho",
+    address: "Aprisco Urbano",
+    day: "Quinta-feira",
+    time: "19h",
+    type: "Adolescentes",
+    gender: "Feminina",
+    leader: "Tabata",
+    audience: "Adolescentes despertadas para uma vida viva e profunda com Jesus.",
+    mapUrl: "https://www.google.com/maps/search/?api=1&query=Rua+Orlando+Silva+9,+Engenho,+Itagua%C3%AD,+RJ",
+    image: "/media/celulas-comunidade.png",
+  },
+  {
+    id: "maranata",
+    name: "Maranata",
+    neighborhood: "Engenho",
+    address: "Aprisco Urbano",
+    day: "Quinta-feira",
+    time: "19h",
+    type: "Adolescentes",
+    gender: "Masculina",
+    leader: "Gabriel",
+    audience: "Adolescentes esperando, servindo e crescendo juntos em Jesus.",
+    mapUrl: "https://www.google.com/maps/search/?api=1&query=Rua+Orlando+Silva+9,+Engenho,+Itagua%C3%AD,+RJ",
+    image: "/media/celulas-comunidade.png",
+  },
+  {
+    id: "kairos",
+    name: "Kairos",
+    neighborhood: "Engenho",
+    address: "Aprisco Urbano",
+    day: "Quinta-feira",
+    time: "19h",
+    type: "Adolescentes",
+    gender: "Masculina",
+    leader: "Joao",
+    audience: "Um tempo de Deus para adolescentes que querem viver algo mais profundo.",
+    mapUrl: "https://www.google.com/maps/search/?api=1&query=Rua+Orlando+Silva+9,+Engenho,+Itagua%C3%AD,+RJ",
+    image: "/media/celulas-comunidade.png",
+  },
+  {
+    id: "emaus",
+    name: "Emaus",
+    neighborhood: "Engenho",
+    address: "Aprisco Urbano",
+    day: "Quinta-feira",
+    time: "19h",
+    type: "Mista",
+    gender: "Masculina",
+    leader: "Asafe",
+    audience: "Uma caminhada de discipulado, palavra e encontro com Jesus no caminho.",
+    mapUrl: "https://www.google.com/maps/search/?api=1&query=Rua+Orlando+Silva+9,+Engenho,+Itagua%C3%AD,+RJ",
     image: "/media/celulas-comunidade.png",
   },
 ];
@@ -109,10 +300,10 @@ export const ministryGroups: {
 }[] = [
   {
     id: "servico",
-    eyebrow: "Servir e acolher",
+    eyebrow: "Cada membro um sacerdote",
     title: "Ministerios de servico",
     description:
-      "Times que recebem pessoas, sustentam a atmosfera da casa e servem cada encontro com excelencia e amor.",
+      "Nos ministerios de servico, nossa missao ganha forma pratica: cada membro serve como sacerdote e ajuda a fazer de cada encontro uma extensao viva da igreja.",
     ministries: [
       {
         slug: "recepcao",
@@ -182,7 +373,7 @@ export const ministryGroups: {
   },
   {
     id: "cuidado",
-    eyebrow: "Pessoas cuidando de pessoas",
+    eyebrow: "Cada casa uma extensao da igreja",
     title: "Ministerios de cuidado",
     description:
       "Ambientes pensados para cada fase da vida, formando discipulos, fortalecendo familias e sustentando a igreja nas casas.",
@@ -229,6 +420,25 @@ export const ministryGroups: {
         pastor: { name: "Nome em atualizacao", title: "Pastor responsavel", photo: null },
       },
       {
+        slug: "lideres",
+        name: "Treinamento de Lideres",
+        summary: "Uma cultura de formacao para quem lidera pessoas e casas.",
+        description:
+          "O treinamento de lideres existe para fortalecer quem discipula, sustenta celulas e cuida de pessoas, formando uma lideranca alinhada ao coracao da casa.",
+        icon: "compass",
+        focus: ["Formacao de lideres", "Discipulado pratico", "Alinhamento da visao"],
+        leader: {
+          name: "Lideranca em atualizacao",
+          title: "Treinamento de lideres",
+          photo: "/media/treinamento-lideres.png",
+        },
+        pastor: { name: "Nome em atualizacao", title: "Pastor responsavel", photo: null },
+        teamPhoto: "/media/treinamento-lideres.png",
+        teamTitle: "Reuniao de lideres",
+        teamDescription:
+          "Um encontro com quem carrega a responsabilidade de discipular, servir e sustentar pessoas com saude espiritual e alinhamento de visao.",
+      },
+      {
         slug: "consolidacao",
         name: "Consolidacao",
         summary: "Cuidar de quem chegou, discipular com intencao e sustentar passos firmes na fe.",
@@ -267,7 +477,7 @@ export const ministries = ministryGroups.flatMap((group) => group.ministries);
 export const documentaries = [
   {
     id: "fundadores-glaucio-cintia-1",
-    title: "Glaucio Muniz e Cintia Fernandes: fundadores do Aprisco Urbano",
+    title: "Glaucio Muniz e Cintia Fentanes: fundadores do Aprisco Urbano",
     description:
       "Um dos takes do documentario produzido pela equipe de midia sobre a trajetoria pastoral, o chamado e o legado dos nossos pastores seniores.",
     status: "Publicado",
@@ -278,7 +488,7 @@ export const documentaries = [
     id: "fundadores-glaucio-cintia-2",
     title: "Pastores seniores: memoria, chamado e legado",
     description:
-      "Outro take do documentario da midia registrando a historia de Glaucio Muniz e Cintia Fernandes, fundadores do Aprisco Urbano.",
+      "Outro take do documentario da midia registrando a historia de Glaucio Muniz e Cintia Fentanes, fundadores do Aprisco Urbano.",
     status: "Publicado",
     image: "/media/hero-glaucio-pregando.png",
     url: "https://www.instagram.com/reel/Daqae4CRNxk/?igsh=MWpkNXF3Njg1MDRvOA==",
@@ -293,7 +503,7 @@ export const events = [
     title: "Campanha do Alimento",
     description:
       "Nossa igreja, atraves do ministerio Lechem, arrecada todos os meses 1 tonelada de alimento para abencoar muitas familias. Faca parte disso e leve 1kg de alimento aos domingos.",
-    location: "Aprisco Urbano · Itaguai",
+    location: "Rua Orlando Silva 9, Engenho - Itaguai, RJ",
     image: "/media/hero-glaucio-pregando.png",
     status: "Acao recorrente",
     action: "Quero participar",
@@ -302,17 +512,31 @@ export const events = [
   },
   {
     id: "fagulha-flow-2026",
-    date: "31 de julho e 1 de agosto de 2026",
-    day: "2 dias de mover do Espirito",
+    date: "31 de julho de 2026 as 19h30 e 1 de agosto de 2026 a partir das 7h30",
+    day: "Sexta e sabado",
     title: "Conferencia FAGULHA FLOW",
     description:
-      "Vamos receber em nossa igreja a conferencia FAGULHA FLOW com Pastor Chileno, Lucas Lima, Arthur Carreira, nosso pastor Glaucio Muniz e muitas outras pessoas. Se voce quer ir mas esta com alguma dificuldade para pagar, procure o Thalys ou a Rebeca: queremos abencoar voce.",
-    location: "Aprisco Urbano · Itaguai",
+      "A conferencia FAGULHA FLOW comeca hoje, sexta-feira, 31 de julho de 2026, as 19h30, e continua no sabado, 1 de agosto de 2026, a partir das 7h30. Estarao conosco Pastor Chileno, Lucas Lima, Arthur Carreira, nosso pastor Glaucio Muniz e muitas outras pessoas. Se voce quer ir mas esta com dificuldade para pagar, procure o Thalys ou a Rebeca.",
+    location: "Aprisco Urbano · Rua Orlando Silva 9, Engenho - Itaguai, RJ",
     image: "/media/eventos-juventude.png",
-    status: "Acontecendo agora",
+    status: "Comeca hoje",
     action: "Falar com a igreja",
     href: "/contato",
     paymentMethods: ["Pix", "Cartao"],
+  },
+  {
+    id: "domingo-ceia-2026-08-02",
+    date: "2 de agosto de 2026",
+    day: "Domingo as 18h",
+    title: "Culto de Domingo com Ceia",
+    description:
+      "No domingo, 2 de agosto de 2026, nos reuniremos como casa para um culto de celebracao e ceia. Um tempo para adorar, lembrar de Jesus e viver comunhao como familia espiritual.",
+    location: "Rua Orlando Silva 9, Engenho - Itaguai, RJ",
+    image: "/media/domingo-ceia-2026-08-02.png",
+    status: "Proximo domingo",
+    action: "Planejar visita",
+    href: "/contato",
+    paymentMethods: [] as string[],
   },
   {
     id: "comunhao-dos-homens-2026",
@@ -328,25 +552,17 @@ export const events = [
     href: "/contato",
     paymentMethods: ["Pix", "Credito"],
   },
-  {
-    id: "livro-cumpra-plenamente",
-    date: "Indicacao especial",
-    day: "Leitura recomendada",
-    title: "Livro: Cumpra plenamente o seu ministerio",
-    description:
-      "Leitura recomendada de Glaucio Muniz para fortalecer a caminhada, o chamado e o servico no Reino.",
-    location: "Aprisco Urbano",
-    image: "/media/hero-glaucio-pregando.png",
-    status: "Aviso da casa",
-    action: "Saber mais",
-    href: "/contato",
-    paymentMethods: [] as string[],
-  },
 ];
 
+export const bookGallery = [
+  "/media/livro-glaucio-1.png",
+  "/media/livro-glaucio-2.png",
+  "/media/livro-glaucio-3.png",
+] as const;
+
 export const products = [
-  ["camiseta", "Camiseta Aprisco", "Vestuario", "Identidade que acompanha voce.", "copper"],
-  ["devocional", "Devocional", "Livros", "Conteudo para a caminhada diaria.", "ivory"],
+  ["livro-glaucio", "Cumpra plenamente o seu ministerio", "Livros", "Livro de Glaucio Muniz em destaque na casa e na loja, apresentado em um carrossel com fotos reais.", "copper"],
+  ["camiseta", "Camiseta Aprisco", "Vestuario", "Identidade que acompanha voce.", "ivory"],
   ["caneca", "Caneca Aprisco", "Casa", "Comunhao ao redor da mesa.", "teal"],
 ] as const;
 
