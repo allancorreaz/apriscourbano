@@ -6,15 +6,7 @@ import { navigation, siteConfig } from "../site-content";
 import { Icon } from "./Icons";
 
 export function Brand({ light = true }: { light?: boolean }) {
-  const [logo, setLogo] = useState(siteConfig.logo || "");
-  useEffect(() => {
-    fetch("/api/public/settings")
-      .then((response) => (response.ok ? response.json() : null))
-      .then((settings: Record<string, string> | null) =>
-        setLogo(settings?.logo_url || siteConfig.logo || ""),
-      )
-      .catch(() => undefined);
-  }, []);
+  const logo = siteConfig.logo || "";
   return (
     <Link href="/" className={`brand ${light ? "light" : ""}`} aria-label="Aprisco Urbano">
       {logo ? <img className="brand-logo" src={logo} alt="Logo Aprisco Urbano" /> : <span className="brand-mark"><b>A</b><i /><b>U</b></span>}

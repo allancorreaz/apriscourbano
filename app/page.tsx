@@ -75,7 +75,7 @@ export default function Home() {
         </div>
         <div className="container featured-cells">
           {cells.slice(0,3).map((cell, i) => <article key={cell.id}>
-            <div style={{ backgroundImage: `linear-gradient(180deg,transparent 38%,rgba(3,18,23,.9)),url(${cell.image})`, backgroundPosition: `${42 + i * 12}% center` }}>
+            <div style={{ backgroundImage: `linear-gradient(180deg,transparent 38%,rgba(3,18,23,.9)),url(${cell.image})` }}>
               <span>{cell.type}</span>
               <section><p>{cell.day} · {cell.time}</p><h3>{cell.name}</h3><small><Icon name="pin" />{cell.neighborhood}</small></section>
             </div><Link href="/celulas"><Icon name="arrow" /></Link>

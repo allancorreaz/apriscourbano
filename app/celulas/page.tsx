@@ -12,7 +12,7 @@ export default function Page() {
         eyebrow="Igreja nas casas"
         title="Cada casa uma extensao da igreja."
         description="As celulas da Aprisco Urbano se reunem todas as quintas-feiras às 19h para discipular, sustentar e enviar pessoas em comunidade."
-        image="/media/celula-ide.png"
+        image="/media/hero-glaucio-pregando.png"
       />
       <section className="inner-section section-pad">
         <div className="container page-intro">

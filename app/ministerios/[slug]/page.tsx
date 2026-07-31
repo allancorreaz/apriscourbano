@@ -4,7 +4,7 @@ import { notFound } from "next/navigation";
 import { Icon } from "../../components/Icons";
 import { PageHero } from "../../components/PageHero";
 import { SiteFooter } from "../../components/SiteFooter";
-import { ministries } from "../../site-content";
+import { ministries, siteConfig } from "../../site-content";
 
 export function generateStaticParams() {
   return ministries.map((ministry) => ({ slug: ministry.slug }));
@@ -33,8 +33,7 @@ export default async function MinistryPage({
   const ministry = ministries.find((item) => item.slug === slug);
   if (!ministry) notFound();
 
-  const heroImage =
-    ministry.teamPhoto || ministry.leader.photo || "/media/hero-noite-pertencimento.png";
+  const heroImage = siteConfig.hero.image;
 
   return (
     <main>
@@ -86,7 +85,7 @@ export default async function MinistryPage({
                     : undefined
                 }
               >
-                {!ministry.leader.photo && <span>Foto da lideranca</span>}
+                {!ministry.leader.photo && <span>Aguardando foto oficial</span>}
               </div>
               <p>{ministry.leader.title}</p>
               <h3>{ministry.leader.name}</h3>
@@ -101,7 +100,7 @@ export default async function MinistryPage({
                     : undefined
                 }
               >
-                {!ministry.pastor.photo && <span>Foto pastoral</span>}
+                {!ministry.pastor.photo && <span>Aguardando foto oficial</span>}
               </div>
               <p>{ministry.pastor.title}</p>
               <h3>{ministry.pastor.name}</h3>

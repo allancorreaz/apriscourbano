@@ -1,4 +1,4 @@
-﻿export type HeroMedia =
+export type HeroMedia =
   | { type: "image"; image: string }
   | { type: "video"; image: string; video: string; poster?: string };
 
@@ -63,7 +63,7 @@ export const siteConfig = {
     type: "image",
     image: "/media/hero-glaucio-pregando.png",
   } as HeroMedia,
-  logo: "/media/logo-aprisco-original.png",
+  logo: "/media/logo-aprisco-transparente.png",
   social: {
     instagram: "https://www.instagram.com/apriscourbano/",
     youtube: "#",
@@ -101,7 +101,7 @@ export const cells: Cell[] = [
     leader: "Joao Bolis",
     audience: "Uma celula mista para comunhao, crescimento e vida compartilhada.",
     mapUrl: "https://www.google.com/maps/search/?api=1&query=Rua+Tiet%C3%AA,+2602,+Casa+2,+Itagua%C3%AD,+RJ",
-    image: "/media/celulas-comunidade.png",
+    image: "/media/celula-a-forja.jpg",
     instagram: "@celula_aforja_",
   },
   {
@@ -116,7 +116,7 @@ export const cells: Cell[] = [
     leader: "Felipe Santana",
     audience: "Jovens homens crescendo em identidade, amizade e envio.",
     mapUrl: "https://www.google.com/maps/search/?api=1&query=Rua+do+Engenho,+45,+Itagua%C3%AD,+RJ",
-    image: "/media/celulas-comunidade.png",
+    image: "/media/aguardando-foto-oficial.svg",
     instagram: "@celulaekballoaprisco",
   },
   {
@@ -146,7 +146,7 @@ export const cells: Cell[] = [
     leader: "Jean Evangelista",
     audience: "Jovens sendo discipulados com ousadia, palavra e comunhao.",
     mapUrl: "https://www.google.com/maps/search/?api=1&query=Rua+Joao+Plaza+Gonzales,+Lt+1,+QD+5,+Itagua%C3%AD,+RJ",
-    image: "/media/celulas-comunidade.png",
+    image: "/media/aguardando-foto-oficial.svg",
     instagram: "@casadepazpreach",
   },
   {
@@ -161,7 +161,7 @@ export const cells: Cell[] = [
     leader: "Ana Beatriz",
     audience: "Uma extensao da casa para comunhao e discipulado em Mangaratiba.",
     mapUrl: "https://www.google.com/maps/search/?api=1&query=Rua+Sao+Luis,+22,+Casa+7,+QD+7,+Mangaratiba,+RJ",
-    image: "/media/celulas-comunidade.png",
+    image: "/media/aguardando-foto-oficial.svg",
   },
   {
     id: "girls-flames-teen",
@@ -175,7 +175,7 @@ export const cells: Cell[] = [
     leader: "Ingrid",
     audience: "Mulheres sendo fortalecidas em comunhao, fogo e amadurecimento espiritual.",
     mapUrl: "https://www.google.com/maps/search/?api=1&query=Rua+Orlando+Silva+9,+Engenho,+Itagua%C3%AD,+RJ",
-    image: "/media/celulas-comunidade.png",
+    image: "/media/aguardando-foto-oficial.svg",
   },
   {
     id: "teen-choosen-girl",
@@ -189,7 +189,7 @@ export const cells: Cell[] = [
     leader: "Thais",
     audience: "Adolescentes sendo lembradas de que foram escolhidas por Jesus.",
     mapUrl: "https://www.google.com/maps/search/?api=1&query=Rua+Orlando+Silva+9,+Engenho,+Itagua%C3%AD,+RJ",
-    image: "/media/celulas-comunidade.png",
+    image: "/media/aguardando-foto-oficial.svg",
   },
   {
     id: "teen-conected-girls",
@@ -203,7 +203,7 @@ export const cells: Cell[] = [
     leader: "Carol",
     audience: "Adolescentes crescendo em conexao real com Deus e umas com as outras.",
     mapUrl: "https://www.google.com/maps/search/?api=1&query=Rua+Orlando+Silva+9,+Engenho,+Itagua%C3%AD,+RJ",
-    image: "/media/celulas-comunidade.png",
+    image: "/media/aguardando-foto-oficial.svg",
   },
   {
     id: "teen-nissi-girls",
@@ -217,7 +217,7 @@ export const cells: Cell[] = [
     leader: "Yasmin",
     audience: "Um ambiente de adoracao, identidade e cuidado para adolescentes.",
     mapUrl: "https://www.google.com/maps/search/?api=1&query=Rua+Orlando+Silva+9,+Engenho,+Itagua%C3%AD,+RJ",
-    image: "/media/celulas-comunidade.png",
+    image: "/media/aguardando-foto-oficial.svg",
   },
   {
     id: "bloom-girls",
@@ -231,7 +231,7 @@ export const cells: Cell[] = [
     leader: "Eduarda",
     audience: "Florescendo em Jesus com amizade, palavra e discipulado.",
     mapUrl: "https://www.google.com/maps/search/?api=1&query=Rua+Orlando+Silva+9,+Engenho,+Itagua%C3%AD,+RJ",
-    image: "/media/celulas-comunidade.png",
+    image: "/media/aguardando-foto-oficial.svg",
   },
   {
     id: "revive-the-girls",
@@ -245,7 +245,7 @@ export const cells: Cell[] = [
     leader: "Tabata",
     audience: "Adolescentes despertadas para uma vida viva e profunda com Jesus.",
     mapUrl: "https://www.google.com/maps/search/?api=1&query=Rua+Orlando+Silva+9,+Engenho,+Itagua%C3%AD,+RJ",
-    image: "/media/celulas-comunidade.png",
+    image: "/media/aguardando-foto-oficial.svg",
   },
   {
     id: "maranata",
@@ -259,7 +259,7 @@ export const cells: Cell[] = [
     leader: "Gabriel",
     audience: "Adolescentes esperando, servindo e crescendo juntos em Jesus.",
     mapUrl: "https://www.google.com/maps/search/?api=1&query=Rua+Orlando+Silva+9,+Engenho,+Itagua%C3%AD,+RJ",
-    image: "/media/celulas-comunidade.png",
+    image: "/media/aguardando-foto-oficial.svg",
   },
   {
     id: "kairos",
@@ -273,7 +273,7 @@ export const cells: Cell[] = [
     leader: "Joao",
     audience: "Um tempo de Deus para adolescentes que querem viver algo mais profundo.",
     mapUrl: "https://www.google.com/maps/search/?api=1&query=Rua+Orlando+Silva+9,+Engenho,+Itagua%C3%AD,+RJ",
-    image: "/media/celulas-comunidade.png",
+    image: "/media/aguardando-foto-oficial.svg",
   },
   {
     id: "emaus",
@@ -287,7 +287,7 @@ export const cells: Cell[] = [
     leader: "Asafe",
     audience: "Uma caminhada de discipulado, palavra e encontro com Jesus no caminho.",
     mapUrl: "https://www.google.com/maps/search/?api=1&query=Rua+Orlando+Silva+9,+Engenho,+Itagua%C3%AD,+RJ",
-    image: "/media/celulas-comunidade.png",
+    image: "/media/aguardando-foto-oficial.svg",
   },
 ];
 
@@ -504,7 +504,7 @@ export const events = [
     description:
       "Nossa igreja, atraves do ministerio Lechem, arrecada todos os meses 1 tonelada de alimento para abencoar muitas familias. Faca parte disso e leve 1kg de alimento aos domingos.",
     location: "Rua Orlando Silva 9, Engenho - Itaguai, RJ",
-    image: "/media/hero-glaucio-pregando.png",
+    image: "/media/aguardando-foto-oficial.svg",
     status: "Acao recorrente",
     action: "Quero participar",
     href: "/contato",
@@ -518,8 +518,8 @@ export const events = [
     description:
       "A conferencia FAGULHA FLOW comeca hoje, sexta-feira, 31 de julho de 2026, as 19h30, e continua no sabado, 1 de agosto de 2026, a partir das 7h30. Estarao conosco Pastor Chileno, Lucas Lima, Arthur Carreira, nosso pastor Glaucio Muniz e muitas outras pessoas. Se voce quer ir mas esta com dificuldade para pagar, procure o Thalys ou a Rebeca.",
     location: "Aprisco Urbano · Rua Orlando Silva 9, Engenho - Itaguai, RJ",
-    image: "/media/eventos-juventude.png",
-    status: "Comeca hoje",
+    image: "/media/evento-fagulha-flow-2026.jpg",
+    status: "Acontece hoje",
     action: "Falar com a igreja",
     href: "/contato",
     paymentMethods: ["Pix", "Cartao"],
@@ -546,11 +546,25 @@ export const events = [
     description:
       "Teremos um tempo precioso de comunhao no Sitio Rancho Moura. Almoco com churrasco e cafe da tarde por R$130,00, com possibilidade de parcelamento no cartao de credito. Entre em contato e garanta sua vaga.",
     location: "Sitio Rancho Moura",
-    image: "/media/eventos-juventude.png",
+    image: "/media/aguardando-foto-oficial.svg",
     status: "Inscricoes abertas",
     action: "Reservar vaga",
     href: "/contato",
     paymentMethods: ["Pix", "Credito"],
+  },
+  {
+    id: "batismo-2026-08-02",
+    date: "2 de agosto de 2026",
+    day: "Domingo as 9h",
+    title: "Batismo",
+    description:
+      "Batismo no domingo, 2 de agosto de 2026, as 9h. \"Digo a verdade: ninguem pode entrar no reino de Deus se nao nascer da agua e do Espirito.\" Joao 3:5.",
+    location: "Rua Presidente Vargas, 130",
+    image: "/media/batismo-2026-08-02.jpg",
+    status: "Proximo evento",
+    action: "Quero participar",
+    href: "/contato",
+    paymentMethods: [] as string[],
   },
 ];
 
@@ -572,3 +586,4 @@ export const beliefs = [
   ["03", "Cada casa uma extensao da igreja", "Vivemos discipulado, cuidado e comunhao nas celulas e na vida diaria."],
   ["04", "Salvar, discipular, treinar, enviar e sustentar", "Nossa missao ganha forma quando pessoas sao cuidadas e enviadas pelo poder do Espirito Santo."],
 ] as const;
+

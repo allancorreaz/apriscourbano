@@ -359,3 +359,60 @@ button:disabled{cursor:not-allowed;opacity:.55}
 .store-book-highlight{margin-bottom:34px}
 @media(max-width:1100px){.cell-filters-extended{grid-template-columns:1fr 1fr 1fr}.featured-book-card article{grid-template-columns:1fr}.book-carousel-frame{min-height:360px}}
 @media(max-width:720px){.hero-purpose-text{font-size:.92rem}.hero-social-strip{font-size:.64rem}.cell-filters-extended{grid-template-columns:1fr}.featured-book-card article{padding:18px}.featured-book-card h3{font-size:1.6rem}.book-carousel-frame{min-height:300px}}
+
+/* Safe image framing: never crop uploaded media */
+.hero-media>div,
+.hero-media video,
+.page-hero,
+.cell-image,
+.featured-cells article>div,
+.event-home,
+.event-image,
+.store-art,
+.book-carousel-slide,
+.responsible-photo,
+.ministry-team-photo,
+.documentary-placeholder,
+.products article>div {
+  background-repeat: no-repeat !important;
+  background-position: center center !important;
+  background-size: contain !important;
+  background-color: #f2ede4 !important;
+}
+
+.hero-media video,
+.documentary-player iframe,
+.documentary-player video {
+  object-fit: contain !important;
+  object-position: center center !important;
+  background: #f2ede4 !important;
+}
+
+.hero-media>div,
+.page-hero {
+  background-color: #07191e !important;
+}
+
+.cell-image,
+.event-image,
+.store-art,
+.book-carousel-frame,
+.responsible-photo,
+.ministry-team-photo {
+  background-color: #f7f1e8 !important;
+}
+
+.cell-image::before,
+.event-image::before,
+.store-art::before,
+.responsible-photo::before,
+.ministry-team-photo::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255,255,255,.02);
+}
+
+.book-carousel-frame {
+  background: #f7f1e8 !important;
+}
