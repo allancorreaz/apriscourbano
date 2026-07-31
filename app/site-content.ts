@@ -1,39 +1,6 @@
-export type HeroMedia =
+﻿export type HeroMedia =
   | { type: "image"; image: string }
   | { type: "video"; image: string; video: string; poster?: string };
-
-export const siteConfig = {
-  churchName: "Aprisco Urbano",
-  shortName: "AU",
-  instagramHandle: "@apriscourbano",
-  city: "Itaguaí, Rio de Janeiro",
-  service: { day: "Domingos", time: "18h", label: "Culto de celebração" },
-  hero: {
-    type: "image",
-    image: "/media/hero-noite-pertencimento.png",
-  } as HeroMedia,
-  /*
-   * Para trocar por uma foto da igreja, coloque o arquivo em public/media
-   * e altere apenas `image`. Para vídeo, use:
-   * { type: "video", image: "/media/capa.jpg",
-   *   poster: "/media/capa.jpg", video: "/media/hero-aprisco.mp4" }
-   */
-  social: {
-    instagram: "https://www.instagram.com/apriscourbano/",
-    youtube: "#",
-    whatsapp: "#",
-  },
-};
-
-export const navigation = [
-  { href: "/", label: "Início" },
-  { href: "/celulas", label: "Células" },
-  { href: "/ministerios", label: "Ministérios" },
-  { href: "/eventos", label: "Eventos" },
-  { href: "/loja", label: "Loja" },
-  { href: "/sobre", label: "Sobre nós" },
-  { href: "/contato", label: "Contato" },
-];
 
 export type Ministry = {
   slug: string;
@@ -52,46 +19,83 @@ export type Ministry = {
     title: string;
     photo: string | null;
   };
+  teamPhoto?: string | null;
+  teamTitle?: string;
+  teamDescription?: string;
+};
+
+export const siteConfig = {
+  churchName: "Aprisco Urbano",
+  shortName: "AU",
+  instagramHandle: "@apriscourbano",
+  city: "Itaguai, Rio de Janeiro",
+  service: { day: "Domingos", time: "18h", label: "Culto de celebracao" },
+  hero: {
+    type: "image",
+    image: "/media/hero-glaucio-pregando.png",
+  } as HeroMedia,
+  social: {
+    instagram: "https://www.instagram.com/apriscourbano/",
+    youtube: "#",
+    whatsapp: "#",
+  },
+};
+
+export const navigation = [
+  { href: "/", label: "Inicio" },
+  { href: "/celulas", label: "Celulas" },
+  { href: "/ministerios", label: "Ministerios" },
+  { href: "/eventos", label: "Eventos" },
+  { href: "/loja", label: "Loja" },
+  { href: "/sobre", label: "Sobre nos" },
+  { href: "/contato", label: "Contato" },
+];
+
+export const churchPurpose = {
+  vision:
+    "Ser igual a Jesus, e fazer as mesmas coisas que Ele fez e coisas maiores pelo poder do Espirito Santo. Salvar, discipular, treinar, enviar e sustentar atraves das celulas.",
+  mission:
+    "Cada membro um sacerdote, cada casa uma extensao da igreja.",
 };
 
 export const cells = [
   {
     id: "a-forja",
     name: "A Forja",
-    neighborhood: "Itaguaí",
-    address: "Endereço completo em atualização",
+    neighborhood: "Itaguai",
+    address: "Endereco completo em atualizacao",
     day: "Quintas",
     time: "19h30",
     age: "Jovens e adultos",
-    leader: "Líder a confirmar",
-    audience: "Uma célula para crescer em comunhão e propósito.",
-    mapUrl: "https://www.google.com/maps/search/?api=1&query=Itagua%C3%AD%2C+RJ",
+    leader: "Lider a confirmar",
+    audience: "Uma celula para crescer em comunhao e proposito.",
+    mapUrl: "https://www.google.com/maps/search/?api=1&query=Itaguai%2C+RJ",
     image: "/media/celulas-comunidade.png",
   },
   {
     id: "familias",
-    name: "Célula Famílias",
-    neighborhood: "Região central",
-    address: "Endereço completo em atualização",
+    name: "Celula Familias",
+    neighborhood: "Regiao central",
+    address: "Endereco completo em atualizacao",
     day: "Dia a confirmar",
-    time: "Horário a confirmar",
-    age: "Adultos e famílias",
-    leader: "Líder a confirmar",
-    audience: "Um ambiente de cuidado, Palavra e vida em família.",
-    mapUrl: "https://www.google.com/maps/search/?api=1&query=Itagua%C3%AD%2C+RJ",
+    time: "Horario a confirmar",
+    age: "Adultos e familias",
+    leader: "Lider a confirmar",
+    audience: "Um ambiente de cuidado, Palavra e vida em familia.",
+    mapUrl: "https://www.google.com/maps/search/?api=1&query=Itaguai%2C+RJ",
     image: "/media/celulas-comunidade.png",
   },
   {
     id: "juventude",
-    name: "Célula Juventude",
-    neighborhood: "Itaguaí",
-    address: "Endereço completo em atualização",
+    name: "Celula Juventude",
+    neighborhood: "Itaguai",
+    address: "Endereco completo em atualizacao",
     day: "Dia a confirmar",
-    time: "Horário a confirmar",
+    time: "Horario a confirmar",
     age: "18 a 27 anos",
-    leader: "Líder a confirmar",
-    audience: "Conexões reais, discipulado e crescimento em Jesus.",
-    mapUrl: "https://www.google.com/maps/search/?api=1&query=Itagua%C3%AD%2C+RJ",
+    leader: "Lider a confirmar",
+    audience: "Conexoes reais, discipulado e crescimento em Jesus.",
+    mapUrl: "https://www.google.com/maps/search/?api=1&query=Itaguai%2C+RJ",
     image: "/media/celulas-comunidade.png",
   },
 ];
@@ -105,129 +109,154 @@ export const ministryGroups: {
 }[] = [
   {
     id: "servico",
-    eyebrow: "Servir é amar",
-    title: "Ministérios de serviço",
+    eyebrow: "Servir e acolher",
+    title: "Ministerios de servico",
     description:
-      "Times que preparam cada ambiente com excelência para que pessoas sejam recebidas, cuidadas e conectadas.",
+      "Times que recebem pessoas, sustentam a atmosfera da casa e servem cada encontro com excelencia e amor.",
     ministries: [
       {
         slug: "recepcao",
-        name: "Recepção",
-        summary: "A primeira expressão de cuidado para quem chega.",
+        name: "Recepcao",
+        summary: "A primeira expressao de cuidado para quem chega.",
         description:
-          "A Recepção acolhe cada pessoa desde o primeiro contato, ajuda visitantes a conhecerem a casa e cria uma chegada leve, segura e verdadeiramente humana.",
+          "A Recepcao acolhe cada pessoa desde o primeiro contato, orienta visitantes, ajuda familias a se conectarem e preserva uma cultura de honra em cada culto e evento.",
         icon: "door",
-        focus: ["Acolhimento de visitantes", "Orientação nos cultos", "Conexão com a comunidade"],
-        leader: { name: "Nome em atualização", title: "Líder da Recepção", photo: null },
-        pastor: { name: "Nome em atualização", title: "Pastor responsável", photo: null },
+        focus: ["Acolhimento de visitantes", "Orientacao nos cultos", "Conexao com a comunidade"],
+        leader: {
+          name: "Equipe de Recepcao",
+          title: "Time de acolhimento",
+          photo: "/media/equipe-recepcao.png",
+        },
+        pastor: {
+          name: "Fabio e Rafaella",
+          title: "Pastores responsaveis",
+          photo: "/media/lider-recepcao.jpg",
+        },
+        teamPhoto: "/media/equipe-recepcao.png",
+        teamTitle: "Equipe de recepcao",
+        teamDescription:
+          "Uma equipe que serve com sorriso, cuidado e atencao para que cada pessoa se sinta em casa desde a chegada.",
       },
       {
         slug: "midia",
-        name: "Mídia",
-        summary: "Comunicação e criatividade a serviço da mensagem.",
+        name: "Midia",
+        summary: "Comunicacao e criatividade a servico da mensagem.",
         description:
-          "A Mídia registra o que Deus está fazendo, comunica a vida da igreja e transforma histórias, cultos e projetos em conteúdos que alcançam pessoas dentro e fora da comunidade.",
+          "A Midia registra o que Deus esta fazendo, comunica a vida da igreja e transforma historias, cultos e projetos em conteudos que alcancam pessoas dentro e fora da comunidade.",
         icon: "camera",
-        focus: ["Fotografia e vídeo", "Transmissões", "Design e redes sociais"],
-        leader: { name: "Nome em atualização", title: "Líder da Mídia", photo: null },
-        pastor: { name: "Nome em atualização", title: "Pastor responsável", photo: null },
+        focus: ["Fotografia e video", "Transmissoes", "Design e redes sociais"],
+        leader: {
+          name: "Lideranca da Midia em atualizacao",
+          title: "Lider da Midia",
+          photo: "/media/lider-midia.jpg",
+        },
+        pastor: { name: "Nome em atualizacao", title: "Pastor responsavel", photo: null },
+      },
+      {
+        slug: "louvor",
+        name: "Louvor",
+        summary: "Uma equipe que conduz a casa em adoracao e sensibilidade ao Espirito Santo.",
+        description:
+          "O Louvor serve criando um ambiente de adoracao, resposta e sensibilidade a presenca de Deus, com excelencia musical e coracoes rendidos a Jesus.",
+        icon: "music",
+        focus: ["Adoracao congregacional", "Sensibilidade espiritual", "Excelencia no servir"],
+        leader: {
+          name: "Lideranca do Louvor em atualizacao",
+          title: "Lider do Louvor",
+          photo: "/media/lider-louvor.jpg",
+        },
+        pastor: { name: "Nome em atualizacao", title: "Pastor responsavel", photo: null },
       },
       {
         slug: "limpeza",
         name: "Limpeza",
-        summary: "Zelo pelos espaços onde a igreja vive comunhão.",
+        summary: "Zelo pelos espacos onde a igreja vive comunhao.",
         description:
-          "O ministério de Limpeza cuida de cada ambiente com zelo e excelência, preparando a casa para receber pessoas e servir tudo o que acontece na igreja.",
+          "O ministerio de Limpeza cuida de cada ambiente com zelo e excelencia, preparando a casa para receber pessoas e servir tudo o que acontece na igreja.",
         icon: "spark",
-        focus: ["Preparação dos ambientes", "Organização", "Cuidado contínuo"],
-        leader: { name: "Nome em atualização", title: "Líder da Limpeza", photo: null },
-        pastor: { name: "Nome em atualização", title: "Pastor responsável", photo: null },
-      },
-      {
-        slug: "cozinha",
-        name: "Cozinha",
-        summary: "Hospitalidade que também acontece ao redor da mesa.",
-        description:
-          "A Cozinha serve com hospitalidade em encontros, eventos e momentos de comunhão, ajudando a transformar refeições e cafés em lugares de cuidado.",
-        icon: "heart",
-        focus: ["Hospitalidade", "Apoio a eventos", "Comunhão à mesa"],
-        leader: { name: "Nome em atualização", title: "Líder da Cozinha", photo: null },
-        pastor: { name: "Nome em atualização", title: "Pastor responsável", photo: null },
+        focus: ["Preparacao dos ambientes", "Organizacao", "Cuidado continuo"],
+        leader: { name: "Nome em atualizacao", title: "Lider da Limpeza", photo: null },
+        pastor: { name: "Nome em atualizacao", title: "Pastor responsavel", photo: null },
       },
     ],
   },
   {
     id: "cuidado",
     eyebrow: "Pessoas cuidando de pessoas",
-    title: "Ministérios de cuidado",
+    title: "Ministerios de cuidado",
     description:
-      "Ambientes pensados para cada fase da vida, formando discípulos e fortalecendo famílias.",
+      "Ambientes pensados para cada fase da vida, formando discipulos, fortalecendo familias e sustentando a igreja nas casas.",
     ministries: [
       {
         slug: "aprisco-urbano-kids",
         name: "Aprisco Urbano Kids",
-        summary: "Crianças conhecendo Jesus de forma segura e criativa.",
+        summary: "Criancas conhecendo Jesus de forma segura e criativa.",
         description:
-          "O Aprisco Urbano Kids apresenta Jesus às crianças em uma linguagem acessível, bíblica e criativa, com ambientes seguros e cuidado em cada fase da infância.",
+          "O Aprisco Urbano Kids apresenta Jesus as criancas em uma linguagem acessivel, biblica e criativa, com ambientes seguros e cuidado em cada fase da infancia.",
         icon: "sun",
-        focus: ["Ensino bíblico", "Ambiente seguro", "Parceria com as famílias"],
-        leader: { name: "Nome em atualização", title: "Líder do Aprisco Urbano Kids", photo: null },
-        pastor: { name: "Nome em atualização", title: "Pastor responsável", photo: null },
+        focus: ["Ensino biblico", "Ambiente seguro", "Parceria com as familias"],
+        leader: {
+          name: "Lideranca do Aprisco Urbano Kids em atualizacao",
+          title: "Lider do Aprisco Urbano Kids",
+          photo: "/media/lider-aprisco-kids.jpg",
+        },
+        pastor: { name: "Nome em atualizacao", title: "Pastor responsavel", photo: null },
       },
       {
         slug: "ative-juventude",
         name: "Ative+ Juventude",
-        summary: "Comunidade e propósito para jovens de 18 a 27 anos.",
+        summary: "Comunidade e proposito para jovens de 18 a 27 anos.",
         description:
-          "O Ative+ Juventude reúne jovens de 18 a 27 anos para viver comunhão, discipulado, serviço e uma fé conectada às decisões da vida adulta.",
+          "O Ative+ Juventude reune jovens de 18 a 27 anos para viver comunhao, discipulado, servico e uma fe conectada as decisoes da vida adulta.",
         icon: "bolt",
-        focus: ["Comunhão", "Discipulado", "Propósito e serviço"],
-        leader: { name: "Nome em atualização", title: "Líder do Ative+ Juventude", photo: null },
-        pastor: { name: "Nome em atualização", title: "Pastor responsável", photo: null },
+        focus: ["Comunhao", "Discipulado", "Proposito e servico"],
+        leader: { name: "Nome em atualizacao", title: "Lider do Ative+ Juventude", photo: null },
+        pastor: { name: "Nome em atualizacao", title: "Pastor responsavel", photo: null },
       },
       {
         slug: "ative-teen",
         name: "Ative+ Teen",
         summary: "Identidade e pertencimento dos 13 aos 18 anos.",
         description:
-          "O Ative+ Teen é um ambiente para adolescentes de 13 a 18 anos construírem identidade em Jesus, amizades saudáveis e raízes firmes na Palavra.",
+          "O Ative+ Teen e um ambiente para adolescentes construirem identidade em Jesus, amizades saudaveis e raizes firmes na Palavra.",
         icon: "star",
-        focus: ["Identidade", "Relacionamentos saudáveis", "Vida com Jesus"],
-        leader: { name: "Nome em atualização", title: "Líder do Ative+ Teen", photo: null },
-        pastor: { name: "Nome em atualização", title: "Pastor responsável", photo: null },
+        focus: ["Identidade", "Relacionamentos saudaveis", "Vida com Jesus"],
+        leader: {
+          name: "Lideranca do Ative+ Teen em atualizacao",
+          title: "Lider do Ative+ Teen",
+          photo: "/media/lider-ative-teen.jpg",
+        },
+        pastor: { name: "Nome em atualizacao", title: "Pastor responsavel", photo: null },
       },
       {
-        slug: "mulheres",
-        name: "Ministério de Mulheres",
-        summary: "Conexão e crescimento entre mulheres.",
+        slug: "consolidacao",
+        name: "Consolidacao",
+        summary: "Cuidar de quem chegou, discipular com intencao e sustentar passos firmes na fe.",
         description:
-          "O Ministério de Mulheres cria espaços de comunhão, ensino, acolhimento e fortalecimento para mulheres em diferentes fases da vida.",
-        icon: "flower",
-        focus: ["Acolhimento", "Crescimento espiritual", "Comunhão"],
-        leader: { name: "Nome em atualização", title: "Líder do Ministério de Mulheres", photo: null },
-        pastor: { name: "Nome em atualização", title: "Pastora responsável", photo: null },
-      },
-      {
-        slug: "lideres",
-        name: "Ministério de Líderes",
-        summary: "Formação para quem serve liderando pessoas.",
-        description:
-          "O Ministério de Líderes desenvolve pessoas para servir com maturidade, responsabilidade e cuidado, fortalecendo uma cultura de liderança saudável.",
-        icon: "compass",
-        focus: ["Formação", "Cuidado de líderes", "Cultura e alinhamento"],
-        leader: { name: "Nome em atualização", title: "Líder do Ministério de Líderes", photo: null },
-        pastor: { name: "Nome em atualização", title: "Pastor responsável", photo: null },
+          "A Consolidacao acompanha pessoas nos primeiros passos, ajuda a transformar decisoes em discipulado e cria pontes firmes entre acolhimento, cuidado e crescimento espiritual.",
+        icon: "heart",
+        focus: ["Acompanhamento de novos convertidos", "Discipulado inicial", "Cuidado intencional"],
+        leader: {
+          name: "Lideranca da Consolidacao em atualizacao",
+          title: "Lider da Consolidacao",
+          photo: "/media/lider-consolidacao.jpg",
+        },
+        pastor: { name: "Nome em atualizacao", title: "Pastor responsavel", photo: null },
       },
       {
         slug: "celulas",
-        name: "Ministério de Células",
-        summary: "Suporte à igreja que acontece nas casas.",
+        name: "Ministerio de Celulas",
+        summary: "Suporte a igreja que acontece nas casas.",
         description:
-          "O Ministério de Células apoia líderes e grupos para que a igreja aconteça perto das pessoas, com comunhão, discipulado e acompanhamento durante a semana.",
+          "O Ministerio de Celulas apoia lideres e grupos para que a igreja aconteca perto das pessoas, com comunhao, discipulado e acompanhamento durante a semana.",
         icon: "home",
-        focus: ["Apoio aos líderes", "Discipulado", "Expansão e cuidado"],
-        leader: { name: "Nome em atualização", title: "Líder do Ministério de Células", photo: null },
-        pastor: { name: "Nome em atualização", title: "Pastor responsável", photo: null },
+        focus: ["Apoio aos lideres", "Discipulado", "Expansao e cuidado"],
+        leader: {
+          name: "Lideranca do Ministerio de Celulas em atualizacao",
+          title: "Lider do Ministerio de Celulas",
+          photo: "/media/lider-celulas.jpg",
+        },
+        pastor: { name: "Nome em atualizacao", title: "Pastor responsavel", photo: null },
       },
     ],
   },
@@ -237,62 +266,93 @@ export const ministries = ministryGroups.flatMap((group) => group.ministries);
 
 export const documentaries = [
   {
-    id: "historia-aprisco",
-    title: "A história da Aprisco Urbano",
+    id: "fundadores-glaucio-cintia-1",
+    title: "Glaucio Muniz e Cintia Fernandes: fundadores do Aprisco Urbano",
     description:
-      "Um documentário sobre o chamado, os primeiros passos e as pessoas que construíram esta casa.",
-    status: "Em produção",
-    image: "/media/hero-noite-pertencimento.png",
+      "Um dos takes do documentario produzido pela equipe de midia sobre a trajetoria pastoral, o chamado e o legado dos nossos pastores seniores.",
+    status: "Publicado",
+    image: "/media/hero-glaucio-pregando.png",
+    url: "https://www.instagram.com/reel/DaYElh_tMkz/?igsh=MTFjaDU1dGl2bjU2dg==",
   },
   {
-    id: "pastores-seniores",
-    title: "Pastores sêniores: uma vida de chamado",
+    id: "fundadores-glaucio-cintia-2",
+    title: "Pastores seniores: memoria, chamado e legado",
     description:
-      "Memórias, testemunhos e a trajetória pastoral contados com a voz de quem viveu cada capítulo.",
-    status: "Em produção",
-    image: "/media/hero-noite-pertencimento.png",
+      "Outro take do documentario da midia registrando a historia de Glaucio Muniz e Cintia Fernandes, fundadores do Aprisco Urbano.",
+    status: "Publicado",
+    image: "/media/hero-glaucio-pregando.png",
+    url: "https://www.instagram.com/reel/Daqae4CRNxk/?igsh=MWpkNXF3Njg1MDRvOA==",
   },
 ] as const;
 
 export const events = [
   {
-    id: "celebracao",
-    date: "Todo domingo",
-    day: "18h",
-    title: "Culto de celebração",
-    description: "Uma noite para adorar, ouvir a Palavra e viver comunhão.",
-    location: "Aprisco Urbano · Itaguaí",
-    image: "/media/eventos-juventude.png",
-    status: "Entrada livre",
-    action: "Planeje sua visita",
+    id: "campanha-do-alimento",
+    date: "Todos os domingos",
+    day: "Leve 1kg de alimento",
+    title: "Campanha do Alimento",
+    description:
+      "Nossa igreja, atraves do ministerio Lechem, arrecada todos os meses 1 tonelada de alimento para abencoar muitas familias. Faca parte disso e leve 1kg de alimento aos domingos.",
+    location: "Aprisco Urbano · Itaguai",
+    image: "/media/hero-glaucio-pregando.png",
+    status: "Acao recorrente",
+    action: "Quero participar",
     href: "/contato",
     paymentMethods: [] as string[],
   },
   {
-    id: "proximo-evento",
-    date: "Data em breve",
-    day: "Inscrições em breve",
-    title: "Próximo evento Aprisco",
+    id: "fagulha-flow-2026",
+    date: "31 de julho e 1 de agosto de 2026",
+    day: "2 dias de mover do Espirito",
+    title: "Conferencia FAGULHA FLOW",
     description:
-      "Espaço preparado para inscrições, lotes, Sympla e links de pagamento.",
-    location: "Local a confirmar",
+      "Vamos receber em nossa igreja a conferencia FAGULHA FLOW com Pastor Chileno, Lucas Lima, Arthur Carreira, nosso pastor Glaucio Muniz e muitas outras pessoas. Se voce quer ir mas esta com alguma dificuldade para pagar, procure o Thalys ou a Rebeca: queremos abencoar voce.",
+    location: "Aprisco Urbano · Itaguai",
     image: "/media/eventos-juventude.png",
-    status: "Em preparação",
-    action: "Ver detalhes",
-    href: "#detalhes",
-    paymentMethods: ["Pix", "Crédito", "Débito", "Sympla"],
+    status: "Acontecendo agora",
+    action: "Falar com a igreja",
+    href: "/contato",
+    paymentMethods: ["Pix", "Cartao"],
+  },
+  {
+    id: "comunhao-dos-homens-2026",
+    date: "22 de agosto de 2026",
+    day: "Somente para os homens",
+    title: "Comunhao dos Homens",
+    description:
+      "Teremos um tempo precioso de comunhao no Sitio Rancho Moura. Almoco com churrasco e cafe da tarde por R$130,00, com possibilidade de parcelamento no cartao de credito. Entre em contato e garanta sua vaga.",
+    location: "Sitio Rancho Moura",
+    image: "/media/eventos-juventude.png",
+    status: "Inscricoes abertas",
+    action: "Reservar vaga",
+    href: "/contato",
+    paymentMethods: ["Pix", "Credito"],
+  },
+  {
+    id: "livro-cumpra-plenamente",
+    date: "Indicacao especial",
+    day: "Leitura recomendada",
+    title: "Livro: Cumpra plenamente o seu ministerio",
+    description:
+      "Leitura recomendada de Glaucio Muniz para fortalecer a caminhada, o chamado e o servico no Reino.",
+    location: "Aprisco Urbano",
+    image: "/media/hero-glaucio-pregando.png",
+    status: "Aviso da casa",
+    action: "Saber mais",
+    href: "/contato",
+    paymentMethods: [] as string[],
   },
 ];
 
 export const products = [
-  ["camiseta", "Camiseta Aprisco", "Vestuário", "Identidade que acompanha você.", "copper"],
-  ["devocional", "Devocional", "Livros", "Conteúdo para a caminhada diária.", "ivory"],
-  ["caneca", "Caneca Aprisco", "Casa", "Comunhão ao redor da mesa.", "teal"],
+  ["camiseta", "Camiseta Aprisco", "Vestuario", "Identidade que acompanha voce.", "copper"],
+  ["devocional", "Devocional", "Livros", "Conteudo para a caminhada diaria.", "ivory"],
+  ["caneca", "Caneca Aprisco", "Casa", "Comunhao ao redor da mesa.", "teal"],
 ] as const;
 
 export const beliefs = [
-  ["01", "Jesus no centro", "Tudo começa, permanece e encontra sentido em Jesus."],
-  ["02", "Pessoas são a igreja", "Somos uma família que compartilha a vida."],
-  ["03", "Crescemos em comunidade", "Discipulado e cuidado acontecem de perto."],
-  ["04", "Vivemos em missão", "Levamos esperança à cidade e servimos com amor."],
+  ["01", "Jesus no centro", "Tudo comeca, permanece e encontra sentido em Jesus."],
+  ["02", "Cada membro um sacerdote", "Acreditamos em uma igreja onde cada pessoa serve, amadurece e responde ao chamado de Deus."],
+  ["03", "Cada casa uma extensao da igreja", "Vivemos discipulado, cuidado e comunhao nas celulas e na vida diaria."],
+  ["04", "Salvar, discipular, treinar, enviar e sustentar", "Nossa missao ganha forma quando pessoas sao cuidadas e enviadas pelo poder do Espirito Santo."],
 ] as const;

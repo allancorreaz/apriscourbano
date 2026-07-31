@@ -1,4 +1,4 @@
-function youtubeId(rawUrl: string) {
+﻿function youtubeId(rawUrl: string) {
   try {
     const url = new URL(rawUrl, "https://aprisco.local");
     if (url.hostname === "youtu.be") {
@@ -28,6 +28,20 @@ function vimeoId(rawUrl: string) {
   } catch {
     return null;
   }
+}
+
+function instagramEmbedUrl(rawUrl: string) {
+  try {
+    const url = new URL(rawUrl);
+    if (!url.hostname.includes("instagram.com")) return null;
+    const parts = url.pathname.split("/").filter(Boolean);
+    if (parts[0] === "reel" && parts[1]) {
+      return `https://www.instagram.com/reel/${parts[1]}/embed`;
+    }
+  } catch {
+    return null;
+  }
+  return null;
 }
 
 export function VideoPlayer({
@@ -65,6 +79,19 @@ export function VideoPlayer({
     );
   }
 
+  const instagram = instagramEmbedUrl(url);
+  if (instagram) {
+    return (
+      <iframe
+        src={instagram}
+        title={title}
+        loading="lazy"
+        allow="autoplay; encrypted-media; picture-in-picture; web-share"
+        allowFullScreen
+      />
+    );
+  }
+
   const directVideo =
     url.startsWith("/media/") ||
     /\.(mp4|webm|ogg)(?:$|[?#])/i.test(url);
@@ -72,15 +99,14 @@ export function VideoPlayer({
     return (
       <video controls preload="metadata" playsInline poster={poster}>
         <source src={url} />
-        Seu navegador não conseguiu reproduzir este vídeo.
+        Seu navegador nao conseguiu reproduzir este video.
       </video>
     );
   }
 
   return (
     <a href={url} target="_blank" rel="noreferrer" className="external-video">
-      Assistir ao vídeo em uma nova aba
+      Assistir ao video em uma nova aba
     </a>
   );
 }
-

@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+﻿import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Icon } from "../../components/Icons";
@@ -33,13 +33,16 @@ export default async function MinistryPage({
   const ministry = ministries.find((item) => item.slug === slug);
   if (!ministry) notFound();
 
+  const heroImage =
+    ministry.teamPhoto || ministry.leader.photo || "/media/hero-noite-pertencimento.png";
+
   return (
     <main>
       <PageHero
-        eyebrow="Ministérios Aprisco Urbano"
+        eyebrow="Ministerios Aprisco Urbano"
         title={ministry.name}
         description={ministry.summary}
-        image="/media/hero-noite-pertencimento.png"
+        image={heroImage}
       />
 
       <section className="ministry-detail section-pad">
@@ -49,7 +52,7 @@ export default async function MinistryPage({
             <h2 className="display">
               Pessoas servindo
               <br />
-              <em>com propósito.</em>
+              <em>com proposito.</em>
             </h2>
           </div>
           <div>
@@ -67,9 +70,9 @@ export default async function MinistryPage({
 
       <section className="ministry-leadership section-pad">
         <div className="container">
-          <p className="eyebrow">Quem cuida deste ministério</p>
+          <p className="eyebrow">Quem cuida deste ministerio</p>
           <h2 className="display light">
-            Liderança presente.
+            Lideranca presente.
             <br />
             <em>Cobertura pastoral.</em>
           </h2>
@@ -83,13 +86,11 @@ export default async function MinistryPage({
                     : undefined
                 }
               >
-                {!ministry.leader.photo && <span>Foto do líder</span>}
+                {!ministry.leader.photo && <span>Foto da lideranca</span>}
               </div>
               <p>{ministry.leader.title}</p>
               <h3>{ministry.leader.name}</h3>
-              <span>
-                Apresentação e testemunho da liderança em atualização.
-              </span>
+              <span>Apresentacao e testemunho da lideranca em atualizacao.</span>
             </article>
             <article>
               <div
@@ -104,18 +105,39 @@ export default async function MinistryPage({
               </div>
               <p>{ministry.pastor.title}</p>
               <h3>{ministry.pastor.name}</h3>
-              <span>
-                Mensagem e apresentação pastoral em atualização.
-              </span>
+              <span>Mensagem e apresentacao pastoral em atualizacao.</span>
             </article>
           </div>
         </div>
       </section>
 
+      {ministry.teamPhoto ? (
+        <section className="inner-section section-pad ministry-team-section">
+          <div className="container ministry-team-layout">
+            <div
+              className="ministry-team-photo"
+              style={{ backgroundImage: `url(${ministry.teamPhoto})` }}
+            />
+            <div>
+              <p className="eyebrow dark">{ministry.teamTitle || "Equipe"}</p>
+              <h2 className="display">
+                Uma equipe que serve
+                <br />
+                <em>com alegria e excelencia.</em>
+              </h2>
+              <p>
+                {ministry.teamDescription ||
+                  "A equipe deste ministerio ajuda a construir um ambiente seguro, acolhedor e cheio de vida para cada encontro da igreja."}
+              </p>
+            </div>
+          </div>
+        </section>
+      ) : null}
+
       <section className="ministry-detail-cta">
         <div className="container">
-          <p className="eyebrow">Há um lugar para servir</p>
-          <h2>Quer conhecer este ministério de perto?</h2>
+          <p className="eyebrow">Ha um lugar para servir</p>
+          <h2>Quer conhecer este ministerio de perto?</h2>
           <Link href="/contato" className="button ivory">
             Falar com a Aprisco <Icon name="arrow" />
           </Link>
@@ -125,4 +147,3 @@ export default async function MinistryPage({
     </main>
   );
 }
-

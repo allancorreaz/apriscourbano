@@ -1,4 +1,4 @@
-export function Icon({
+﻿export function Icon({
   name,
   size = 20,
 }: {
@@ -27,6 +27,8 @@ export function Icon({
     flower: <><circle cx="12" cy="12" r="2"/><path d="M12 10c-2-3-1-6 1-7 2 1 3 4 1 7M14 12c3-2 6-1 7 1-1 2-4 3-7 1M12 14c2 3 1 6-1 7-2-1-3-4-1-7M10 12c-3 2-6 1-7-1 1-2 4-3 7-1"/></>,
     compass: <><circle cx="12" cy="12" r="9"/><path d="m15 9-2 4-4 2 2-4 4-2Z"/></>,
     home: <><path d="m3 11 9-8 9 8"/><path d="M5 10v11h14V10M9 21v-7h6v7"/></>,
+    music: <><path d="M9 18V7l10-2v11"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="16" r="2"/></>,
   };
+
   return <svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">{p[name] ?? p.arrow}</svg>;
 }

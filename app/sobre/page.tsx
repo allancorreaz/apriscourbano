@@ -1,14 +1,14 @@
-import { getPublishedMedia } from "../admin-service";
+﻿import { getPublishedMedia } from "../admin-service";
 import { Icon } from "../components/Icons";
 import { PageHero } from "../components/PageHero";
 import { SiteFooter } from "../components/SiteFooter";
 import { VideoPlayer } from "../components/VideoPlayer";
-import { beliefs, documentaries } from "../site-content";
+import { beliefs, churchPurpose, documentaries } from "../site-content";
 
 export const dynamic = "force-dynamic";
 export const metadata = {
-  title: "Sobre nós",
-  description: "História, visão e valores da Aprisco Urbano.",
+  title: "Sobre nos",
+  description: "Historia, visao e valores da Aprisco Urbano.",
 };
 
 export default async function Page() {
@@ -18,9 +18,9 @@ export default async function Page() {
     <main>
       <PageHero
         eyebrow="Nossa casa"
-        title="Uma igreja urbana. Uma fé vivida de perto."
-        description="Existimos para conectar pessoas a Jesus, formar discípulos e servir a cidade com amor e verdade."
-        image="/media/hero-noite-pertencimento.png"
+        title="Uma igreja urbana. Uma fe vivida de perto."
+        description="Existimos para conectar pessoas a Jesus, formar discipulos e servir a cidade com amor, verdade e poder do Espirito Santo."
+        image="/media/hero-glaucio-pregando.png"
       />
 
       <section className="inner-section section-pad">
@@ -31,19 +31,21 @@ export default async function Page() {
             <span>U</span>
           </div>
           <div>
-            <p className="eyebrow dark">Sobre nós</p>
+            <p className="eyebrow dark">Sobre nos</p>
             <h2 className="display">
               Chamados para ser
               <br />
               <em>casa na cidade.</em>
             </h2>
             <p>
-              A história oficial da Aprisco Urbano poderá ser publicada aqui
-              com seus marcos, testemunhos e o chamado que deu origem à igreja.
+              O Aprisco Urbano nasceu para revelar Jesus em Itaguai, formar uma familia
+              espiritual saudavel e construir uma igreja que discipula, treina, envia e
+              sustenta pessoas atraves das celulas.
             </p>
             <p>
-              Mais do que datas, esta página revela por que existimos, como
-              cuidamos e o futuro que estamos construindo juntos.
+              Nossa missao e clara: cada membro um sacerdote, cada casa uma extensao da
+              igreja. Nossa visao e viver como Jesus viveu e fazer as mesmas coisas que
+              Ele fez, e coisas maiores, pelo poder do Espirito Santo.
             </p>
           </div>
         </div>
@@ -53,7 +55,7 @@ export default async function Page() {
         <div className="container">
           <p className="eyebrow">O que nos move</p>
           <h2 className="display light">
-            Convicções que
+            Conviccoes que
             <br />
             <em>ganham vida.</em>
           </h2>
@@ -72,7 +74,36 @@ export default async function Page() {
       <section className="inner-section section-pad">
         <div className="container page-intro">
           <div>
-            <p className="eyebrow dark">Liderança pastoral</p>
+            <p className="eyebrow dark">Visao e missao</p>
+            <h2 className="display">
+              Uma igreja que quer ser
+              <br />
+              <em>igual a Jesus.</em>
+            </h2>
+          </div>
+          <p>
+            {churchPurpose.vision}
+          </p>
+        </div>
+        <div className="container purpose-grid purpose-grid-inner">
+          <article>
+            <span>Missao da casa</span>
+            <p>{churchPurpose.mission}</p>
+          </article>
+          <article>
+            <span>Como fazemos</span>
+            <p>
+              Salvando, discipulando, treinando, enviando e sustentando pessoas por
+              meio das celulas, da comunhao e do servico cristao.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section className="inner-section section-pad">
+        <div className="container page-intro">
+          <div>
+            <p className="eyebrow dark">Lideranca pastoral</p>
             <h2 className="display">
               Pastores que servem
               <br />
@@ -80,19 +111,23 @@ export default async function Page() {
             </h2>
           </div>
           <p>
-            Um espaço para apresentar a história, o chamado e as fotografias
-            oficiais dos pastores sêniores da Aprisco Urbano.
+            Glaucio Muniz e Cintia Fernandes sao os fundadores do Aprisco Urbano. As
+            fotos oficiais dos pastores seniores podem ser atualizadas aqui assim que
+            voce me enviar o proximo material.
           </p>
         </div>
         <div className="container pastors">
-          {["Pastor sênior", "Pastora sênior"].map((role, index) => (
-            <article key={role}>
+          {[
+            ["Pastor senior", "Glaucio Muniz"],
+            ["Pastora senior", "Cintia Fernandes"],
+          ].map((role, index) => (
+            <article key={role[0]}>
               <div className={`pastor p${index}`}>
-                <span>Foto oficial</span>
+                <span>Foto oficial em atualizacao</span>
               </div>
-              <p>{role}</p>
-              <h3>Nome em atualização</h3>
-              <span>Biografia e testemunho em atualização.</span>
+              <p>{role[0]}</p>
+              <h3>{role[1]}</h3>
+              <span>Biografia e testemunho em atualizacao.</span>
             </article>
           ))}
         </div>
@@ -101,20 +136,36 @@ export default async function Page() {
       <section className="documentaries section-pad">
         <div className="container documentary-heading">
           <div>
-            <p className="eyebrow">Memória, chamado e legado</p>
+            <p className="eyebrow">Memoria, chamado e legado</p>
             <h2 className="display light">
-              Histórias que merecem
+              Historias que merecem
               <br />
               <em>ser preservadas.</em>
             </h2>
           </div>
           <p>
-            Os documentários produzidos pela equipe de mídia podem ser exibidos
-            aqui pelo YouTube, Vimeo ou por um arquivo MP4/WebM.
+            Os takes abaixo fazem parte dos documentarios produzidos pela equipe de
+            midia com os pastores seniores Glaucio Muniz e Cintia Fernandes,
+            fundadores do Aprisco Urbano.
           </p>
         </div>
 
         <div className="container documentary-grid">
+          {documentaries.map((documentary) => (
+            <article key={documentary.id} className="documentary-card">
+              <div className="documentary-player">
+                <VideoPlayer
+                  title={documentary.title}
+                  url={documentary.url}
+                  poster={documentary.image}
+                />
+              </div>
+              <span>Documentario Aprisco</span>
+              <h3>{documentary.title}</h3>
+              <p>{documentary.description}</p>
+            </article>
+          ))}
+
           {mediaItems.map((media) => (
             <article key={`media-${media.id}`} className="documentary-card">
               <div className="documentary-player">
@@ -125,32 +176,27 @@ export default async function Page() {
                 />
               </div>
               <span>
-                {media.mediaType === "DOCUMENTARY"
-                  ? "Documentário"
-                  : "Vídeo Aprisco"}
+                {media.mediaType === "DOCUMENTARY" ? "Documentario" : "Video Aprisco"}
               </span>
               <h3>{media.title}</h3>
               <p>{media.description}</p>
             </article>
           ))}
 
-          {mediaItems.length === 0 &&
-            documentaries.map((documentary) => (
-              <article key={documentary.id} className="documentary-card pending">
-                <div
-                  className="documentary-placeholder"
-                  style={{
-                    backgroundImage: `linear-gradient(135deg,rgba(3,17,22,.88),rgba(3,17,22,.34)),url(${documentary.image})`,
-                  }}
-                >
-                  <Icon name="camera" size={36} />
-                  <span>{documentary.status}</span>
-                </div>
-                <span>Documentário Aprisco</span>
-                <h3>{documentary.title}</h3>
-                <p>{documentary.description}</p>
-              </article>
-            ))}
+          {mediaItems.length === 0 ? (
+            <article className="documentary-card documentary-note">
+              <div className="documentary-placeholder documentary-placeholder-note">
+                <Icon name="camera" size={36} />
+                <span>Espaco pronto para novos episodios</span>
+              </div>
+              <span>Proximos capitulos</span>
+              <h3>Novos documentarios podem entrar aqui</h3>
+              <p>
+                Conforme a equipe de midia publicar novos links ou arquivos, esta grade
+                pode crescer sem mudar a estrutura da pagina.
+              </p>
+            </article>
+          ) : null}
         </div>
       </section>
 
@@ -158,4 +204,3 @@ export default async function Page() {
     </main>
   );
 }
-

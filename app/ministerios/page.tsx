@@ -1,34 +1,46 @@
-import Link from "next/link";
+﻿import Link from "next/link";
+import { getChatGPTUser } from "../chatgpt-auth";
+import { hasPermission } from "../access-control";
+import { resolveCurrentUser } from "../admin-service";
 import { Icon } from "../components/Icons";
 import { PageHero } from "../components/PageHero";
 import { SiteFooter } from "../components/SiteFooter";
 import { ministryGroups } from "../site-content";
 
+export const dynamic = "force-dynamic";
 export const metadata = {
-  title: "Ministérios",
-  description: "Ministérios de serviço e cuidado da Aprisco Urbano.",
+  title: "Ministerios",
+  description: "Ministerios de servico e cuidado da Aprisco Urbano.",
 };
 
-export default function Page() {
+export default async function Page() {
+  const identity = await getChatGPTUser();
+  const actor = identity ? await resolveCurrentUser(identity) : null;
+  const canSeeAddCard =
+    actor &&
+    (hasPermission(actor.role, "ministries.manage") ||
+      hasPermission(actor.role, "content.manage") ||
+      hasPermission(actor.role, "users.manage"));
+
   return (
     <main>
       <PageHero
         eyebrow="Servir, cuidar, formar"
-        title="Dons diferentes. O mesmo propósito."
-        description="Cada ministério existe para revelar o amor de Jesus em gestos práticos, ambientes seguros e relacionamentos verdadeiros."
-        image="/media/hero-noite-pertencimento.png"
+        title="Dons diferentes. O mesmo proposito."
+        description="Cada ministerio existe para revelar o amor de Jesus em gestos praticos, ambientes seguros e relacionamentos verdadeiros."
+        image="/media/hero-glaucio-pregando.png"
       />
       <section className="inner-section section-pad">
         <div className="container centered-page">
-          <p className="eyebrow dark">Encontre sua expressão</p>
+          <p className="eyebrow dark">Encontre sua expressao</p>
           <h2 className="display">
-            Não ocupamos posições.
+            Nao ocupamos posicoes.
             <br />
             <em>Servimos pessoas.</em>
           </h2>
           <p>
-            Conheça cada frente, sua missão, seu líder e a cobertura pastoral
-            responsável.
+            Conheca cada frente, sua missao, sua lideranca e a cobertura pastoral
+            responsavel.
           </p>
         </div>
 
@@ -51,24 +63,24 @@ export default function Page() {
                     <h3>{ministry.name}</h3>
                     <p>{ministry.summary}</p>
                     <div className="ministry-responsible">
-                      <small>Líder</small>
+                      <small>Lideranca</small>
                       <strong>{ministry.leader.name}</strong>
                     </div>
-                    <Link
-                      href={`/ministerios/${ministry.slug}`}
-                      className="text-link"
-                    >
-                      Conhecer ministério <Icon name="arrow" />
+                    <Link href={`/ministerios/${ministry.slug}`} className="text-link">
+                      Conhecer ministerio <Icon name="arrow" />
                     </Link>
                   </article>
                 ))}
-                <article className="add-card">
-                  <b>+</b>
-                  <h3>Outro ministério</h3>
-                  <p>
-                    Espaço pronto para novas frentes de serviço e cuidado.
-                  </p>
-                </article>
+                {canSeeAddCard ? (
+                  <article className="add-card">
+                    <b>+</b>
+                    <h3>Adicionar ministerio</h3>
+                    <p>
+                      Este espaco fica visivel apenas para perfis com permissao de
+                      edicao do site ou administracao.
+                    </p>
+                  </article>
+                ) : null}
               </div>
             </section>
           ))}
@@ -78,22 +90,22 @@ export default function Page() {
       <section className="leaders section-pad">
         <div className="container leaders-layout">
           <div>
-            <p className="eyebrow">Liderança que cuida</p>
+            <p className="eyebrow">Lideranca que cuida</p>
             <h2 className="display light">
-              Cada ministério tem
+              Cada ministerio tem
               <br />
-              <em>uma liderança próxima.</em>
+              <em>uma lideranca proxima.</em>
             </h2>
           </div>
           <div className="leadership-note">
             <p>
-              Nas páginas individuais haverá espaço para a fotografia, a
-              apresentação do líder do ministério e a fotografia do pastor ou
-              pastora responsável.
+              Nas paginas individuais voce encontra foco, apresentacao, foto da
+              lideranca e, quando houver, a cobertura pastoral responsavel por aquela
+              frente.
             </p>
             <span>
-              Os nomes e retratos oficiais poderão ser atualizados conforme a
-              igreja autorizar a publicação.
+              Novos ministerios e ajustes de lideranca permanecem protegidos para quem
+              possui acesso de edicao.
             </span>
           </div>
         </div>
@@ -102,4 +114,3 @@ export default function Page() {
     </main>
   );
 }
-
