@@ -1,0 +1,39 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+
+  // Cloudflare Worker name shown in the dashboard.
+  "name": "aprisco-urbano",
+
+  // Keep this aligned with the generated vinext artifact.
+  "main": "dist/server/index.js",
+  "no_bundle": true,
+
+  "compatibility_date": "2026-05-15",
+  "compatibility_flags": ["nodejs_compat"],
+
+  "assets": {
+    "directory": "dist/client"
+  },
+
+  "observability": {
+    "enabled": true
+  },
+
+  "rules": [
+    {
+      "type": "ESModule",
+      "globs": ["**/*.js", "**/*.mjs"]
+    }
+  ],
+
+  // Replace the placeholder values below after creating the D1 database
+  // in Cloudflare. Keep the binding name as DB because the app expects it.
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "aprisco-urbano-db",
+      "database_id": "170855c9-0493-4cf3-84db-3cf80aeddd5f"
+    }
+  ]
+}
+
